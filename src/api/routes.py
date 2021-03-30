@@ -16,3 +16,14 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
+
+
+@api.route('/register', methods=['POST'])
+def register_user():
+    
+    response = {
+        "message": "Hello! I'm a message that came from the backend"
+        }
+
+    return jsonify(response_body), 200
