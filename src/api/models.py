@@ -19,12 +19,12 @@ class User(db.Model):
             "name": self.name
             # do not serialize the password, its a security breach
         }
-    def create_user(body):
-        user=User()
-        user.name=body["name"]
-        user.email=body["email"]
-        user.password["password"]
-        user.is_active=body["is_active"]
+    @classmethod 
+    def create_user (cls, email, password):
+        user = cls()
+        user.email = email
+        user.password= password
+        user.is_active = True
         db.session.add(user)
         db.session.commit()
 
