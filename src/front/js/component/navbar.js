@@ -24,6 +24,11 @@ export const Navbar = () => {
 							Log In
 						</button>
 					</Link>
+					<Link to="/profile">
+						<button className="btn btn-light" type="button">
+							Profile
+						</button>
+					</Link>
 				</div>
 			</div>
 		</nav>

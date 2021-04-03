@@ -7,6 +7,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			saveAccessToken: accessToken => {
 				setStore({ accessToken: accessToken });
+			},
+			getAccessToken: () => {
+				let store = getStore();
+				return store.accessToken;
 			}
 		}
 	};

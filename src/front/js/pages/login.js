@@ -6,6 +6,7 @@ export const LogIn = () => {
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 	const { actions } = useContext(Context);
+	const [message, setMessage] = useState("");
 
 	function logIn(event) {
 		event.preventDefault();
@@ -46,14 +47,12 @@ export const LogIn = () => {
 		<div className="jumbotron">
 			{error ? <h1>{error}</h1> : ""}
 			{message ? <h1>{message}</h1> : ""}
-			<form onSubmit={login}>
-				<span>* is required </span>
-
+			<form onSubmit={logIn}>
 				<input type="email" placeholder="email" required onChange={event => setEmail(event.target.value)} />
 
 				<input type="password" placeholder="password" onChange={event => setPassword(event.target.value)} />
 
-				<input type="submit" value="acceder" onClick={login} />
+				<input type="submit" value="acceder" onClick={logIn} />
 			</form>
 		</div>
 	);
