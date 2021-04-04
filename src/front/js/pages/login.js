@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
+import { useHistory } from "react-router-dom";
 
 export const LogIn = () => {
 	const [email, setEmail] = useState("");
@@ -7,6 +8,7 @@ export const LogIn = () => {
 	const [error, setError] = useState("");
 	const { actions } = useContext(Context);
 	const [message, setMessage] = useState("");
+	const history = useHistory();
 
 	function logIn(event) {
 		event.preventDefault();
@@ -33,6 +35,7 @@ export const LogIn = () => {
 			.then(responseJson => {
 				if (responseOk) {
 					actions.saveAccessToken(responseJson.access_token);
+					history.push("/home");
 				} else {
 					setError(responseJson.message);
 				}
