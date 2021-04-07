@@ -23,7 +23,8 @@ def handle_hello():
 
 @api.route('/signup', methods=['POST'])
 def signup():
-    body= request.get_json()
+    body = request.get_json()
+   
     User.create_user(body["email"], body["password"])
         
     return jsonify({"message":"registrado!"}), 200
@@ -34,8 +35,9 @@ def login():
     body = request.get_json()
     email = body["email"]
     password = body["password"]
-
-    user = User.get_login_credentials(email, password)
+    
+    user = User.get_login_credentials(email)
+    
     if user is None:
         raise APIException("Email o contraseña incorrecta")
     
@@ -46,7 +48,33 @@ def login():
 @api.route('/profile', methods=['GET'])
 @jwt_required()
 def profile():
-        current_user_id = get_jwt_identity()
-        user = User.get(current_user_id)
-        return jsonify(user.serialize())
+    current_user_id = get_jwt_identity()
+    user = User.get(current_user_id)
     
+    return jsonify(user.serialize())
+
+
+@api.route('/profile', methods=['PUT'])
+@jwt_required()
+def post_profile():
+    request_json = request.get_json()
+    current_user_id = get_jwt_identity()
+    
+    current_user = User.get(current_user_id)
+
+    current_user.update(request_json)
+
+    return jsonify(current_user.serialize())
+
+
+@api.route('/profile/new-bike', methods=['POST'])
+@jwt_required
+def new_user_bike():
+    body = request.get_json()
+    current_user_id = get_jwt_identity()
+
+    user = User.get(current_user_id)
+    bike = Bike.create(body["bike_type"], body["wheel_inches"], body["gears"])
+    user.bikes.append(bike)
+
+    user.save()
