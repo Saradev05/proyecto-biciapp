@@ -18,7 +18,7 @@ export const LogIn = () => {
 			return;
 		}
 		let responseOk = false;
-		fetch("https://3001-bronze-crane-rmugjnez.ws-eu03.gitpod.io/api/login", {
+		fetch(process.env.BACKEND_URL + "/api/login", {
 			method: "POST",
 			headers: {
 				"content-Type": "application/json"
@@ -55,7 +55,7 @@ export const LogIn = () => {
 
 				<input type="password" placeholder="password" onChange={event => setPassword(event.target.value)} />
 
-				<input type="submit" value="acceder" onClick={logIn} />
+				<input type="submit" value="acceder" />
 			</form>
 		</div>
 	);

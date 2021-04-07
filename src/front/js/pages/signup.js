@@ -5,6 +5,7 @@ export const SignUp = () => {
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [error, setError] = useState("");
+	const [message, setMessage] = useState("");
 
 	function signup() {
 		if (password != confirmPassword) {
@@ -12,7 +13,7 @@ export const SignUp = () => {
 			return;
 		}
 
-		fetch("https://3001-bronze-crane-rmugjnez.ws-eu03.gitpod.io/api/signup", {
+		fetch(process.env.BACKEND_URL + "/api/signup", {
 			method: "POST",
 			headers: {
 				"content-Type": "application/json"
@@ -22,6 +23,7 @@ export const SignUp = () => {
 				password: password
 			})
 		});
+		setMessage("Ya estas registrado!");
 	}
 
 	return (
