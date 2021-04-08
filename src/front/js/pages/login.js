@@ -7,7 +7,6 @@ export const LogIn = () => {
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 	const { actions } = useContext(Context);
-	const [message, setMessage] = useState("");
 	const history = useHistory();
 
 	function logIn(event) {
@@ -18,7 +17,7 @@ export const LogIn = () => {
 			return;
 		}
 		let responseOk = false;
-		fetch("https://3001-bronze-crane-rmugjnez.ws-eu03.gitpod.io/api/login", {
+		fetch(process.env.BACKEND_URL + "/api/login", {
 			method: "POST",
 			headers: {
 				"content-Type": "application/json"
@@ -49,13 +48,12 @@ export const LogIn = () => {
 	return (
 		<div className="jumbotron">
 			{error ? <h1>{error}</h1> : ""}
-			{message ? <h1>{message}</h1> : ""}
 			<form onSubmit={logIn}>
 				<input type="email" placeholder="email" required onChange={event => setEmail(event.target.value)} />
 
 				<input type="password" placeholder="password" onChange={event => setPassword(event.target.value)} />
 
-				<input type="submit" value="acceder" onClick={logIn} />
+				<input type="submit" value="acceder" />
 			</form>
 		</div>
 	);
