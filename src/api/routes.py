@@ -7,9 +7,13 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import get_jwt_identity
+import datetime 
+
+
 
 api = Blueprint('api', __name__)
-
+app = Flask(__name__)
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=30)
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
@@ -21,7 +25,8 @@ def handle_hello():
 
 @api.route('/signup', methods=['POST'])
 def signup():
-    body= request.get_json()
+    body = request.get_json()
+   
     User.create_user(body["email"], body["password"])
         
     return jsonify({"message":"registrado!"}), 200
@@ -32,8 +37,9 @@ def login():
     body = request.get_json()
     email = body["email"]
     password = body["password"]
-
-    user = User.get_login_credentials(email, password)
+    
+    user = User.get_login_credentials(email, password )
+    
     if user is None:
         raise APIException("Email o contraseña incorrecta")
     
@@ -44,9 +50,11 @@ def login():
 @api.route('/profile', methods=['GET'])
 @jwt_required()
 def profile():
-        current_user_id = get_jwt_identity()
-        user = User.get(current_user_id)
-        return jsonify(user.serialize())
+    current_user_id = get_jwt_identity()
+    user = User.get(current_user_id)
+    
+    return jsonify(user.serialize())
+
 
 @api.route('/profile', methods=['PUT'])
 @jwt_required()
@@ -72,4 +80,3 @@ def new_user_bike():
     user.bikes.append(bike)
 
     user.save()
-    

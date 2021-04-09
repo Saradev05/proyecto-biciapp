@@ -23,11 +23,9 @@ export const Profile = () => {
 			}
 		})
 			.then(response => response.json())
-			// .then(responseJson => setEmail(responseJson.email)); next victor
 			.then(responseJson => setUser(responseJson));
 	}, []);
 
-	// victor
 	function update(event) {
 		event.preventDefault();
 		fetch(process.env.BACKEND_URL + "/api/profile", {
@@ -37,7 +35,9 @@ export const Profile = () => {
 				Authorization: "Bearer " + actions.getAccessToken()
 			},
 			body: JSON.stringify(user)
-		});
+		})
+			.then(response => response.json())
+			.then(responseJson => setUser(responseJson));
 	}
 
 	// victor
@@ -66,17 +66,43 @@ export const Profile = () => {
 					<label htmlFor="inputPassword4" className="form-label">
 						Contraseña
 					</label>
-					<input type="password" className="form-control" id="inputPassword4" />
+					<input
+						type="password"
+						className="form-control"
+						id="inputPassword4"
+						defaultValue={user.password}
+						onChange={event => {
+							setUser({ ...user, password: event.target.value });
+						}}
+					/>
 				</div>
 				<div className="col-md-6">
 					<label className="form-label" />
 					Nombre
-					<input type="text" className="form-control" placeholder="Nombre" aria-label="First name" />
+					<input
+						type="text"
+						className="form-control"
+						placeholder="Nombre"
+						aria-label="First name"
+						defaultValue={user.name}
+						onChange={event => {
+							setUser({ ...user, name: event.target.value });
+						}}
+					/>
 				</div>
 				<div className="col-md-6">
 					<label className="form-label" />
 					Apellidos
-					<input type="text" className="form-control" placeholder="Apellidos" aria-label="Last name" />
+					<input
+						type="text"
+						className="form-control"
+						placeholder="Apellidos"
+						aria-label="Last name"
+						defaultValue={user.surname}
+						onChange={event => {
+							setUser({ ...user, surname: event.target.value });
+						}}
+					/>
 				</div>
 				<div className="col-md-6">
 					<label className="form-label" />

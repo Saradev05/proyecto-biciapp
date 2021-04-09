@@ -15,12 +15,13 @@ class User(db.Model):
     address2= db.Column(db.String(80), unique=False, nullable=True)
     city=db.Column(db.String(80), unique=False, nullable=True)
     postal_code=db.Column(db.String(80), unique=False, nullable=True)
+   
     favorite_activities=db.Column(db.String(80), unique=False, nullable=True)
 
     bikes = db.relationship("Bike", back_populates="user")
-
+    
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '<User %r>' % self.nick_name
 
     def serialize(self):
         return {
@@ -35,19 +36,20 @@ class User(db.Model):
             "postal_code": self.postal_code,
             # do not serialize the password, its a security breach
         }
+    
     @classmethod 
-    def create_user (cls, email, password):
+    def create_user(cls, email, password):
         user = cls()
-        user.email = email
-        user.password= password
+        user.password = password
         user.is_active = True
+        user.email = email
 
         db.session.add(user)
         db.session.commit()
 
-    # victor
+    # victor preguntar si puedo quitar email de update
     def update(self, json):
-        self.email = json["email"]
+        print(json)
         self.name = json["name"]
         self.surname = json["surname"]
         if "age" in json:
@@ -80,6 +82,7 @@ class User(db.Model):
 
 # victor        
 
+       
 class Bike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     bike_type = db.Column(db.String(80), unique=False, nullable=False)
@@ -88,6 +91,3 @@ class Bike(db.Model):
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User", back_populates="bikes")
-
-    
-       

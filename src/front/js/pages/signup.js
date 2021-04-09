@@ -6,7 +6,6 @@ export const SignUp = () => {
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [error, setError] = useState("");
 	const [message, setMessage] = useState("");
-
 	function signup() {
 		if (password != confirmPassword) {
 			setError("las contraseñas son distintas");
@@ -29,6 +28,7 @@ export const SignUp = () => {
 	return (
 		<div className="jumbotron">
 			{error ? <h1>{error}</h1> : ""}
+			{message ? <h1>{message}</h1> : ""}
 			<input type="email" placeholder="email" onChange={event => setEmail(event.target.value)} />
 
 			<input type="password" placeholder="password" onChange={event => setPassword(event.target.value)} />
