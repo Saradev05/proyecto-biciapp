@@ -50,6 +50,7 @@ class User(db.Model):
     # victor preguntar si puedo quitar email de update
     def update(self, json):
         print(json)
+        self.email = json["email"]
         self.name = json["name"]
         self.surname = json["surname"]
         if "age" in json:

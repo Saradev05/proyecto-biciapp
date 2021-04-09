@@ -112,18 +112,40 @@ export const Profile = () => {
 						className="form-control"
 						placeholder="Nombre a mostrar"
 						aria-label="First name"
+						defaultValue={user.nick_name}
+						onChange={event => {
+							setUser({ ...user, nick_name: event.target.value });
+						}}
 					/>
 				</div>
 				<div className="col-md-6">
 					<label className="form-label" />
 					Edad
-					<input type="text" className="form-control" placeholder="edad" aria-label="First name" />
+					<input
+						type="text"
+						className="form-control"
+						placeholder="edad"
+						aria-label="First name"
+						defaultValue={user.age}
+						onChange={event => {
+							setUser({ ...user, age: event.target.value });
+						}}
+					/>
 				</div>
 				<div className="col-6">
 					<label htmlFor="inputAddress" className="form-label">
 						dirección
 					</label>
-					<input type="text" className="form-control" id="inputAddress" placeholder="Calle , num" />
+					<input
+						type="text"
+						className="form-control"
+						id="inputAddress"
+						placeholder="Calle , num"
+						defaultValue={user.address1}
+						onChange={event => {
+							setUser({ ...user, address1: event.target.value });
+						}}
+					/>
 				</div>
 				<div className="col-6">
 					<label htmlFor="inputAddress" className="form-label">
@@ -134,19 +156,39 @@ export const Profile = () => {
 						className="form-control"
 						id="inputAddress"
 						placeholder="piso, escalera, puerta"
+						defaultValue={user.address2}
+						onChange={event => {
+							setUser({ ...user, address2: event.target.value });
+						}}
 					/>
 				</div>
 				<div className="col-md-6">
 					<label htmlFor="inputCity" className="form-label">
 						Ciudad
 					</label>
-					<input type="text" className="form-control" id="inputCity" />
+					<input
+						type="text"
+						className="form-control"
+						id="inputCity"
+						defaultValue={user.city}
+						onChange={event => {
+							setUser({ ...user, city: event.target.value });
+						}}
+					/>
 				</div>
 				<div className="col-md-6">
 					<label htmlFor="inputZip" className="form-label">
 						Codigo postal
 					</label>
-					<input type="text" className="form-control" id="inputZip" />
+					<input
+						type="text"
+						className="form-control"
+						id="inputZip"
+						defaultValue={user.postal_code}
+						onChange={event => {
+							setUser({ ...user, postal_code: event.target.value });
+						}}
+					/>
 				</div>
 				<div className="col-12" />
 				<div className="col-12">
@@ -172,39 +214,7 @@ export const Profile = () => {
 					</select>
 				</div>
 			</form>
-			<div className="input-group md-6">
-				<select className="form-select" id="inputGroupSelect02">
-					<option selected>Choose...</option>
-					<option value="1">One</option>
-					<option value="2">Two</option>
-					<option value="3">Three</option>
-				</select>
-				<label className="input-group-text" htmlFor="inputGroupSelect02">
-					Options
-				</label>
-			</div>
-			<div className="input-group md-6">
-				<button className="btn btn-outline-secondary" type="button">
-					Button
-				</button>
-				<select className="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
-					<option selected>Choose...</option>
-					<option value="1">One</option>
-					<option value="2">Two</option>
-					<option value="3">Three</option>
-				</select>
-			</div>
-			<div className="input-group">
-				<select className="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-					<option selected>Choose...</option>
-					<option value="1">One</option>
-					<option value="2">Two</option>
-					<option value="3">Three</option>
-				</select>
-				<button className="btn btn-outline-secondary" type="button">
-					Button
-				</button>
-			</div>
+
 			<div>
 				<input type="radio" value="si" name="pregunta" id="pregunta_si" /> SI
 				<input type="radio" value="no" name="pregunta" id="pregunta_no" /> NO
