@@ -47,7 +47,9 @@ class User(db.Model):
         db.session.add(user)
         db.session.commit()
 
+    # victor preguntar si puedo quitar email de update
     def update(self, json):
+        print(json)
         self.email = json["email"]
         self.name = json["name"]
         self.surname = json["surname"]
@@ -71,12 +73,16 @@ class User(db.Model):
         db.session.commit()
 
     @classmethod
-    def get_login_credentials(cls, email):
-        return cls.query.filter_by(email = email).first()
+    def get_login_credentials(cls, email, password):
+        return cls.query.filter_by(email = email).filter_by(password = password).one_or_none()
+        # return cls.query.filter_by(email = email).first() victor
 
     @classmethod
     def get(cls, id):
         return cls.query.get(id)
+
+# victor        
+
        
 class Bike(db.Model):
     id = db.Column(db.Integer, primary_key=True)

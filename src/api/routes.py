@@ -7,17 +7,19 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import get_jwt_identity
+import datetime 
+
+
 
 api = Blueprint('api', __name__)
-
+app = Flask(__name__)
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=30)
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
-
     response_body = {
         "message": "Hello! I'm a message that came from the backend"
     }
-
     return jsonify(response_body), 200
 
 
@@ -36,7 +38,7 @@ def login():
     email = body["email"]
     password = body["password"]
     
-    user = User.get_login_credentials(email)
+    user = User.get_login_credentials(email, password )
     
     if user is None:
         raise APIException("Email o contraseña incorrecta")
