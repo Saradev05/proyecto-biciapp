@@ -87,8 +87,40 @@ class User(db.Model):
 class Bike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     bike_type = db.Column(db.String(80), unique=False, nullable=False)
+    bike_name = db.Column(db.String(80), unique=False, nullable=True)
     wheel_inches = db.Column(db.String(80), unique=False, nullable=True)
     gears = db.Column(db.Integer)
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User", back_populates="bikes")
+
+    
+    def __repr__(self):
+        return '<Bike %r>' % self.bike_type
+    
+    def serialize(self):
+        return {
+            "bike_name": self.bike_name,
+            "bike_type": self.bike_type,
+            "wheel_inches": self.wheel_inches,
+            "gears" : self.gears            
+        }
+
+    @classmethod 
+    def create_bike(cls, bike_type, gears, wheel_inches):
+        bike = cls()
+        bike.bike_type = bike_type
+        bike.wheel_inches = wheel_inches
+        bike.gears = gears
+
+        db.session.add(bike)
+        db.session.commit()
+
+    def update(self, json):
+        self.bike_type = json["bike_type"]
+        self.bike_name = json["bike_name"]
+        self.wheel_inches = json["wheel_inches"]
+        self.gears = json["gears"]
+        
+        db.session.add(self)
+        db.session.commit()
