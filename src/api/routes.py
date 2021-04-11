@@ -23,6 +23,8 @@ def handle_hello():
     return jsonify(response_body), 200
 
 
+
+
 @api.route('/signup', methods=['POST'])
 def signup():
     body = request.get_json()
@@ -46,6 +48,39 @@ def login():
 
     access_token = create_access_token(identity = user.id )
     return jsonify({"access_token": access_token })
+
+@api.route('/forgot-password', methods=['POST'])
+def forgot_password():
+    request_json = request.get_json()
+    email = request_json["email"]
+    if email is None:
+        raise APIException("Email required")
+
+    token = random.randint(100000000,199990000)
+    user = User.get_login_credentials(email)
+    user.token = token
+
+    db.session.commit()
+
+    forgot_password = ForgotPassword(email,token)
+    forgot_password.send()      
+
+    return jsonify({}), 200
+
+@api.route('/reset-pasword', methods=['POST'])
+def forgot_password():
+    request_json = request.get_json()
+    email = request_json["email"]
+    token = request_json["token"]
+    password = request_json["password"]
+
+    user = User.get_for_forgot(email, token)
+    user.password = password 
+    user.token = None
+    db.session.commit()
+
+    return jsonify({}), 200
+
 
 @api.route('/profile', methods=['GET'])
 @jwt_required()

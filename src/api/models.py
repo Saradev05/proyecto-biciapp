@@ -124,3 +124,13 @@ class Bike(db.Model):
         
         db.session.add(self)
         db.session.commit()
+
+
+class ForgotPasword():
+    def __init__(self, email, token):
+        super().__init__()
+        self.email = email
+        self.token = token
+    def send (self):
+        url = process.env.BACKEND_URL + "/api/new_password" +token
+        return True
