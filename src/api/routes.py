@@ -80,3 +80,26 @@ def new_user_bike():
     user.bikes.append(bike)
 
     user.save()
+
+
+
+@api.route('/administ', methods=['GET'])
+@jwt_required()
+def administ_profile():
+    current_administ_id = get_jwt_identity()
+    administ = Administ.get(current_administ_id)
+    
+    return jsonify(administ.serialize())
+
+
+@api.route('/administ', methods=['PUT'])
+@jwt_required()
+def post_administ_profile():
+    request_json = request.get_json()
+    current_administ_id = get_jwt_identity()
+    
+    current_administ = Administ.get(current_administ_id)
+
+    current_administ.update(request_json)
+
+    return jsonify(current_administ.serialize())
