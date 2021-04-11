@@ -6,6 +6,7 @@ export const Profile = () => {
 	const [email, setEmail] = useState("");
 	// const [password, setPassword] = useState("");
 	const [user, setUser] = useState(null);
+	const [bike, setBike] = useState(null);
 	const { actions } = useContext(Context);
 	const history = useHistory();
 
@@ -201,9 +202,9 @@ export const Profile = () => {
 				</div>
 			</form>
 
-			<form className=" row g-3  col-md-6 ">
+			<form className=" row g-3  col-md-6 " id="bikes">
 				<div className="col-md-6">
-					<label htmlFor="inputEmail4" className="form-label">
+					<label htmlFor="bike_type" className="form-label">
 						Tipo de bici
 					</label>
 					<input
@@ -211,20 +212,20 @@ export const Profile = () => {
 						className="form-control"
 						defaultValue={bike.bike_type}
 						onChange={event => {
-							setUser({ ...user, email: event.target.value });
+							setUser({ ...bike, bike_type: event.target.value });
 						}}
 					/>
 				</div>
 				<div className="col-md-6">
-					<label htmlFor="inputEmail4" className="form-label">
-						Tipo de bici
+					<label htmlFor="wheel_inches" className="form-label">
+						pulgadas rueda
 					</label>
 					<input
 						type="text"
 						className="form-control"
-						defaultValue={bike.bike_type}
+						defaultValue={bike.wheel_inches}
 						onChange={event => {
-							setUser({ ...user, email: event.target.value });
+							setUser({ ...bike, wheel_inches: event.target.value });
 						}}
 					/>
 				</div>
