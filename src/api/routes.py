@@ -53,11 +53,12 @@ def login():
 def forgot_password():
     request_json = request.get_json()
     email = request_json["email"]
+    
     if email is None:
         raise APIException("Email required")
 
     token = random.randint(100000000,199990000)
-    user = User.get_login_credentials(email)
+    user = User.get_user_email(email)
     user.token = token
 
     db.session.commit()
@@ -68,7 +69,7 @@ def forgot_password():
     return jsonify({}), 200
 
 @api.route('/reset-pasword', methods=['POST'])
-def forgot_password():
+def reset_password():
     request_json = request.get_json()
     email = request_json["email"]
     token = request_json["token"]
@@ -104,14 +105,24 @@ def post_profile():
     return jsonify(current_user.serialize())
 
 
-@api.route('/profile/new-bike', methods=['POST'])
+@api.route('/new_bike', methods=['POST'])
 @jwt_required
 def new_user_bike():
     body = request.get_json()
     current_user_id = get_jwt_identity()
 
     user = User.get(current_user_id)
-    bike = Bike.create(body["bike_type"], body["wheel_inches"], body["gears"])
+    bike = Bike.create(body["b_type"], body["wheel_inches"], body["gears"])
     user.bikes.append(bike)
 
     user.save()
+
+@api.route('/new_bike', methods=['GET'])
+@jwt_required()
+def bike():
+    
+    user = User.get(current_user_id)
+    current_user_id = get_jwt_identity()
+    bike = Bike.get(current_user_id)
+    
+    return jsonify(bike.serialize())

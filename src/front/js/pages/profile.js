@@ -8,6 +8,7 @@ export const Profile = () => {
 	const [user, setUser] = useState(null);
 	const [bike, setBike] = useState(null);
 	const { actions } = useContext(Context);
+	const [message, setMessage] = useState("");
 	const history = useHistory();
 
 	useEffect(() => {
@@ -39,11 +40,42 @@ export const Profile = () => {
 		})
 			.then(response => response.json())
 			.then(responseJson => setUser(responseJson));
+
+		fetch(process.env.BACKEND_URL + "/api/new_bike", {
+			method: "POST",
+			headers: {
+				"content-Type": "application/json",
+				Authorization: "Bearer " + actions.getAccessToken()
+			},
+			body: JSON.stringify({
+				b_type: b_type,
+				wheel_inches: wheel_inches,
+				gears: gears
+			})
+		})
+			.then(response => response.json())
+			.then(responseJson => setBike(responseJson));
+		fetch(process.env.BACKEND_URL + "/api/new_bike", {
+			method: "GET",
+			headers: {
+				"content-Type": "application/json",
+				Authorization: "Bearer " + actions.getAccessToken()
+			}
+		})
+			.then(response => response.json())
+			.then(responseJson => setBike(responseJson));
+
+		setMessage("Perfil guardado correctamente!");
 	}
 
-	// victor
 	if (!user) {
 		return <h1>Loading user....</h1>;
+	}
+	if (!bike) {
+		return <h1>Loading user....</h1>;
+	}
+	{
+		message ? <h1>{message}</h1> : "";
 	}
 
 	return (
@@ -204,50 +236,40 @@ export const Profile = () => {
 
 			<form className=" row g-3  col-md-6 " id="bikes">
 				<div className="col-md-6">
-					<label htmlFor="bike_type" className="form-label">
+					<label htmlFor="b_type" className="form-label">
 						Tipo de bici
 					</label>
-					<input
+					<select
 						type="text"
+						placeholder="seleccionar tipo de bici"
 						className="form-control"
-						defaultValue={bike.bike_type}
+						defaultValue={bike ? bike.b_type : ""}
 						onChange={event => {
-							setUser({ ...bike, bike_type: event.target.value });
-						}}
-					/>
+							setBike({ ...bike, b_type: event.target.value });
+						}}>
+						<option selected>BTT</option>
+						<option>Carretera</option>
+						<option>paseo</option>
+					</select>
 				</div>
 				<div className="col-md-6">
-					<label htmlFor="wheel_inches" className="form-label">
-						pulgadas rueda
+					<label htmlFor="b_type" className="form-label">
+						diametro de rueda
 					</label>
-					<input
+					<select
 						type="text"
+						placeholder="diametro de rueda"
 						className="form-control"
-						defaultValue={bike.wheel_inches}
+						defaultValue={bike ? bike.wheel_inches : ""}
 						onChange={event => {
-							setUser({ ...bike, wheel_inches: event.target.value });
-						}}
-					/>
-				</div>
-				<div className="input-group col-md-6">
-					<label className="input-group-text" htmlFor="inputGroupSelect01">
-						Options
-					</label>
-					<select className="form-select" id="inputGroupSelect01">
-						<option selected>Choose...</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
+							setBike({ ...bike, wheel_inches: event.target.value });
+						}}>
+						<option selected>28" o más</option>
+						<option>20" a 27"</option>
+						<option>menos de 20"</option>
 					</select>
 				</div>
 			</form>
-
-			<div>
-				<input type="radio" value="si" name="pregunta" id="pregunta_si" /> SI
-				<input type="radio" value="no" name="pregunta" id="pregunta_no" /> NO
-				<input type="radio" value="nsnc" name="pregunta" id="pregunta_nsnc" /> NS/NC email:
-				{email}
-			</div>
 		</div>
 	);
 };
