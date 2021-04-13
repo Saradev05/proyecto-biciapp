@@ -117,12 +117,16 @@ def new_user_bike():
 
     user.save()
 
-@api.route('/new_bike', methods=['GET'])
+@api.route('/user/bikes', methods=['GET'])
 @jwt_required()
-def bike():
+def user_bikes():
     
-    user = User.get(current_user_id)
     current_user_id = get_jwt_identity()
-    bike = Bike.get(current_user_id)
-    
-    return jsonify(bike.serialize())
+
+    user = User.get(current_user_id)
+    bikes = user.bikes
+    bikes_serialized = []
+    for bike in bikes : 
+        bikes_serialized.append(bike.serialize())
+            
+    return jsonify(bikes_serialized)

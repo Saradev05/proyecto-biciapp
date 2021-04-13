@@ -26,6 +26,16 @@ export const Profile = () => {
 		})
 			.then(response => response.json())
 			.then(responseJson => setUser(responseJson));
+
+		fetch(process.env.BACKEND_URL + "/api/user/bikes", {
+			method: "GET",
+			headers: {
+				"content-Type": "application/json",
+				Authorization: "Bearer " + actions.getAccessToken()
+			}
+		})
+			.then(response => response.json())
+			.then(responseJson => setBike(responseJson));
 	}, []);
 
 	function update(event) {
@@ -55,15 +65,6 @@ export const Profile = () => {
 		})
 			.then(response => response.json())
 			.then(responseJson => setBike(responseJson));
-		fetch(process.env.BACKEND_URL + "/api/new_bike", {
-			method: "GET",
-			headers: {
-				"content-Type": "application/json",
-				Authorization: "Bearer " + actions.getAccessToken()
-			}
-		})
-			.then(response => response.json())
-			.then(responseJson => setBike(responseJson));
 
 		setMessage("Perfil guardado correctamente!");
 	}
@@ -72,14 +73,12 @@ export const Profile = () => {
 		return <h1>Loading user....</h1>;
 	}
 	if (!bike) {
-		return <h1>Loading user....</h1>;
-	}
-	{
-		message ? <h1>{message}</h1> : "";
+		return <h1>Loading bikes....</h1>;
 	}
 
 	return (
 		<div className="container">
+			{message ? <h1>{message}</h1> : ""}
 			<form className="row g-3">
 				<div className="col-md-6">
 					<label htmlFor="inputEmail4" className="form-label">
@@ -247,7 +246,7 @@ export const Profile = () => {
 						onChange={event => {
 							setBike({ ...bike, b_type: event.target.value });
 						}}>
-						<option selected>BTT</option>
+						<option selected>MTB</option>
 						<option>Carretera</option>
 						<option>paseo</option>
 					</select>
@@ -264,9 +263,9 @@ export const Profile = () => {
 						onChange={event => {
 							setBike({ ...bike, wheel_inches: event.target.value });
 						}}>
-						<option selected>28" o más</option>
-						<option>20" a 27"</option>
-						<option>menos de 20"</option>
+						<option selected>28 pulgadas o más</option>
+						<option>20 a 27 pulgadas</option>
+						<option>menos de 20 pulgadas</option>
 					</select>
 				</div>
 			</form>
