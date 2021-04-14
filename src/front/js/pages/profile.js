@@ -3,7 +3,6 @@ import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 
 export const Profile = () => {
-	const [email, setEmail] = useState("");
 	// const [password, setPassword] = useState("");
 	const [user, setUser] = useState(null);
 	const [bike, setBike] = useState(null);
@@ -68,8 +67,20 @@ export const Profile = () => {
 		})
 			.then(response => response.json())
 			.then(responseJson => setBike(responseJson));
-
 		setMessage("Perfil guardado correctamente!");
+
+		fetch(process.env.BACKEND_URL + "/api/new_bike", {
+			method: "PUT",
+			headers: {
+				"content-Type": "application/json",
+				Authorization: "Bearer " + actions.getAccessToken()
+			},
+			body: JSON.stringify(bike)
+		})
+			.then(response => response.json())
+			.then(responseJson => setUser(responseJson));
+
+		setMessage("Bici guardada correctamente!");
 	}
 
 	if (!user) {
@@ -230,6 +241,7 @@ export const Profile = () => {
 					<button type="submit" className="btn btn-primary" onClick={update}>
 						Guardar datos
 					</button>
+					{"  "}
 					<button type="submit" className="btn btn-primary">
 						Borrar
 					</button>
@@ -287,6 +299,15 @@ export const Profile = () => {
 						<option>20 a 27 pulgadas</option>
 						<option>menos de 20 pulgadas</option>
 					</select>
+				</div>
+				<div className="col-12">
+					<button type="submit" className="btn btn-primary" onClick={update}>
+						Guardar bici
+					</button>
+					{"  "}
+					<button type="submit" className="btn btn-primary">
+						Borrar
+					</button>
 				</div>
 			</form>
 		</div>

@@ -47,7 +47,7 @@ class User(db.Model):
         db.session.add(user)
         db.session.commit()
 
-    # victor preguntar si puedo quitar email de update
+
     def update(self, json):
         print(json)
         self.email = json["email"]
