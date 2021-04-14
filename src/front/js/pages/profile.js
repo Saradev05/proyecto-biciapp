@@ -7,6 +7,9 @@ export const Profile = () => {
 	// const [password, setPassword] = useState("");
 	const [user, setUser] = useState(null);
 	const [bike, setBike] = useState(null);
+	const [bType, setBType] = useState(null);
+	const [gears, setGears] = useState(null);
+	const [wheelInches, setWheelInches] = useState(null);
 	const { actions } = useContext(Context);
 	const [message, setMessage] = useState("");
 	const history = useHistory();
@@ -58,8 +61,8 @@ export const Profile = () => {
 				Authorization: "Bearer " + actions.getAccessToken()
 			},
 			body: JSON.stringify({
-				b_type: b_type,
-				wheel_inches: wheel_inches,
+				b_type: bType,
+				wheel_inches: wheelInches,
 				gears: gears
 			})
 		})
@@ -244,7 +247,7 @@ export const Profile = () => {
 						className="form-control"
 						defaultValue={bike ? bike.b_type : ""}
 						onChange={event => {
-							setBike({ ...bike, b_type: event.target.value });
+							setBType({ ...bike, b_type: event.target.value });
 						}}>
 						<option selected>MTB</option>
 						<option>Carretera</option>
@@ -261,7 +264,24 @@ export const Profile = () => {
 						className="form-control"
 						defaultValue={bike ? bike.wheel_inches : ""}
 						onChange={event => {
-							setBike({ ...bike, wheel_inches: event.target.value });
+							setWheelInches({ ...bike, wheel_inches: event.target.value });
+						}}>
+						<option selected>28 pulgadas o más</option>
+						<option>20 a 27 pulgadas</option>
+						<option>menos de 20 pulgadas</option>
+					</select>
+				</div>
+				<div className="col-md-6">
+					<label htmlFor="b_type" className="form-label">
+						marchas
+					</label>
+					<select
+						type="text"
+						placeholder="diametro de rueda"
+						className="form-control"
+						defaultValue={bike ? bike.gears : ""}
+						onChange={event => {
+							setGears({ ...bike, gears: event.target.value });
 						}}>
 						<option selected>28 pulgadas o más</option>
 						<option>20 a 27 pulgadas</option>

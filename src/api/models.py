@@ -95,7 +95,7 @@ class Bike(db.Model):
 
     
     def __repr__(self):
-        return '<Bike %r>' % self.bike_type
+        return '<Bike %r>' % self.b_type
     
     def serialize(self):
         return {

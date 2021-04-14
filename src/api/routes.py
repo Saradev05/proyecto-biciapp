@@ -109,6 +109,7 @@ def post_profile():
 @jwt_required
 def new_user_bike():
     body = request.get_json()
+    print(body)
     current_user_id = get_jwt_identity()
 
     user = User.get(current_user_id)
