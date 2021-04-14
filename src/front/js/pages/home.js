@@ -7,10 +7,10 @@ export const Home = () => {
 	const { store } = useContext(Context);
 
 	return (
-		<div className="text-center mt-5">
+		<div id="backgrd" className="text-center ">
 			<img
 				src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
-				className="img-fluid jumbotron"
+				className="bg-image img-fluid jumbotron "
 				width="100%"
 				height="80px"
 			/>
