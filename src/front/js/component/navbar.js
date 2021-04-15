@@ -4,9 +4,9 @@ import "../../styles/navbar.scss";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-xl fixed top navbar-light bg-light  ">
+		<nav className="navbar  fixed top navbar-light bg-light  ">
 			<Link to="/">
-				<span className="navbar-brand pd-10 mb-0 h1">Biciapp</span>
+				<h2 className="navbar-brand pd-10 mb-0 h1">Biciapp</h2>
 			</Link>
 
 			<div className="ml-auto">

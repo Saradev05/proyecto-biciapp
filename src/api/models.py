@@ -106,11 +106,12 @@ class Bike(db.Model):
         }
 
     @classmethod 
-    def create(cls, b_type, gears, wheel_inches):
+    def create(cls, name, b_type, gears, wheel_inches):
         bike = cls()
         bike.b_type = b_type
         bike.wheel_inches = wheel_inches
         bike.gears = gears
+        bike.name = name
 
         db.session.add(bike)
         db.session.commit()

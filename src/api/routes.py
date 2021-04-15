@@ -2,18 +2,14 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Bike
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import get_jwt_identity
-import datetime 
-
 
 
 api = Blueprint('api', __name__)
-app = Flask(__name__)
-app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=30)
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
@@ -106,17 +102,18 @@ def post_profile():
 
 
 @api.route('/new_bike', methods=['POST'])
-@jwt_required
+@jwt_required()
 def new_user_bike():
     body = request.get_json()
     print(body)
     current_user_id = get_jwt_identity()
 
     user = User.get(current_user_id)
-    bike = Bike.create(body["b_type"], body["wheel_inches"], body["gears"])
+    bike = Bike.create(body["name"],body["b_type"],  body["gears"], body["wheel_inches"])
     user.bikes.append(bike)
 
     user.save()
+    return jsonify(bike.serialize())
 
 @api.route('/user/bikes', methods=['GET'])
 @jwt_required()
