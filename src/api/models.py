@@ -15,9 +15,9 @@ class User(db.Model):
     address2= db.Column(db.String(80), unique=False, nullable=True)
     city=db.Column(db.String(80), unique=False, nullable=True)
     postal_code=db.Column(db.String(80), unique=False, nullable=True)
-   
     favorite_activities=db.Column(db.String(80), unique=False, nullable=True)
 
+    # user_activities= db.relationship("Activities", back_populates="user")
     bikes = db.relationship("Bike", back_populates="user")
     
     def __repr__(self):
@@ -86,11 +86,11 @@ class User(db.Model):
        
 class Bike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    bike_type = db.Column(db.String(80), unique=False, nullable=False)
-    wheel_inches = db.Column(db.String(80), unique=False, nullable=True)
+    bike_type = db.Column(db.String(180), unique=False, nullable=False)
+    wheel_inches = db.Column(db.String(180), unique=False, nullable=True)
     gears = db.Column(db.Integer)
-
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
     user = db.relationship("User", back_populates="bikes")
 
 
@@ -107,9 +107,8 @@ class Administ(db.Model):
     address2= db.Column(db.String(80), unique=False, nullable=True)
     city=db.Column(db.String(80), unique=False, nullable=True)
     postal_code=db.Column(db.String(80), unique=False, nullable=True)
-   
-  
-    
+
+    activities=db.relationship("Activity", back_populates="administ") 
     
     def __repr__(self):
         return '<Administ %r>' % self.nick_name
@@ -170,3 +169,15 @@ class Administ(db.Model):
     @classmethod
     def get(cls, id):
         return cls.query.get(id)
+
+
+class Activity(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(180), unique=False, nullable=False)
+    ruta = db.Column(db.String(180), unique=False, nullable=True)
+    dificultad = db.Column(db.Integer)
+    age =db.Column(db.Integer, unique=False, nullable=True)
+
+    administ_id= db.Column(db.Integer, db.ForeignKey("administ.id"))
+    administ = db.relationship("Administ", back_populates="activities")
+   
