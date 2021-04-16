@@ -46,15 +46,59 @@ export const LogIn = () => {
 	}
 
 	return (
-		<div className="jumbotron">
+		<div className=" container  ">
 			{error ? <h1>{error}</h1> : ""}
-			<form onSubmit={logIn}>
-				<input type="email" placeholder="email" required onChange={event => setEmail(event.target.value)} />
-
-				<input type="password" placeholder="password" onChange={event => setPassword(event.target.value)} />
-
-				<input type="submit" value="acceder" />
-			</form>
+			<div className="row justify-content-center">
+				<div className="col-md-8">
+					<div className="card">
+						<div className="card-header">Registrarme</div>
+						<div className="card-body">
+							<form onSubmit={logIn}>
+								<div className="form-group row">
+									<label htmlFor="email_address" className="col-md-4 col-form-label text-md-right">
+										E-mail
+									</label>
+									<div className="col-md-6">
+										<input
+											type="email"
+											id="email_address"
+											className="form-control"
+											name="email-address"
+											required
+											placeholder="email"
+											onChange={event => setEmail(event.target.value)}
+										/>
+									</div>
+								</div>
+								<div className="form-group row">
+									<label htmlFor="password" className="col-md-4 col-form-label text-md-right">
+										Contraseña
+									</label>
+									<div className="col-md-6">
+										<input
+											type="password"
+											id="password"
+											className="form-control"
+											name="email-address"
+											required
+											placeholder="password"
+											onChange={event => setPassword(event.target.value)}
+										/>
+									</div>
+								</div>
+								<div className="col-md-6 offset-md-4">
+									<button type="submit" className="btn btn-primary">
+										Acceder
+									</button>
+									<a href="#" className="btn btn-link">
+										No recuerdas la contraseña?
+									</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

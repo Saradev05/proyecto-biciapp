@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
+import "../../styles/profile.scss";
 
 export const Profile = () => {
 	// const [password, setPassword] = useState("");
