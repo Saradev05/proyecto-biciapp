@@ -6,6 +6,7 @@ export const Profile = () => {
 	// const [password, setPassword] = useState("");
 	const [user, setUser] = useState(null);
 	const [bike, setBike] = useState(null);
+	const [name, setName] = useState(null);
 	const [bType, setBType] = useState(null);
 	const [gears, setGears] = useState(null);
 	const [wheelInches, setWheelInches] = useState(null);
@@ -64,9 +65,10 @@ export const Profile = () => {
 				Authorization: "Bearer " + actions.getAccessToken()
 			},
 			body: JSON.stringify({
+				name: name,
 				b_type: bType,
-				wheel_inches: wheelInches,
-				gears: gears
+				gears: gears,
+				wheel_inches: wheelInches
 			})
 		})
 			.then(response => response.json())
@@ -253,11 +255,25 @@ export const Profile = () => {
 						onChange={event => {
 							setBType(event.target.value);
 						}}>
-                        <option value= "sin seleccionar">escoger una opción </option>
+						<option value="sin seleccionar">escoger una opción </option>
 						<option value="MTB">MTB</option>
 						<option value="Carretera">Carretera</option>
-						<option value="paseo" >paseo</option>
+						<option value="paseo">paseo</option>
 					</select>
+				</div>
+				<div className="col-md-6">
+					<label className="form-label" />
+					Nombre
+					<input
+						type="text"
+						className="form-control"
+						placeholder="Nombre"
+						aria-label="First name"
+						defaultValue={bike.name}
+						onChange={event => {
+							setName(event.target.value);
+						}}
+					/>
 				</div>
 				<div className="col-md-6">
 					<label htmlFor="b_type" className="form-label">
@@ -271,7 +287,7 @@ export const Profile = () => {
 						onChange={event => {
 							setWheelInches(event.target.value);
 						}}>
-                        <option value= "sin seleccionar">escoger una opción </option>
+						<option value="sin seleccionar">escoger una opción </option>
 						<option value="28+">28 pulgadas o más</option>
 						<option value="20-27">20 a 27 pulgadas</option>
 						<option value="19-">menos de 20 pulgadas</option>
@@ -287,12 +303,12 @@ export const Profile = () => {
 						className="form-control"
 						defaultValue={bike ? bike.gears : ""}
 						onChange={event => {
-							setGears( event.target.value );
-                        }}>
-                        <option value= "sin seleccionar">escoger una opción </option>
-						<option selected>28 pulgadas o más</option>
-						<option>20 a 27 pulgadas</option>
-						<option>menos de 20 pulgadas</option>
+							setGears(event.target.value);
+						}}>
+						<option value="sin seleccionar">escoger una opción </option>
+						<option selected>30 marchas o mas</option>
+						<option>15 a 29 marchas</option>
+						<option>menos de 15 marchas</option>
 					</select>
 				</div>
 				<div className="col-12">

@@ -88,7 +88,7 @@ class Bike(db.Model):
     b_type = db.Column(db.String(80), unique=False, nullable=False)
     name = db.Column(db.String(80), unique=False, nullable=True)
     wheel_inches = db.Column(db.String(80), unique=False, nullable=True)
-    gears = db.Column(db.Integer)
+    gears = db.Column(db.String(60),unique=False,nullable=True )
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User", back_populates="bikes")
