@@ -51,7 +51,7 @@ export const LogIn = () => {
 			<div className="row justify-content-center">
 				<div className="col-md-8">
 					<div className="card">
-						<div className="card-header">Registrarme</div>
+						<div className="card-header h4">Registrarme</div>
 						<div className="card-body">
 							<form onSubmit={logIn}>
 								<div className="form-group row">
