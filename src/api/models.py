@@ -174,10 +174,40 @@ class Administ(db.Model):
 class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(180), unique=False, nullable=False)
-    ruta = db.Column(db.String(180), unique=False, nullable=True)
-    dificultad = db.Column(db.Integer)
-    age =db.Column(db.Integer, unique=False, nullable=True)
+    route = db.Column(db.String(180), unique=False, nullable=True)
+    dificulty = db.Column(db.Integer)
+    description=db.Column(db.String(10000000), unique=False, nullable=True)
 
     administ_id= db.Column(db.Integer, db.ForeignKey("administ.id"))
     administ = db.relationship("Administ", back_populates="activities")
    
+    def __repr__(self):
+        return '<Activity %r>' % self.name
+    
+    def serialize(self):
+        return {
+            "name": self.name,
+            "route": self.route,
+            "dificulty": self.dificulty,
+            "description" : self.description
+                   
+        }
+
+    @classmethod 
+    def create(cls, name, route, dificulty, description):
+        activity = cls()
+        activity.name = name
+        activity.route = route
+        activity.dificulty = dificulty
+        activity.description = description
+
+        db.session.add(activity)
+        db.session.commit()
+
+    def update(self, json):
+        self.name = json["name"]
+        self.route = json["route"]
+        self.dificulty = json["dificulty"]
+        self.description = json["description"]
+        db.session.add(self)
+        db.session.commit()

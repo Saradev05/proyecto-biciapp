@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Bike, Administ
+from api.models import db, User, Bike, Administ, Activity
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import jwt_required
@@ -95,6 +95,31 @@ def administ_profile():
 @api.route('/administ', methods=['PUT'])
 @jwt_required()
 def post_administ_profile():
+    request_json = request.get_json()
+    current_administ_id = get_jwt_identity()
+    
+    current_administ = Administ.get(current_administ_id)
+
+    current_administ.update(request_json)
+
+    return jsonify(current_administ.serialize())
+
+@api.route('/activity', methods=['GET'])
+@jwt_required()
+def show_activity():
+    current_administ_id = get_jwt_identity()
+    administ = Administ.get(current_administ_id)
+    activity = Administ.activity
+    activity_serialized = []
+    for activity in activities :
+        activities_serialized.append(activity.serialize())
+    return jsonify(activities_serialized)
+    
+
+
+@api.route('/activity', methods=['POST'])
+@jwt_required()
+def post_activity():
     request_json = request.get_json()
     current_administ_id = get_jwt_identity()
     
