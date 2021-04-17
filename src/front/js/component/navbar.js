@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../styles/navbar.scss";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar  fixed top navbar-light bg-light  ">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">Biciapp</span>
+				<h2 className="navbar-brand pd-10 mb-0 h1">Biciapp</h2>
 			</Link>
 
 			<div className="ml-auto">

@@ -10,6 +10,8 @@ from api.utils import APIException, generate_sitemap
 from api.models import db
 from api.routes import api
 from api.admin import setup_admin
+import datetime 
+
 #from models import Person
 from flask_jwt_extended import JWTManager
 
@@ -30,7 +32,13 @@ else:
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 MIGRATE = Migrate(app, db)
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=60)
+
+
 db.init_app(app)
+
+
+
 
 # Allow CORS requests to this API
 CORS(app)

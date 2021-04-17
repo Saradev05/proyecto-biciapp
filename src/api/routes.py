@@ -2,18 +2,14 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Bike
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import get_jwt_identity
-import datetime 
-
 
 
 api = Blueprint('api', __name__)
-app = Flask(__name__)
-app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=30)
 
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
@@ -21,6 +17,8 @@ def handle_hello():
         "message": "Hello! I'm a message that came from the backend"
     }
     return jsonify(response_body), 200
+
+
 
 
 @api.route('/signup', methods=['POST'])
@@ -47,6 +45,40 @@ def login():
     access_token = create_access_token(identity = user.id )
     return jsonify({"access_token": access_token })
 
+@api.route('/forgot-password', methods=['POST'])
+def forgot_password():
+    request_json = request.get_json()
+    email = request_json["email"]
+    
+    if email is None:
+        raise APIException("Email required")
+
+    token = random.randint(100000000,199990000)
+    user = User.get_user_email(email)
+    user.token = token
+
+    db.session.commit()
+
+    forgot_password = ForgotPassword(email,token)
+    forgot_password.send()      
+
+    return jsonify({}), 200
+
+@api.route('/reset-pasword', methods=['POST'])
+def reset_password():
+    request_json = request.get_json()
+    email = request_json["email"]
+    token = request_json["token"]
+    password = request_json["password"]
+
+    user = User.get_for_forgot(email, token)
+    user.password = password 
+    user.token = None
+    db.session.commit()
+
+    return jsonify({}), 200
+
+
 @api.route('/profile', methods=['GET'])
 @jwt_required()
 def profile():
@@ -69,14 +101,30 @@ def post_profile():
     return jsonify(current_user.serialize())
 
 
-@api.route('/profile/new-bike', methods=['POST'])
-@jwt_required
+@api.route('/new_bike', methods=['POST'])
+@jwt_required()
 def new_user_bike():
     body = request.get_json()
+    print(body)
     current_user_id = get_jwt_identity()
 
     user = User.get(current_user_id)
-    bike = Bike.create(body["bike_type"], body["wheel_inches"], body["gears"])
+    bike = Bike.create(body["name"],body["b_type"],  body["gears"], body["wheel_inches"])
     user.bikes.append(bike)
 
     user.save()
+    return jsonify(bike.serialize())
+
+@api.route('/user/bikes', methods=['GET'])
+@jwt_required()
+def user_bikes():
+    
+    current_user_id = get_jwt_identity()
+
+    user = User.get(current_user_id)
+    bikes = user.bikes
+    bikes_serialized = []
+    for bike in bikes : 
+        bikes_serialized.append(bike.serialize())
+            
+    return jsonify(bikes_serialized)

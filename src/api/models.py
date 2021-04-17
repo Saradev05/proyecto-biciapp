@@ -47,7 +47,7 @@ class User(db.Model):
         db.session.add(user)
         db.session.commit()
 
-    # victor preguntar si puedo quitar email de update
+
     def update(self, json):
         print(json)
         self.email = json["email"]
@@ -75,20 +75,62 @@ class User(db.Model):
     @classmethod
     def get_login_credentials(cls, email, password):
         return cls.query.filter_by(email = email).filter_by(password = password).one_or_none()
-        # return cls.query.filter_by(email = email).first() victor
 
     @classmethod
     def get(cls, id):
         return cls.query.get(id)
 
-# victor        
+      
 
        
 class Bike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    bike_type = db.Column(db.String(80), unique=False, nullable=False)
+    b_type = db.Column(db.String(80), unique=False, nullable=False)
+    name = db.Column(db.String(80), unique=False, nullable=True)
     wheel_inches = db.Column(db.String(80), unique=False, nullable=True)
-    gears = db.Column(db.Integer)
+    gears = db.Column(db.String(60),unique=False,nullable=True )
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User", back_populates="bikes")
+
+    
+    def __repr__(self):
+        return '<Bike %r>' % self.b_type
+    
+    def serialize(self):
+        return {
+            "name": self.name,
+            "b_type": self.b_type,
+            "wheel_inches": self.wheel_inches,
+            "gears" : self.gears            
+        }
+
+    @classmethod 
+    def create(cls, name, b_type, gears, wheel_inches):
+        bike = cls()
+        bike.b_type = b_type
+        bike.wheel_inches = wheel_inches
+        bike.gears = gears
+        bike.name = name
+
+        db.session.add(bike)
+        db.session.commit()
+
+    def update(self, json):
+        self.b_type = json["b_type"]
+        self.name = json["name"]
+        self.wheel_inches = json["wheel_inches"]
+        self.gears = json["gears"]
+        
+        db.session.add(self)
+        db.session.commit()
+
+
+class ForgotPasword():
+    def __init__(self, email, token):
+        super().__init__()
+        self.email = email
+        self.token = token
+    def send (self):
+        url = process.env.BACKEND_URL + "/api/new_password" +token
+        return True
