@@ -27,8 +27,8 @@ export const SignUp = () => {
 
 	return (
 		<div className="jumbotron">
-			{error ? <h1>{error}</h1> : ""}
-			{message ? <h1>{message}</h1> : ""}
+			{error ? <h3>{error}</h3> : ""}
+			{message ? <h3>{message}</h3> : ""}
 			<input type="email" placeholder="email" onChange={event => setEmail(event.target.value)} />
 
 			<input type="password" placeholder="password" onChange={event => setPassword(event.target.value)} />

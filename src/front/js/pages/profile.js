@@ -86,7 +86,7 @@ export const Profile = () => {
 
 	return (
 		<div className="container">
-			{message ? <h1>{message}</h1> : ""}
+			{message ? <h3>{message}</h3> : ""}
 			<form className="row g-3">
 				<div className="col-md-6">
 					<label htmlFor="inputEmail4" className="form-label">
