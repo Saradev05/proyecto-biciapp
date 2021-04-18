@@ -1,11 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Administ = () => {
 	const [email, setEmail] = useState("");
-	// const [password, setPassword] = useState("");
-	const [administ, setAdminist] = useState(null);
+	const [password, setPassword] = useState("");
+	const [administ, setAdminist] = useState("");
 	const { actions } = useContext(Context);
 	const history = useHistory();
 
@@ -26,7 +27,7 @@ export const Administ = () => {
 			.then(responseJson => setAdminist(responseJson));
 	}, []);
 
-	function update(event) {
+	function Administ(event) {
 		event.preventDefault();
 		fetch(process.env.BACKEND_URL + "/api/administ", {
 			method: "PUT",
@@ -191,7 +192,12 @@ export const Administ = () => {
 				</div>
 				<div className="col-12" />
 				<div className="col-12">
-					<button type="submit" className="btn btn-primary" onClick={update}>
+					<button
+						type="submit"
+						className="btn btn-primary"
+						onClick={() => {
+							update;
+						}}>
 						Guardar datos
 					</button>
 					<button type="submit" className="btn btn-primary">
@@ -199,26 +205,12 @@ export const Administ = () => {
 					</button>
 				</div>
 			</form>
-
-			<form className=" row g-3  col-md-6 ">
-				<div className="input-group col-md-6">
-					<label className="input-group-text" htmlFor="inputGroupSelect01">
-						Options
-					</label>
-					<select className="form-select" id="inputGroupSelect01">
-						<option selected>Choose...</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
-					</select>
-				</div>
-			</form>
-
 			<div>
-				<input type="radio" value="si" name="pregunta" id="pregunta_si" /> SI
-				<input type="radio" value="no" name="pregunta" id="pregunta_no" /> NO
-				<input type="radio" value="nsnc" name="pregunta" id="pregunta_nsnc" /> NS/NC email:
-				{email}
+				<Link to="/activity">
+					<button className="btn btn-primary" type="button">
+						Actividades
+					</button>
+				</Link>
 			</div>
 		</div>
 	);

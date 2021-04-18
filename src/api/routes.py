@@ -92,17 +92,18 @@ def administ_profile():
     return jsonify(administ.serialize())
 
 
-@api.route('/administ', methods=['PUT'])
+@api.route('/administ', methods=['POST'])
 @jwt_required()
 def post_administ_profile():
-    request_json = request.get_json()
+
+    body = request.get_json()
     current_administ_id = get_jwt_identity()
-    
-    current_administ = Administ.get(current_administ_id)
 
-    current_administ.update(request_json)
+    administ = Administ.get(current_administ_id)
+    administ = Administ.create(body["email"], body["name"], body["surname"], body["nickname"], body["password"], body["address1"], body["address2"], body["city"], body["postalcode"])
+    user.administ.append(administ)
 
-    return jsonify(current_administ.serialize())
+    administ.save()
 
 @api.route('/activity', methods=['GET'])
 @jwt_required()

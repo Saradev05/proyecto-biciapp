@@ -9,28 +9,23 @@ export const Activity = () => {
     const [route, setRoute] = useState(null);
     const [dificulty, setDificulty] = useState(null);
     const [description, setDescription] = useState(null);
-    const [message, setMessage]= useState(null);
+    const [message, setMessage] = useState(null);
     const { actions } = useContext(Context);
     const history = useHistory();
 
     useEffect(() => {
-        let accessToken = actions.getAccessToken();
-        if (!accessToken) {
-            history.push("/activity");
-            return;
-        }
         fetch(process.env.BACKEND_URL + "/api/activity", {
             method: "GET",
             headers: {
                 "content-Type": "application/json",
-                Authorization: "Bearer " + actions.getAccessToken()
+
             }
         })
             .then(response => response.json())
             .then(responseJson => setActivity(responseJson));
     }, []);
 
-    function update(event) {
+    function activityUpdate(event) {
         event.preventDefault();
         fetch(process.env.BACKEND_URL + "/api/activity", {
             method: "POST",
@@ -40,21 +35,15 @@ export const Activity = () => {
             },
             body: JSON.stringify({
                 name: name,
-                route: route,
-                dificulty: dificulty,
-                description: description
-           } )
+                route:route,
+                dificulty:dificulty,
+                description:description
+            })
         })
             .then(response => response.json())
             .then(responseJson => setActivity(responseJson));
-            setmessage("actividad añadida")
+        setMessage("tarea guardada correctamente!");
     }
-
-   
-    if (!activity) {
-        return <h1>Loading activity....</h1>;
-    }
-
     return (
 
         <div className=" container  ">
@@ -88,7 +77,7 @@ export const Activity = () => {
                                     <div className="col-md-6">
                                         <input
                                             type="route"
-                                           
+
                                             className="route"
                                             name="route"
                                             required
@@ -97,44 +86,44 @@ export const Activity = () => {
                                         />
                                     </div>
                                 </div>
-                                 {/* <div className="form-group row">
+                                <div className="form-group row">
                                     <label htmlFor="dificulty" className="col-md-4 col-form-label text-md-right">
-                                       dificultad
+                                        dificultad
                                     </label>
                                     <div className="col-md-6">
                                         <input
-                                            type="route"
-                                           
-                                            className="route"
-                                            name="route"
+                                            type="dificulty"
+
+                                            className="dificulty"
+                                            name="dificulty"
                                             required
-                                            placeholder="Ruta"
-                                            onChange={event => setRoute(event.target.value)}
+                                            placeholder="dificultad"
+                                            onChange={event => setDificulty(event.target.value)}
                                         />
                                     </div>
                                 </div>
-                                 <div className="form-group row">
-                                    <label htmlFor="route" className="col-md-4 col-form-label text-md-right">
-                                       descripcion
+                                <div className="form-group row">
+                                    <label htmlFor="description" className="col-md-4 col-form-label text-md-right">
+                                        descripción
                                     </label>
                                     <div className="col-md-6">
                                         <input
-                                            type="route"
-                                           
-                                            className="route"
-                                            name="route"
+                                            type="description"
+
+                                            className="description"
+                                            name="description"
                                             required
-                                            placeholder="Ruta"
-                                            onChange={event => setRoute(event.target.value)}
+                                            placeholder="descripcion"
+                                            onChange={event => setDescription(event.target.value)}
                                         />
                                     </div>
                                 </div>
                                 <div className="col-md-6 offset-md-4">
                                     <button type="submit" className="btn btn-primary">
-                                        Crear
+                                        Crear actividad
                                     </button>
-                                    <a href="#" className="btn btn-link">
-                                        No recuerdas la contraseña? */}
+                                    <a href="" className="btn btn-link">
+                                        No recuerdas la contraseña?
                                     </a>
                                 </div>
                             </form>

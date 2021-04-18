@@ -175,7 +175,7 @@ class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(180), unique=False, nullable=False)
     route = db.Column(db.String(180), unique=False, nullable=True)
-    dificulty = db.Column(db.Integer)
+    dificulty = db.Column(db.String(120), unique=False, nullable=True)
     description=db.Column(db.String(10000000), unique=False, nullable=True)
 
     administ_id= db.Column(db.Integer, db.ForeignKey("administ.id"))
