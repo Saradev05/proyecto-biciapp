@@ -109,11 +109,15 @@ def new_user_bike():
     current_user_id = get_jwt_identity()
 
     user = User.get(current_user_id)
-    bike = Bike.create(body["name"],body["b_type"],  body["gears"], body["wheel_inches"])
-    user.bikes.append(bike)
+    bike = Bike.create(body["b_type"],body["name"],   body["wheel_inches"],body["gears"],)
+    # user.bikes.append(bike)
+    print (bike,bike is Bike )
 
-    user.save()
-    return jsonify(bike.serialize())
+    if bike is not None: 
+        return jsonify(bike.serialize()), 200
+    else : 
+        return jsonify({"error": "no se ha guardado"   }), 400
+
 
 @api.route('/user/bikes', methods=['GET'])
 @jwt_required()

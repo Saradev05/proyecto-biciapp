@@ -99,22 +99,27 @@ class Bike(db.Model):
     
     def serialize(self):
         return {
-            "name": self.name,
+            
             "b_type": self.b_type,
+            "name": self.name,
             "wheel_inches": self.wheel_inches,
-            "gears" : self.gears            
+            "gears": self.gears,
+
+                      
         }
 
     @classmethod 
-    def create(cls, name, b_type, gears, wheel_inches):
+    def create(cls, b_type,name,  wheel_inches, gears):
         bike = cls()
         bike.b_type = b_type
+        bike.name = name
         bike.wheel_inches = wheel_inches
         bike.gears = gears
-        bike.name = name
 
         db.session.add(bike)
         db.session.commit()
+        
+        return bike
 
     def update(self, json):
         self.b_type = json["b_type"]

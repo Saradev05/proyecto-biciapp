@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext";
+import { useHistory } from "react-router-dom";
 
 export const SignUp = () => {
 	const [email, setEmail] = useState("");
@@ -6,6 +8,10 @@ export const SignUp = () => {
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [error, setError] = useState("");
 	const [message, setMessage] = useState("");
+	const { actions } = useContext(Context);
+
+	const history = useHistory();
+
 	function signup() {
 		if (password != confirmPassword) {
 			setError("las contraseñas son distintas");
@@ -21,7 +27,19 @@ export const SignUp = () => {
 				email: email,
 				password: password
 			})
-		});
+		})
+			.then(response => {
+				responseOk = response.ok;
+				return response.json();
+			})
+			.then(responseJson => {
+				if (responseOk) {
+					actions.saveAccessToken(responseJson.access_token);
+					history.push("/login");
+				} else {
+					setError(responseJson.message);
+				}
+			});
 		setMessage("Ya estas registrado!");
 	}
 
