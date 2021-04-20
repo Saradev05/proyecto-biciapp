@@ -84,7 +84,7 @@ export const Profile = () => {
 				setBike(responseJson);
 				setMessage("Bici guardada correctamente!");
 			})
-			.catch(error => setMessage("no se ha g"));
+			.catch(error => setMessage("no se ha guardado"));
 	}
 
 	if (!user) {

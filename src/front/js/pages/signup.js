@@ -12,12 +12,13 @@ export const SignUp = () => {
 
 	const history = useHistory();
 
-	function signup() {
+	function signup(event) {
+		event.preventDefault();
 		if (password != confirmPassword) {
 			setError("las contraseñas son distintas");
 			return;
 		}
-
+		let responseOk = false;
 		fetch(process.env.BACKEND_URL + "/api/signup", {
 			method: "POST",
 			headers: {
@@ -34,13 +35,13 @@ export const SignUp = () => {
 			})
 			.then(responseJson => {
 				if (responseOk) {
-					actions.saveAccessToken(responseJson.access_token);
+					// actions.saveAccessToken(responseJson.access_token);
+					setMessage("Ya estas registrado!");
 					history.push("/login");
 				} else {
 					setError(responseJson.message);
 				}
 			});
-		setMessage("Ya estas registrado!");
 	}
 
 	return (
