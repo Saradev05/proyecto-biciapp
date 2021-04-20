@@ -9,12 +9,5 @@ export const Footer = () => (
 				Aleida <i className="fa fa-bicycle fa-2x fa-lg text-success " /> Sara
 			</a>
 		</p>
-		<div className="col-md-6 offset-md-4">
-			<Link to="/administ">
-				<button className="btn btn-primary" type="button">
-					Administración
-				</button>
-			</Link>
-		</div>
 	</footer>
 );

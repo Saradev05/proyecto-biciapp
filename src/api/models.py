@@ -17,6 +17,7 @@ class User(db.Model):
     postal_code=db.Column(db.String(80), unique=False, nullable=True)
     favorite_activities=db.Column(db.String(80), unique=False, nullable=True)
 
+    is_admin = db.Column(db.Boolean(), nullable=False, default=False, server_default='f')
     # user_activities= db.relationship("Activities", back_populates="user")
     bikes = db.relationship("Bike", back_populates="user")
     
@@ -34,6 +35,7 @@ class User(db.Model):
             "address2": self.address2,
             "city": self.city,
             "postal_code": self.postal_code,
+            "is_admin": self.is_admin
             # do not serialize the password, its a security breach
         }
     
@@ -46,6 +48,8 @@ class User(db.Model):
 
         db.session.add(user)
         db.session.commit()
+
+        return user
 
     # victor preguntar si puedo quitar email de update
     def update(self, json):

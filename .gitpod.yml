@@ -20,6 +20,7 @@ tasks:
         pipenv run upgrade &&
         python docs/assets/greeting.py back
     - command: >
+        pipenv run init-db
         npm install &&
         python docs/assets/greeting.py front
       openMode: split-right

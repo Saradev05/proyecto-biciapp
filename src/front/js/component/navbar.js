@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { actions, store } = useContext(Context);
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
@@ -25,6 +27,15 @@ export const Navbar = () => {
 							Profile
 						</button>
 					</Link>
+					{store.isAdmin ? (
+						<Link to="/administ">
+							<button className="btn btn-primary" type="button">
+								Administración
+							</button>
+						</Link>
+					) : (
+						""
+					)}
 				</div>
 			</div>
 		</nav>

@@ -6,7 +6,7 @@ export const LogIn = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
-	const { actions } = useContext(Context);
+	const { actions, store } = useContext(Context);
 	const history = useHistory();
 
 	function logIn(event) {
@@ -34,6 +34,7 @@ export const LogIn = () => {
 			.then(responseJson => {
 				if (responseOk) {
 					actions.saveAccessToken(responseJson.access_token);
+					store.isAdmin(responseJson.isAdmin);
 					history.push("/home");
 				} else {
 					setError(responseJson.message);

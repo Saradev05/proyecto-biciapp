@@ -45,7 +45,7 @@ def login():
     
 
     access_token = create_access_token(identity = user.id )
-    return jsonify({"access_token": access_token })
+    return jsonify({"access_token": access_token, "user": user.serialize() }), 200
 
 @api.route('/profile', methods=['GET'])
 @jwt_required()
