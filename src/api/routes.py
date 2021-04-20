@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Bike, Administ, Activity
+from api.models import db, User, Bike,  Activity
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import jwt_required
@@ -83,34 +83,34 @@ def new_user_bike():
 
 
 
-@api.route('/administ', methods=['GET'])
-@jwt_required()
-def administ_profile():
-    current_administ_id = get_jwt_identity()
-    administ = Administ.get(current_administ_id)
+# @api.route('/administ', methods=['GET'])
+# @jwt_required()
+# def administ_profile():
+#     current_administ_id = get_jwt_identity()
+#     administ = Administ.get(current_administ_id)
     
-    return jsonify(administ.serialize())
+#     return jsonify(administ.serialize())
 
 
-@api.route('/administ', methods=['POST'])
-@jwt_required()
-def post_administ_profile():
+# @api.route('/administ', methods=['POST'])
+# @jwt_required()
+# def post_administ_profile():
 
-    body = request.get_json()
-    current_administ_id = get_jwt_identity()
+#     body = request.get_json()
+#     current_administ_id = get_jwt_identity()
 
-    administ = Administ.get(current_administ_id)
-    administ = Administ.create(body["email"], body["name"], body["surname"], body["nickname"], body["password"], body["address1"], body["address2"], body["city"], body["postalcode"])
-    user.administ.append(administ)
+#     administ = Administ.get(current_administ_id)
+#     administ = Administ.create(body["email"], body["name"], body["surname"], body["nickname"], body["password"], body["address1"], body["address2"], body["city"], body["postalcode"])
+#     user.administ.append(administ)
 
-    administ.save()
+#     administ.save()
 
 @api.route('/activity', methods=['GET'])
 @jwt_required()
 def show_activity():
-    current_administ_id = get_jwt_identity()
-    administ = Administ.get(current_administ_id)
-    activity = Administ.activity
+    current_user_id = get_jwt_identity()
+    user = User.get(current_user_id)
+    activities = User.activity
     activity_serialized = []
     for activity in activities :
         activities_serialized.append(activity.serialize())

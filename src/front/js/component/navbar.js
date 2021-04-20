@@ -14,28 +14,24 @@ export const Navbar = () => {
 				<div className="d-grid gap-2 d-md-block">
 					<Link to="/signup">
 						<button className="btn btn-light" type="button">
-							Sign Up
+							Registro
 						</button>
 					</Link>
 					<Link to="/login">
 						<button className="btn btn-light" type="button">
-							Log In
+							Entrar
 						</button>
 					</Link>
 					<Link to="/profile">
 						<button className="btn btn-light" type="button">
-							Profile
+							Perfil
 						</button>
 					</Link>
-					{store.isAdmin ? (
-						<Link to="/administ">
-							<button className="btn btn-primary" type="button">
-								Administración
-							</button>
-						</Link>
-					) : (
-						""
-					)}
+					<Link to="/activity">
+						<button className="btn btn-primary" type="button">
+							Actividades
+						</button>
+					</Link>
 				</div>
 			</div>
 		</nav>

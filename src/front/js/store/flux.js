@@ -2,7 +2,7 @@ const getState = ({ getStore, getAction, setStore }) => {
 	return {
 		store: {
 			accessToken: "",
-			isAdmin: false
+			isAdmin: null
 		},
 
 		actions: {
