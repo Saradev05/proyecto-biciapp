@@ -14,7 +14,7 @@ api = Blueprint('api', __name__)
 @api.route('/hello', methods=['POST', 'GET'])
 def handle_hello():
     response_body = {
-        "message": "Hello! I'm a message that came from the backend"
+        "message": "Bienvenido a Biciapp! queremos conocerte en el próximo evento, consulta las proximas actividades"
     }
     return jsonify(response_body), 200
 
@@ -109,9 +109,11 @@ def new_user_bike():
     current_user_id = get_jwt_identity()
 
     user = User.get(current_user_id)
-    bike = Bike.create(body["b_type"],body["name"],   body["wheel_inches"],body["gears"],)
-    # user.bikes.append(bike)
+    bike = Bike.create(body["b_type"],body["name"],body["wheel_inches"],body["gears"],)
+    user.bikes.append(bike)
     print (bike,bike is Bike )
+
+    user.save()
 
     if bike is not None: 
         return jsonify(bike.serialize()), 200
