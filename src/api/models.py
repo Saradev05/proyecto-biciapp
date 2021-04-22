@@ -98,71 +98,7 @@ class Bike(db.Model):
 
     user = db.relationship("User", back_populates="bikes")
 
-
-
-# class Administ(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     email = db.Column(db.String(120), unique=True, nullable=False)
-#     name = db.Column(db.String(100), unique=False, nullable=True)
-#     surname = db.Column(db.String(100), unique=False, nullable=True)
-#     password = db.Column(db.String(80), unique=False, nullable=False)
-#     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
-    
-
-#     activities=db.relationship("Activity", back_populates="administ") 
-    
-#     def __repr__(self):
-#         return '<Administ %r>' % self.nick_name
-
-#     def serialize(self):
-#         return {
-#             "id": self.id,
-#             "email": self.email,
-#             "name": self.name,
-#             "surname": self.surname,
-            
-#             # do not serialize the password, its a security breach
-#         }
-    
-#     @classmethod 
-#     def create_administ(cls, email, password):
-#         administ = cls()
-#         administ.email = email
-#         administ.password = password
-#         administ.is_active = True
-        
-
-#         db.session.add(administ)
-#         db.session.commit()
-
-  
-#     def update(self, json):
-#         print(json)
-#         self.email = json["email"]
-#         self.name = json["name"]
-#         self.surname = json["surname"]
-#         if "age" in json:
-#             self.age = json["age"]
-        
-#         self.nick_name = json["nick_name"]
-        
-#         if "password" in json:
-#             self.password = json["password"]
-        
-#         if "is_activo" in json:
-#             self.is_active = json["is_active"]
-     
-#         db.session.add(self)
-#         db.session.commit()
-
-#     @classmethod
-#     def get_login_credentials(cls, email, password):
-#         return cls.query.filter_by(email = email).filter_by(password = password).one_or_none()
-        
-#     @classmethod
-#     def get(cls, id):
-#         return cls.query.get(id)
-
+ 
 
 class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -187,8 +123,9 @@ class Activity(db.Model):
         }
 
     @classmethod 
-    def create(cls, route, dificulty, description):
+    def create(cls, user_id, name, route, dificulty, description):
         activity = cls()
+        activity.user_id= user_id
         activity.name=name
         activity.route = route
         activity.dificulty = dificulty

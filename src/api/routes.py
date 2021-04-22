@@ -82,29 +82,6 @@ def new_user_bike():
     user.save()
 
 
-
-# @api.route('/administ', methods=['GET'])
-# @jwt_required()
-# def administ_profile():
-#     current_administ_id = get_jwt_identity()
-#     administ = Administ.get(current_administ_id)
-    
-#     return jsonify(administ.serialize())
-
-
-# @api.route('/administ', methods=['POST'])
-# @jwt_required()
-# def post_administ_profile():
-
-#     body = request.get_json()
-#     current_administ_id = get_jwt_identity()
-
-#     administ = Administ.get(current_administ_id)
-#     administ = Administ.create(body["email"], body["name"], body["surname"], body["nickname"], body["password"], body["address1"], body["address2"], body["city"], body["postalcode"])
-#     user.administ.append(administ)
-
-#     administ.save()
-
 @api.route('/activity', methods=['GET'])
 @jwt_required()
 def show_activity():
@@ -122,10 +99,9 @@ def show_activity():
 @jwt_required()
 def post_activity():
     request_json = request.get_json()
-    current_administ_id = get_jwt_identity()
+    current_user_id = get_jwt_identity()
     
-    current_administ = Administ.get(current_administ_id)
-
-    current_administ.update(request_json)
-
-    return jsonify(current_administ.serialize())
+    current_user = User.get(current_user_id)
+    new_activity= Activity.create(current_user_id,request_json["name"],request_json["route"], request_json["dificulty"], request_json["description"])
+   
+    return jsonify(current_user.serialize())

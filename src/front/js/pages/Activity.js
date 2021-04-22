@@ -42,16 +42,16 @@ export const Activity = () => {
 			})
 		})
 			.then(response => {
-				console.log(response);
 				responseOk = response.ok;
-				response.json();
+				return response.json();
 			})
 			.then(responseJson => {
+				console.log(responseJson);
 				if (responseOk) {
 					setActivity(responseJson);
 					setMessage("tarea guardada correctamente!");
 				} else {
-					setError(responseJson.message);
+					setError(responseJson.msg);
 				}
 			})
 			.catch(error => {
@@ -59,22 +59,10 @@ export const Activity = () => {
 			});
 	}
 
-	//     .then(response => {
-	// if (response.status == 200) {
-	// return response.json();
-	// } else {
-	// throw Error("No se ha guardado");
-	// }
-	// })
-	// .then(responseJson => {
-	// setBike(responseJson);
-	// setMessage("Bici guardada correctamente!");
-	// })
-	// .catch(error => setMessage("no se ha guardado"));
-	// }
 	return (
 		<div className=" container  ">
 			{error ? <h1>{error}</h1> : ""}
+			{message ? <h1>{message}</h1> : ""}
 			<div className="row justify-content-center">
 				<div className="col-md-8">
 					<div className="card">
