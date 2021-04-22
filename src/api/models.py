@@ -99,7 +99,7 @@ class Bike(db.Model):
     
     def serialize(self):
         return {
-            
+            "user_id": self.user_id,
             "b_type": self.b_type,
             "name": self.name,
             "wheel_inches": self.wheel_inches,
@@ -109,8 +109,9 @@ class Bike(db.Model):
         }
 
     @classmethod 
-    def create(cls, b_type,name,  wheel_inches, gears):
+    def create(cls, user_id, b_type, name, wheel_inches, gears):
         bike = cls()
+        bike.user_id = user_id
         bike.b_type = b_type
         bike.name = name
         bike.wheel_inches = wheel_inches
@@ -122,6 +123,7 @@ class Bike(db.Model):
         return bike
 
     def update(self, json):
+        # self.user_id= "user_id"]
         self.b_type = json["b_type"]
         self.name = json["name"]
         self.wheel_inches = json["wheel_inches"]

@@ -58,6 +58,7 @@ export const Profile = () => {
 
 		setMessage("Perfil guardado correctamente!");
 	}
+
 	function bikeUpdate(event) {
 		event.preventDefault();
 		fetch(process.env.BACKEND_URL + "/api/new_bike", {
@@ -84,7 +85,7 @@ export const Profile = () => {
 				setBike(responseJson);
 				setMessage("Bici guardada correctamente!");
 			})
-			.catch(error => setMessage("no se ha guardado"));
+			.catch(error => setMessage(error.message));
 	}
 
 	if (!user) {

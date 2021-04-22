@@ -105,13 +105,11 @@ def post_profile():
 @jwt_required()
 def new_user_bike():
     body = request.get_json()
-    print(body)
     current_user_id = get_jwt_identity()
 
     user = User.get(current_user_id)
-    bike = Bike.create(body["b_type"],body["name"],   body["wheel_inches"],body["gears"],)
-    # user.bikes.append(bike)
-    print (bike,bike is Bike )
+    bike = Bike.create(current_user_id, body["b_type"], body["name"], body["wheel_inches"], body["gears"])
+    user.bikes.append(bike)
 
     if bike is not None: 
         return jsonify(bike.serialize()), 200
