@@ -110,9 +110,7 @@ def new_user_bike():
     user = User.get(current_user_id)
     bike = Bike.create(current_user_id, body["b_type"], body["name"], body["wheel_inches"], body["gears"])
     user.bikes.append(bike)
-
-    user.save()
-
+        
     if bike is not None: 
         return jsonify(bike.serialize()), 200
     else : 
