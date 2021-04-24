@@ -15,6 +15,9 @@ from api.models import User
 # from init_database import init_db
 
 
+import datetime 
+
+#from models import Person
 from flask_jwt_extended import JWTManager
 
 ENV = os.getenv("FLASK_ENV")
@@ -34,7 +37,13 @@ else:
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 MIGRATE = Migrate(app, db)
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=60)
+
+
 db.init_app(app)
+
+
+
 
 # Allow CORS requests to this API
 CORS(app)

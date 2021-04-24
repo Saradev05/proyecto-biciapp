@@ -7,14 +7,15 @@ export const Home = () => {
 	const { store } = useContext(Context);
 
 	return (
-		<div className="text-center mt-5">
-			<img
-				src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
-				className="img-fluid jumbotron"
-				width="100%"
-				height="80px"
-			/>
-
+		<div id="backgrd" className="text-center ">
+			<div className="bg-image mh-20" width="100%">
+				<img
+					src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
+					className="bg-image img-fluid  "
+					width="100%"
+					height="auto"
+				/>
+			</div>
 			<div className="alert alert-info">{store.message || "Loading message from the backend..."}</div>
 
 			<p>
