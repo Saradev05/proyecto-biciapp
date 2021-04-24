@@ -8,22 +8,10 @@ export const Home = () => {
 
 	return (
 		<div id="backgrd" className="text-center ">
-			<div className="bg-image mh-20" width="100%">
-				<img
-					src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
-					className="bg-image img-fluid  "
-					width="100%"
-					height="auto"
-				/>
+			<div className="home_body container-fluid row " width="100%">
+				<div className="col-8 "> </div>
+				<div className=" col-4"> actividades columna</div>
 			</div>
-			<div className="alert alert-info">{store.message || "Loading message from the backend..."}</div>
-
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://github.com/4GeeksAcademy/react-flask-hello/tree/95e0540bd1422249c3004f149825285118594325/docs">
-					Read documentation
-				</a>
-			</p>
 		</div>
 	);
 };
