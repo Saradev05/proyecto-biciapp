@@ -6,9 +6,12 @@ export const Home = () => {
 	const { store } = useContext(Context);
 	return (
 		<div id="backgrd" className="text-center " width="100%">
+			<img src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg" />
 			<div className="home_body container-fluid row ">
 				<div className="col-8 "> </div>
-				<div className=" col-4">
+
+				<div className="col-12" />
+				<div className=" col-12">
 					{" "}
 					actividades columna
 					<div className="card">
