@@ -17,6 +17,9 @@ class User(db.Model):
     postal_code=db.Column(db.String(80), unique=False, nullable=True)
     role= db.Column(db.String(80), unique=False, nullable=True)
     favorite_activities=db.Column(db.String(80), unique=False, nullable=True)
+    token =db.Column(db.String(100), unique=True, nullable=True)
+
+    
 
     is_admin = db.Column(db.Boolean(), nullable=False, default=False, server_default='f')
     
@@ -173,11 +176,13 @@ class Activity(db.Model):
         db.session.add(self)
         db.session.commit()
     
-class ForgotPasword():
+class ForgotPaswordEmail():
     def __init__(self, email, token):
         super().__init__()
         self.email = email
         self.token = token
+
     def send (self):
         url = process.env.BACKEND_URL + "/api/new_password" +token
         return True
+        # return url

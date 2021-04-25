@@ -58,19 +58,23 @@ def forgot_password():
 
     forgot_password = ForgotPassword(email,token)
     forgot_password.send()      
+    # url= forgot_password_email.send
 
     return jsonify({}), 200
+    # return jsonify({url: url}), 200
+   
 
-@api.route('/reset-pasword', methods=['POST'])
+@api.route('/new-password', methods=['POST'])
 def reset_password():
     request_json = request.get_json()
     email = request_json["email"]
     token = request_json["token"]
-    password = request_json["password"]
+    pasword = request_json["password"]
 
     user = User.get_for_forgot(email, token)
-    user.password = password 
+    user.password = password
     user.token = None
+
     db.session.commit()
 
     return jsonify({}), 200

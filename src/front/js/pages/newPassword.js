@@ -2,22 +2,24 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Forgot = () => {
-	const [email, setEmail] = useState("");
+export const NewPassword = () => {
 	const [emailError, setEmailError] = useState("");
+	const [password, setPassword] = useState("");
 
-	function requestForgotPasword(event) {
+	function newPassword(event) {
 		if (email.trim() == "") {
 			setEmailError("Email obligatorio");
 		}
 
-		fetch(process.env.BACKEND_URL + "/api/forgot", {
+		fetch(process.env.BACKEND_URL + "/api/new-password", {
 			method: "POST",
 			heathers: {
 				"content-Type": "application/json"
 			},
 			body: JSON.stringify({
-				email: email
+				password: password,
+				newPassword: newPassword,
+				newPassword: newPassword
 			})
 		});
 	}
@@ -32,7 +34,7 @@ export const Forgot = () => {
 							<form>
 								<div className="form-group row">
 									<label htmlFor="email_address" className="col-md-4 col-form-label text-md-right">
-										email
+										contraseña
 									</label>
 									<div className="col-md-6">
 										<input
@@ -43,7 +45,7 @@ export const Forgot = () => {
 											required
 											placeholder="email"
 											onChange={event => {
-												setEmail(event.target.value);
+												setNewPassword(event.target.value);
 											}}
 										/>
 									</div>
@@ -57,8 +59,8 @@ export const Forgot = () => {
 										<input
 											type="button"
 											className="btn btn-primary m-2"
-											value="Recuperar contraseña"
-											onClick={requestForgotPasword}
+											value="Cambiar contraseña"
+											onClick={newPassword}
 										/>
 									</div>
 								</div>
