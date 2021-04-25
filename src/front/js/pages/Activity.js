@@ -49,7 +49,7 @@ export const Activity = () => {
 				console.log(responseJson);
 				if (responseOk) {
 					setActivity(responseJson);
-					setMessage("tarea guardada correctamente!");
+					setMessage("Actividad guardada correctamente!");
 				} else {
 					setError(responseJson.msg);
 				}

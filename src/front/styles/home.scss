@@ -5,6 +5,45 @@ img{
     height: 60%;
    
 }
+.navbar{
+  min-height: 100px;
+    padding: 30px;
+   font-weight: large ;
+   
+   
+}
+.navbar-brand{
+
+font-size: larger;   
+}
+
+.home_body {
+    background-image:url("https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg");
+    width:101%;
+    height:700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 body{
     //  background-color: rgb(4, 119, 4);
+}
+
+.login_body {
+    background-image:url("https://cdn.pixabay.com/photo/2018/11/27/18/47/bike-3842079_1280.jpg");
+    width:101%;
+    height:700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile_body {
+    background-image:url("https://cdn.pixabay.com/photo/2017/07/30/17/43/bicycle-2554980_1280.jpg");
+    width:101%;
+    height:700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.madeBy{
+    align-items: center;
 }
