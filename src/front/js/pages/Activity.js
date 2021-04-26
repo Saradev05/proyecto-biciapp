@@ -60,7 +60,7 @@ export const Activity = () => {
 	}
 
 	return (
-		<div className=" container  ">
+		<div className=" container  py-5 my-5">
 			{error ? <h1>{error}</h1> : ""}
 			{message ? <h1>{message}</h1> : ""}
 			<div className="row justify-content-center">

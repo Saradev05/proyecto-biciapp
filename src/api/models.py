@@ -105,6 +105,8 @@ class Bike(db.Model):
         self.gears = json["gears"]
         db.session.add(self)
         db.session.commit()
+
+
 class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name= db.Column(db.String(180), unique=False, nullable=True)
@@ -113,15 +115,18 @@ class Activity(db.Model):
     description=db.Column(db.String(10000000), unique=False, nullable=True)
     user_id= db.Column(db.Integer, db.ForeignKey("user.id"))
     activity_user = db.relationship("User", back_populates="user_activity")
+
     def __repr__(self):
         return '<Activity %r>' % self.name
+
     def serialize(self):
         return {
             "name": self.name,
             "route": self.route,
             "dificulty": self.dificulty,
-            "description" : self.description         
+            "description" : self.description        
         }
+
     @classmethod 
     def create(cls, user_id, name, route, dificulty, description):
         activity = cls()
@@ -132,6 +137,7 @@ class Activity(db.Model):
         activity.description = description
         db.session.add(activity)
         db.session.commit()
+
     def update(self, json):
         self.name= json["name"]
         self.route = json["route"]

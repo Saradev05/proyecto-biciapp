@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
+	<footer className="footer navbar-fixed-bottom mt-auto py-3 text-center">
 		<h5>
 			Made by <a href="mailto:info@aleidagonzalez.com">Aleida</a>{" "}
 			<i className="fa fa-bicycle text-success fa-2x  " />
