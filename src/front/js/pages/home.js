@@ -12,11 +12,11 @@ import "../../styles/home.scss";
 export const Home = () => {
 	const { store } = useContext(Context);
 	return (
-		<div id="backgrd" className="text-center " width="100%">
-			<img
-				src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
-				className="home-img mb-4"
-			/>
+		<div className="jumbotron-fluid">
+			<div className="container-fluid">
+				<img src={FamilyIMG} className="family-img mb-4" />
+			</div>
+
 			<div className="container py-5 my-5">
 				<div className="row text-center ">
 					<div className="col mx-auto mb-3">
@@ -27,7 +27,7 @@ export const Home = () => {
 					<div className="card">
 						<img className="card-img-top" src={FamilyIMG} alt="Card image cap" />
 						<div className="card-body">
-							<h5 className="card-title text-center">GRUPALES</h5>
+							<h5 className="card-title text-center">Eventos</h5>
 							<Link to={"/events"}>
 								<button className="btn btn-outline-warning">ver detalles</button>
 							</Link>
@@ -37,8 +37,8 @@ export const Home = () => {
 					<div className="card">
 						<img className="card-img-top" src={MontanaIMG} alt="Card image cap" />
 						<div className="card-body">
-							<h5 className="card-title text-center">MONTAÑA</h5>
-							<Link to={"/activity"}>
+							<h5 className="card-title text-center">En Montaña</h5>
+							<Link to={"/montain"}>
 								<button className="btn btn-outline-warning">ver detalles</button>
 							</Link>
 						</div>
@@ -47,8 +47,8 @@ export const Home = () => {
 					<div className="card">
 						<img className="card-img-top" src={CostaIMG} alt="Card image cap" />
 						<div className="card-body">
-							<h5 className="card-title text-center">Costa</h5>
-							<Link to={"/activity"}>
+							<h5 className="card-title text-center">En Costa</h5>
+							<Link to={"/beach"}>
 								<button className="btn btn-outline-warning">ver detalles</button>
 							</Link>
 						</div>

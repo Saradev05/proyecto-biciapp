@@ -44,8 +44,9 @@ class User(db.Model):
         db.session.add(user)
         db.session.commit()
         return user
+
     def update(self, json):
-        print(json)
+        
         self.email = json["email"]
         self.name = json["name"]
         self.surname = json["surname"]
@@ -62,12 +63,16 @@ class User(db.Model):
         self.postal_code = json["postal_code"]
         db.session.add(self)
         db.session.commit()
+
     @classmethod
     def get_login_credentials(cls, email, password):
         return cls.query.filter_by(email = email).filter_by(password = password).one_or_none()
+
     @classmethod
     def get(cls, id):
         return cls.query.get(id)
+
+
 class Bike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     b_type = db.Column(db.String(80), unique=False, nullable=False)
@@ -76,8 +81,10 @@ class Bike(db.Model):
     gears = db.Column(db.String(60),unique=False,nullable=True )
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User", back_populates="bikes")
+
     def __repr__(self):
         return '<Bike %r>' % self.b_type
+
     def serialize(self):
         return {
             "user_id": self.user_id,
@@ -86,6 +93,7 @@ class Bike(db.Model):
             "wheel_inches": self.wheel_inches,
             "gears": self.gears,           
         }
+
     @classmethod 
     def create(cls, user_id, b_type, name, wheel_inches, gears):
         bike = cls()
@@ -97,6 +105,7 @@ class Bike(db.Model):
         db.session.add(bike)
         db.session.commit()
         return bike
+        
     def update(self, json):
         # self.user_id= "user_id"]
         self.b_type = json["b_type"]
