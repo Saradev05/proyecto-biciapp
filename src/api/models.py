@@ -184,5 +184,5 @@ class ForgotPaswordEmail():
 
     def send (self):
         url = process.env.BACKEND_URL + "/api/new_password" +token
-        return True
-        # return url
+        # return True
+        return url

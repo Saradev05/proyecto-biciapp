@@ -42,44 +42,6 @@ def login():
     access_token = create_access_token(identity = user.id )
     return jsonify({"access_token": access_token, "user": user.serialize() }), 200
 
-@api.route('/forgot-password', methods=['POST'])
-def forgot_password():
-    request_json = request.get_json()
-    email = request_json["email"]
-    
-    if email is None:
-        raise APIException("Email required")
-
-    token = random.randint(100000000,199990000)
-    user = User.get_user_email(email)
-    user.token = token
-
-    db.session.commit()
-
-    forgot_password = ForgotPassword(email,token)
-    forgot_password.send()      
-    # url= forgot_password_email.send
-
-    return jsonify({}), 200
-    # return jsonify({url: url}), 200
-   
-
-@api.route('/new-password', methods=['POST'])
-def reset_password():
-    request_json = request.get_json()
-    email = request_json["email"]
-    token = request_json["token"]
-    pasword = request_json["password"]
-
-    user = User.get_for_forgot(email, token)
-    user.password = password
-    user.token = None
-
-    db.session.commit()
-
-    return jsonify({}), 200
-
-
 @api.route('/profile', methods=['GET'])
 @jwt_required()
 def profile():
@@ -141,6 +103,7 @@ def post_activity():
     new_activity= Activity.create(current_user_id,request_json["name"],request_json["route"], request_json["dificulty"], request_json["description"])
    
     return jsonify(current_user.serialize())
+
 @api.route('/user/bikes', methods=['GET'])
 @jwt_required()
 def user_bikes():
@@ -154,3 +117,41 @@ def user_bikes():
         bikes_serialized.append(bike.serialize())
             
     return jsonify(bikes_serialized)
+
+
+@api.route('/forgot-password', methods=['POST'])
+def forgot_password():
+    request_json = request.get_json()
+    email = request_json["email"]
+    
+    if email is None:
+        raise APIException("Email required")
+
+    token = random.randint(100000000,199990000)
+    user = User.get_user_email(email)
+    user.token = token
+
+    db.session.commit()
+
+    forgot_password = ForgotPassword(email,token)
+    # forgot_password.send()      
+    url= forgot_password_email.send
+
+    # return jsonify({}), 200
+    return jsonify({url: url}), 200
+   
+
+@api.route('/new-password', methods=['POST'])
+def reset_password():
+    request_json = request.get_json()
+    email = request_json["email"]
+    token = request_json["token"]
+    pasword = request_json["password"]
+
+    user = User.get_for_forgot(email, token)
+    user.password = password
+    user.token = None
+
+    db.session.commit()
+
+    return jsonify({}), 200
