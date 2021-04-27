@@ -34,7 +34,7 @@ export const SignUp = () => {
 			})
 			.then(responseJson => {
 				if (responseOk) {
-					// actions.saveAccessToken(responseJson.access_token);
+					actions.saveAccessToken(responseJson.access_token);
 					setMessage("Ya estas registrado!");
 					history.push("/login");
 				} else {

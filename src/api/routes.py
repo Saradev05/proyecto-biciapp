@@ -68,7 +68,7 @@ def new_user_bike():
     else : 
         return jsonify({"error": "no se ha guardado"   }), 400
 
-
+#lista de las actividades de un usuario
 @api.route('/activity', methods=['GET'])
 @jwt_required()
 def show_activity():
@@ -78,6 +78,7 @@ def show_activity():
     activity_serialized = []
     for activity in activities :
         activities_serialized.append(activity.serialize())
+       
     return jsonify(activities_serialized)
 
 
@@ -87,8 +88,9 @@ def post_activity():
     request_json = request.get_json()
     current_user_id = get_jwt_identity()
     current_user = User.get(current_user_id)
+
     new_activity= Activity.create(current_user_id,request_json["name"],request_json["route"], request_json["dificulty"], request_json["description"])
-    return jsonify(current_user.serialize())
+    return jsonify(current_user.serialize()), 201
 
     
 @api.route('/user/bikes', methods=['GET'])

@@ -15,10 +15,11 @@ export const Activity = () => {
 	const history = useHistory();
 
 	useEffect(() => {
-		fetch(process.env.BACKEND_URL + "/api/activity", {
+		fetch(process.env.BACKEND_URL + "/api/activity/", {
 			method: "GET",
 			headers: {
-				"content-Type": "application/json"
+				"content-Type": "application/json",
+				Authorization: "Bearer " + actions.getAccessToken()
 			}
 		})
 			.then(response => response.json())
@@ -60,7 +61,7 @@ export const Activity = () => {
 	}
 
 	return (
-		<div className=" container  ">
+		<div className=" container  py-5 my-5">
 			{error ? <h1>{error}</h1> : ""}
 			{message ? <h1>{message}</h1> : ""}
 			<div className="row justify-content-center">
