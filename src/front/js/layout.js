@@ -53,7 +53,7 @@ const Layout = () => {
 						<Route exact path="/forgot">
 							<Forgot />
 						</Route>
-						<Route exact path="/newPassword">
+						<Route exact path="/newPassword/:token">
 							<NewPassword />
 						</Route>
 						<Route>

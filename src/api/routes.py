@@ -2,11 +2,13 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Bike,  Activity
+from api.models import db, User, Bike,  Activity, ForgotPasswordEmail
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import get_jwt_identity
+import random
+import os
 
 
 api = Blueprint('api', __name__)
@@ -122,23 +124,24 @@ def user_bikes():
 @api.route('/forgot-password', methods=['POST'])
 def forgot_password():
     request_json = request.get_json()
+    print(request_json)
     email = request_json["email"]
     
     if email is None:
         raise APIException("Email required")
-
+    
     token = random.randint(100000000,199990000)
     user = User.get_user_email(email)
     user.token = token
 
     db.session.commit()
 
-    forgot_password = ForgotPassword(email,token)
+    forgot_password = ForgotPasswordEmail(email,token)
     # forgot_password.send()      
-    url= forgot_password_email.send
+    url= forgot_password.send()
 
     # return jsonify({}), 200
-    return jsonify({url: url}), 200
+    return jsonify({"url": url}), 200
    
 
 @api.route('/new-password', methods=['POST'])
@@ -146,7 +149,7 @@ def reset_password():
     request_json = request.get_json()
     email = request_json["email"]
     token = request_json["token"]
-    pasword = request_json["password"]
+    password = request_json["password"]
 
     user = User.get_for_forgot(email, token)
     user.password = password

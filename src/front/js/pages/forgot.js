@@ -11,9 +11,9 @@ export const Forgot = () => {
 			setEmailError("Email obligatorio");
 		}
 
-		fetch(process.env.BACKEND_URL + "/api/forgot", {
+		fetch(process.env.BACKEND_URL + "/api/forgot-password", {
 			method: "POST",
-			heathers: {
+			headers: {
 				"content-Type": "application/json"
 			},
 			body: JSON.stringify({

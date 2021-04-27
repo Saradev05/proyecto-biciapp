@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 db = SQLAlchemy()
 
@@ -87,6 +88,10 @@ class User(db.Model):
     @classmethod
     def get(cls, id):
         return cls.query.get(id)
+
+    @classmethod
+    def get_user_email(cls, email):
+        return cls.query.filter_by(email = email).one_or_none()
     
      
 class Bike(db.Model):
@@ -176,13 +181,13 @@ class Activity(db.Model):
         db.session.add(self)
         db.session.commit()
     
-class ForgotPaswordEmail():
+class ForgotPasswordEmail():
     def __init__(self, email, token):
         super().__init__()
         self.email = email
         self.token = token
 
     def send (self):
-        url = process.env.BACKEND_URL + "/api/new_password" +token
+        url = os.getenv("FRONT_END_URL") + "/newPassword/" + str(self.token)
         # return True
         return url

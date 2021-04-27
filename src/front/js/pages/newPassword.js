@@ -5,6 +5,8 @@ import { Context } from "../store/appContext";
 export const NewPassword = () => {
 	const [emailError, setEmailError] = useState("");
 	const [password, setPassword] = useState("");
+	const [newPass, setNewPass] = useState("");
+	const [email, setEmail] = useState("");
 
 	function newPassword(event) {
 		if (email.trim() == "") {
@@ -43,9 +45,9 @@ export const NewPassword = () => {
 											className="form-control"
 											name="email-address"
 											required
-											placeholder="email"
+											placeholder="nueva contraseña"
 											onChange={event => {
-												setNewPassword(event.target.value);
+												setNewPass(event.target.value);
 											}}
 										/>
 									</div>

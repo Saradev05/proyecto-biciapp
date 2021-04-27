@@ -32,7 +32,7 @@ export const Profile = () => {
 			.then(response => response.json())
 			.then(responseJson => setUser(responseJson));
 
-		fetch(process.env.BACKEND_URL + "/api/user/bikes", {
+		fetch(process.env.BACKEND_URL + "/api/user/bikes/", {
 			method: "GET",
 			headers: {
 				"content-Type": "application/json",
