@@ -78,6 +78,7 @@ def show_activity():
     activity_serialized = []
     for activity in activities :
         activities_serialized.append(activity.serialize())
+       
     return jsonify(activities_serialized)
 
 

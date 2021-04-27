@@ -14,7 +14,7 @@ export const Home = () => {
 	return (
 		<div className="jumbotron-fluid">
 			<div className="container-fluid">
-				<img src={FamilyIMG} className="family-img mb-4" />
+				<img src={FamilyIMG} className="family-img" />
 			</div>
 
 			<div className="container py-5 my-5">

@@ -1,15 +1,13 @@
+.jumbotron{
+    padding: 0;
+    margin: 0;
+height: 400px;
+    width: 100%;
 
-.jumbotron-fluid{
-    height: 400px;
-    width: 100%;
-}
-.home-img {
-    width: 100%;
-    height: 400px;
-    margin: -100px;
     
-   
 }
+
+
 .navbar{
   min-height: 120px;
    font-weight: large ;
@@ -24,7 +22,7 @@
 .home_body {
     background-color: azure;
     width:100%;
-    height:700px;
+ 
     background-repeat: repeat;
     background-size: cover;
 }
@@ -60,3 +58,4 @@
     font-style: oblique;
 }
 
+ 

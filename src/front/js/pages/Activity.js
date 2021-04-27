@@ -15,10 +15,11 @@ export const Activity = () => {
 	const history = useHistory();
 
 	useEffect(() => {
-		fetch(process.env.BACKEND_URL + "/api/activity", {
+		fetch(process.env.BACKEND_URL + "/api/activity/", {
 			method: "GET",
 			headers: {
-				"content-Type": "application/json"
+				"content-Type": "application/json",
+				Authorization: "Bearer " + actions.getAccessToken()
 			}
 		})
 			.then(response => response.json())
