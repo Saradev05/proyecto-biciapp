@@ -8,12 +8,15 @@ export const Profile = () => {
 	// const [password, setPassword] = useState("");
 	const [user, setUser] = useState(null);
 	const [bike, setBike] = useState(null);
+	const [bikes, setBikes] = useState(null);
 	const [name, setName] = useState(null);
 	const [bType, setBType] = useState(null);
 	const [gears, setGears] = useState(null);
 	const [wheelInches, setWheelInches] = useState(null);
 	const { actions } = useContext(Context);
 	const [message, setMessage] = useState("");
+	const [messageBike, setMessageBike] = useState("");
+
 	const history = useHistory();
 
 	useEffect(() => {
@@ -83,7 +86,7 @@ export const Profile = () => {
 			})
 			.then(responseJson => {
 				setBike(responseJson);
-				setMessage("Bici guardada correctamente!");
+				setMessageBike("Bici guardada correctamente!");
 			})
 			.catch(error => setMessage(error.message));
 	}
@@ -262,7 +265,7 @@ export const Profile = () => {
 					<div className="card">
 						<div className="card-header h4">Datos de bicicleta</div>
 						<div className="card-body">
-							{message ? <h5>{message}</h5> : ""}
+							{messageBike ? <h5>{messageBike}</h5> : ""}
 							<form className=" row g-3  col-md-10 " id="bikes">
 								<div className="col-md-6">
 									<label htmlFor="b_type" className="form-label">
@@ -297,7 +300,7 @@ export const Profile = () => {
 									/>
 								</div>
 								<div className="col-md-6">
-									<label htmlFor="b_type" className="form-label">
+									<label htmlFor="wheel_inches" className="form-label">
 										diametro de rueda
 									</label>
 									<select
@@ -315,21 +318,21 @@ export const Profile = () => {
 									</select>
 								</div>
 								<div className="col-md-6">
-									<label htmlFor="b_type" className="form-label">
+									<label htmlFor="gears" className="form-label">
 										marchas
 									</label>
 									<select
 										type="text"
-										placeholder="diametro de rueda"
+										placeholder="marchas de la bici"
 										className="form-control"
 										defaultValue={bike ? bike.gears : ""}
 										onChange={event => {
 											setGears(event.target.value);
 										}}>
 										<option value="sin seleccionar">escoger una opción </option>
-										<option selected>30 marchas o mas</option>
-										<option>15 a 29 marchas</option>
-										<option>menos de 15 marchas</option>
+										<option value="30+">30 marchas o mas</option>
+										<option value="15+">15 a 29 marchas</option>
+										<option value="-15">menos de 15 marchas</option>
 									</select>
 								</div>
 								<div className="col-12 m-2">
