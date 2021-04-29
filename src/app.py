@@ -29,7 +29,7 @@ app.url_map.strict_slashes = False
 app.config["JWT_SECRET_KEY"] = "gsdhhhhhlljjhcuydgciugdgcgc´`mnj"  # Change this!
 jwt = JWTManager(app)
 
-# database condiguration
+# database condiguration heroku invento
 if os.environ.get("DATABASE_URL") is not None:
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("postgres://", "postgresql://", 1)
 else:
