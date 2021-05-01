@@ -1,38 +1,56 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
+
 import rigoImageUrl from "../../img/rigo-baby.jpg";
+import CostaIMG from "../../img/costa01.jpg";
+import MontanaIMG from "../../img/montana02.jpg";
+import FamilyIMG from "../../img/family_home.jpg";
+
+import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 
 export const Home = () => {
 	const { store } = useContext(Context);
-
 	return (
-		<div id="backgrd" className="text-center ">
-			<div className="home_body container-fluid row " width="100%">
-				<div className="col-8 "> </div>
-				<div className=" col-4">
-					{" "}
-					actividades columna
+		<div className="jumbotron-fluid">
+			<div className="container-fluid">
+				<img src={FamilyIMG} className="family-img" />
+			</div>
+
+			<div className="container py-5 my-5">
+				<div className="row text-center ">
+					<div className="col mx-auto mb-3">
+						<h2 className="text-muted ">PROXIMAS ACTIVIDADES</h2>
+					</div>
+				</div>
+				<div className="card-deck">
 					<div className="card">
-						<div className="card-header">
-							<h3>PROXIMAS ACTIVIDADES</h3>{" "}
-						</div>
+						<img className="card-img-top" src={FamilyIMG} alt="Card image cap" />
 						<div className="card-body">
-							<div className="card-title">AQUI VAN LAS TARJETAS DE ACTIVIDADES VISTA CORTA</div>
-							<p className="card-text">
-								With supporting text below as a natural lead-in to additional content.
-							</p>
-							<div className="card-title">AQUI VAN LAS TARJETAS DE ACTIVIDADES VISTA CORTA</div>
-							<p className="card-text">
-								With supporting text below as a natural lead-in to additional content.
-							</p>
-							<div className="card-title">AQUI VAN LAS TARJETAS DE ACTIVIDADES VISTA CORTA</div>
-							<p className="card-text">
-								With supporting text below as a natural lead-in to additional content.
-							</p>
-							<a href="#" className="btn btn-primary">
-								Ver todas las actividades
-							</a>
+							<h5 className="card-title text-center">Eventos</h5>
+							<Link to={"/events"}>
+								<button className="btn btn-outline-warning">ver detalles</button>
+							</Link>
+						</div>
+					</div>
+
+					<div className="card">
+						<img className="card-img-top" src={MontanaIMG} alt="Card image cap" />
+						<div className="card-body">
+							<h5 className="card-title text-center">En Montaña</h5>
+							<Link to={"/montain"}>
+								<button className="btn btn-outline-warning">ver detalles</button>
+							</Link>
+						</div>
+					</div>
+
+					<div className="card">
+						<img className="card-img-top" src={CostaIMG} alt="Card image cap" />
+						<div className="card-body">
+							<h5 className="card-title text-center">En Costa</h5>
+							<Link to={"/beach"}>
+								<button className="btn btn-outline-warning">ver detalles</button>
+							</Link>
 						</div>
 					</div>
 				</div>

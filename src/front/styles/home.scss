@@ -1,34 +1,68 @@
-// img{
-//     width: 100%;
-//     height: auto;
-//     margin: -100px;
-//     height: 60%;
-// }
-.home_body {
-    background-image:url("https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg");
-	width:100%;
-    height:600px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.login_body {
-    background-image:url("https://cdn.pixabay.com/photo/2018/11/27/18/47/bike-3842079_1280.jpg");
-	width:100%;
-    height:600px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.navbar{
-    background-image: radial-gradient(circle at 120.71% 50%, #fff9a7 0, #fffb97 6.25%, #fffd87 12.5%, #fffe78 18.75%, #fffd69 25%, #fffc5b 31.25%, #f9fa4e 37.5%, #d9f743 43.75%, #b5f23c 50%, #8ced3b 56.25%, #5ae841 62.5%, #00e34d 68.75%, #00de5c 75%, #00da6e 81.25%, #00d682 87.5%, #00d398 93.75%, #00d0af 100%);
-}
+.jumbotron{
+    padding: 0;
+    margin: 0;
+height: 400px;
+    width: 100%;
 
-.footer{
-    background-image: radial-gradient(circle at 120.71% 50%, #fff9a7 0, #fffb97 6.25%, #fffd87 12.5%, #fffe78 18.75%, #fffd69 25%, #fffc5b 31.25%, #f9fa4e 37.5%, #d9f743 43.75%, #b5f23c 50%, #8ced3b 56.25%, #5ae841 62.5%, #00e34d 68.75%, #00de5c 75%, #00da6e 81.25%, #00d682 87.5%, #00d398 93.75%, #00d0af 100%);
     
 }
-// .footer .h5 .madeBy{
-//     align-items: center;
-// }
-// .footer .container {
-//     flex: flex row;
+
+
+.navbar{
+  min-height: 120px;
+   font-weight: large ;
+   
+   }
+.img-logo{
+    height: 100px;
+    width:100px;
+
+}
+
+.home_body {
+    background-color: azure;
+    width:100%;
+ 
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.login_body {
+    background-image:url("https://cdn.pixabay.com/photo/2018/11/27/18/47/bike-3842079_1280.jpg");
+    width:100%;
+    height:700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile_body {
+    background-image:url("https://cdn.pixabay.com/photo/2017/07/30/17/43/bicycle-2554980_1280.jpg");
+    width:100%;
+    height:700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.madeBy{
+    align-items: center;
+}
+.footer{
+    display: inline-flex;
+   
+
+}
+
+.footer-button{
+    
+    align-content: flex-end;
+    font-family: monospace;
+    font-style: oblique;
+}
+
+ 
+// .home_body {
+//     background-image:url("https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg");
+// 	width:100%;
+//     height:600px;
+//     background-repeat: no-repeat;
+//     background-size: cover;
 // }

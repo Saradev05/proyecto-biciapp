@@ -2,7 +2,6 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 db = SQLAlchemy()
-
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
@@ -19,17 +18,11 @@ class User(db.Model):
     role= db.Column(db.String(80), unique=False, nullable=True)
     favorite_activities=db.Column(db.String(80), unique=False, nullable=True)
     token =db.Column(db.String(100), unique=True, nullable=True)
-
-    
-
     is_admin = db.Column(db.Boolean(), nullable=False, default=False, server_default='f')
-    
     user_activity= db.relationship("Activity", back_populates="activity_user")
     bikes = db.relationship("Bike", back_populates="user")
-    
     def __repr__(self):
         return '<User %r>' % self.nick_name
-
     def serialize(self):
         return {
             "id": self.id,
@@ -44,47 +37,39 @@ class User(db.Model):
             "is_admin": self.is_admin
             # do not serialize the password, its a security breach
         }
-    
     @classmethod 
     def create_user(cls, email, password):
         user = cls()
         user.password = password
         user.is_active = True
         user.email = email
-
         db.session.add(user)
         db.session.commit()
-
         return user
 
     def update(self, json):
-        print(json)
+        
         self.email = json["email"]
         self.name = json["name"]
         self.surname = json["surname"]
         if "age" in json:
             self.age = json["age"]
-        
         self.nick_name = json["nick_name"]
-        
         if "password" in json:
             self.password = json["password"]
-        
         if "is_activo" in json:
             self.is_active = json["is_active"]
-        
         self.address1 = json["address1"]
         self.address2 = json["address2"]
         self.city = json["city"]
         self.postal_code = json["postal_code"]
-        
         db.session.add(self)
         db.session.commit()
 
     @classmethod
     def get_login_credentials(cls, email, password):
         return cls.query.filter_by(email = email).filter_by(password = password).one_or_none()
-   
+
     @classmethod
     def get(cls, id):
         return cls.query.get(id)
@@ -100,14 +85,12 @@ class Bike(db.Model):
     name = db.Column(db.String(80), unique=False, nullable=True)
     wheel_inches = db.Column(db.String(80), unique=False, nullable=True)
     gears = db.Column(db.String(60),unique=False,nullable=True )
-
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
     user = db.relationship("User", back_populates="bikes")
 
     def __repr__(self):
         return '<Bike %r>' % self.b_type
-    
+
     def serialize(self):
         return {
             "user_id": self.user_id,
@@ -125,21 +108,19 @@ class Bike(db.Model):
         bike.name = name
         bike.wheel_inches = wheel_inches
         bike.gears = gears
-
         db.session.add(bike)
         db.session.commit()
-        
         return bike
-
+        
     def update(self, json):
         # self.user_id= "user_id"]
         self.b_type = json["b_type"]
         self.name = json["name"]
         self.wheel_inches = json["wheel_inches"]
         self.gears = json["gears"]
-        
         db.session.add(self)
         db.session.commit()
+
 
 class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -149,16 +130,16 @@ class Activity(db.Model):
     description=db.Column(db.String(10000000), unique=False, nullable=True)
     user_id= db.Column(db.Integer, db.ForeignKey("user.id"))
     activity_user = db.relationship("User", back_populates="user_activity")
-   
+
     def __repr__(self):
         return '<Activity %r>' % self.name
-    
+
     def serialize(self):
         return {
             "name": self.name,
             "route": self.route,
             "dificulty": self.dificulty,
-            "description" : self.description         
+            "description" : self.description        
         }
 
     @classmethod 
@@ -169,7 +150,6 @@ class Activity(db.Model):
         activity.route = route
         activity.dificulty = dificulty
         activity.description = description
-
         db.session.add(activity)
         db.session.commit()
 

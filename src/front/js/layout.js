@@ -13,9 +13,12 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Profile } from "./pages/profile";
-import { Activity } from "./pages/Activity";
+import { Activity } from "./pages/activity";
 import { Forgot } from "./pages/forgot";
 import { NewPassword } from "./pages/newPassword";
+import { Events } from "./pages/events";
+import { Montain } from "./pages/montain";
+import { Beach } from "./pages/beach";
 
 //create your first component
 const Layout = () => {
@@ -47,7 +50,7 @@ const Layout = () => {
 						<Route exact path="/profile">
 							<Profile />
 						</Route>
-						<Route exact path="/activity">
+						<Route exact path="/activity/theid">
 							<Activity />
 						</Route>
 						<Route exact path="/forgot">
@@ -55,6 +58,15 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/newPassword/:token">
 							<NewPassword />
+						</Route>
+						<Route exact path="/events">
+							<Events />
+						</Route>
+						<Route exact path="/montain">
+							<Montain />
+						</Route>
+						<Route exact path="/beach">
+							<Beach />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
