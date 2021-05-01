@@ -5,7 +5,7 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import CostaIMG from "../../img/costa01.jpg";
 import MontanaIMG from "../../img/montana02.jpg";
 import FamilyIMG from "../../img/family_home.jpg";
-
+import Cyclists from "../../img/cyclists.jpg";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 
@@ -14,7 +14,7 @@ export const Home = () => {
 	return (
 		<div className="jumbotron-fluid">
 			<div className="container-fluid">
-				<img src={FamilyIMG} className="family-img" />
+				<img src={Cyclists} className="cyclists" />
 			</div>
 
 			<div className="container py-5 my-5">

@@ -7,6 +7,8 @@ export const LogIn = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
+	const [message, setMessage] = useState("");
+
 	const { actions } = useContext(Context);
 	const history = useHistory();
 
@@ -50,13 +52,14 @@ export const LogIn = () => {
 	return (
 		<div id="backgrd" className="text-center ">
 			<div className="login_body container-fluid row " width="100%">
-				<div className=" container  ">
-					{error ? <h1>{error}</h1> : ""}
+				<div className=" container py-4 ">
 					<div className="row justify-content-center">
-						<div className="col-md-8">
+						<div className="col-md-8  pt-2">
 							<div className="card">
-								<div className="card-header h4">Registrarme</div>
+								<div className="card-header h4">Entrar en Biciapp</div>
 								<div className="card-body">
+									{error ? <h5>{error}</h5> : ""}
+									{message ? <h5>{message}</h5> : ""}
 									<form onSubmit={logIn}>
 										<div className="form-group row">
 											<label

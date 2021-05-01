@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { useHistory } from "react-router-dom";
 
 export const NewPassword = () => {
 	const [emailError, setEmailError] = useState("");
 	const [password, setPassword] = useState("");
 	const [newPass, setNewPass] = useState("");
 	const [email, setEmail] = useState("");
+	const history = useHistory();
 
 	function newPassword(event) {
 		if (email.trim() == "") {

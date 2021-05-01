@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { useHistory } from "react-router-dom";
 
 export const Forgot = () => {
 	const [email, setEmail] = useState("");
 	const [emailError, setEmailError] = useState("");
+	const [error, setError] = useState("");
+	const [message, setMessage] = useState("");
+	const history = useHistory();
 
 	function requestForgotPasword(event) {
-		if (email.trim() == "") {
-			setEmailError("Email obligatorio");
+		event.preventDefault();
+		setError("");
+		if (email == "") {
+			setError("Email formato incorrecto");
+			return;
 		}
 
 		fetch(process.env.BACKEND_URL + "/api/forgot-password", {
@@ -19,16 +26,30 @@ export const Forgot = () => {
 			body: JSON.stringify({
 				email: email
 			})
-		});
+		})
+			.then(response => {
+				responseOk = response.ok;
+				return response.json();
+			})
+			.then(responseJson => {
+				if (responseOk) {
+					setMessage("ves a tu correo para reestablecer la contraseña!");
+					history.push("/newPassword");
+				} else {
+					setError(responseJson.message);
+				}
+			});
 	}
 
 	return (
-		<div className=" container  ">
+		<div className=" container py-4 ">
 			<div className="row justify-content-center">
-				<div className="col-md-8">
+				<div className="col-md-8 pt-2">
 					<div className="card">
 						<div className="card-header h4">Recuperar la contraseña</div>
 						<div className="card-body">
+							{error ? <h5>{error}</h5> : ""}
+							{message ? <h5>{message}</h5> : ""}
 							<form>
 								<div className="form-group row">
 									<label htmlFor="email_address" className="col-md-4 col-form-label text-md-right">
