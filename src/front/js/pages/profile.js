@@ -256,6 +256,7 @@ export const Profile = () => {
 												Guardar datos
 											</button>
 											{"  "}
+
 											<button type="submit" className="btn btn-primary">
 												Borrar
 											</button>
