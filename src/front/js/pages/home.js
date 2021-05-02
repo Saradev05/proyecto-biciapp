@@ -13,8 +13,12 @@ export const Home = () => {
 	const { store } = useContext(Context);
 	return (
 		<div className="jumbotron-fluid">
-			<div className="container-fluid">
-				<img src={Cyclists} className="cyclists" />
+			<div className="container-fluid p-0 ">
+				<img
+					src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
+					className="imgCyclists img-fluid jumbotron"
+					width="100%"
+				/>{" "}
 			</div>
 
 			<div className="container py-5 my-5">

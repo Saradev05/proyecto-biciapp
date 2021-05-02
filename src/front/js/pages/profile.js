@@ -437,7 +437,7 @@ export const Profile = () => {
 											</div>
 											<div className="col-12 m-2">
 												<button type="submit" className="btn btn-primary" onClick={bikeUpdate}>
-													Guardar bici
+													home
 												</button>
 												{"  "}
 												<button type="submit" className="btn btn-primary">
