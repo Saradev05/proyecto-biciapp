@@ -271,7 +271,7 @@ export const Profile = () => {
 								<div className="card-body py-5">
 									{messageBike ? <h5>{messageBike}</h5> : ""}
 									<form className=" row g-3  col-md-10 " id="bikes">
-										<div className="col-md-6">
+										<div className="col-6">
 											<label htmlFor="b_type" className="form-label">
 												Tipo de bici
 											</label>
@@ -289,7 +289,7 @@ export const Profile = () => {
 												<option value="paseo">paseo</option>
 											</select>
 										</div>
-										<div className="col-md-6">
+										<div className="col-6">
 											<label className="form-label" />
 											Le has puesto nombre?
 											<input
@@ -303,7 +303,7 @@ export const Profile = () => {
 												}}
 											/>
 										</div>
-										<div className="col-md-6">
+										<div className="col-6">
 											<label htmlFor="wheel_inches" className="form-label">
 												diametro de rueda
 											</label>
@@ -321,7 +321,7 @@ export const Profile = () => {
 												<option value="19-">menos de 20 pulgadas</option>
 											</select>
 										</div>
-										<div className="col-md-6">
+										<div className="col-6">
 											<label htmlFor="gears" className="form-label">
 												marchas
 											</label>

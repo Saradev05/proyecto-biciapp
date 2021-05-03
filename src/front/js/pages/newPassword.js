@@ -25,11 +25,14 @@ export const NewPassword = () => {
 				newPassword: newPassword,
 				newPassword: newPassword
 			})
+		}).then(response => {
+			responseOk = response.ok;
+			return response.json();
 		});
 	}
 
 	return (
-		<div className=" container  ">
+		<div className="newPassword container  ">
 			<div className="row justify-content-center">
 				<div className="col-md-8">
 					<div className="card">
