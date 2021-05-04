@@ -10,14 +10,14 @@ export const Forgot = () => {
 	const [message, setMessage] = useState("");
 	const history = useHistory();
 
-	function requestForgotPasword(event) {
+	function requestForgotPassword(event) {
 		event.preventDefault();
 		setError("");
 		if (email == "") {
 			setError("Email formato incorrecto");
 			return;
 		}
-
+		let responseOk = false;
 		fetch(process.env.BACKEND_URL + "/api/forgot-password", {
 			method: "POST",
 			headers: {
@@ -34,7 +34,7 @@ export const Forgot = () => {
 			.then(responseJson => {
 				if (responseOk) {
 					setMessage("ves a tu correo para reestablecer la contraseña!");
-					history.push("/newPassword");
+					history.push("/newPassword/token");
 				} else {
 					setError(responseJson.message);
 				}
@@ -42,8 +42,8 @@ export const Forgot = () => {
 	}
 
 	return (
-		<div id="backgrd" className="text-center ">
-			<div className="forgot-body container-fluid row " width="100%">
+		<div id="backgrd" className=" forgot_body text-center ">
+			<div className=" container-fluid row " width="100%">
 				<div className=" container py-4 ">
 					<div className="row justify-content-center">
 						<div className="col-md-8 pt-2">
@@ -78,12 +78,12 @@ export const Forgot = () => {
 											) : (
 												""
 											)}
-											<div className="col-md-6 offset-md-4">
+											<div className="col-md-6 offset-md-4 mt-2">
 												<input
 													type="button"
 													className="btn btn-primary m-2"
 													value="Recuperar contraseña"
-													onClick={requestForgotPasword}
+													onClick={requestForgotPassword}
 												/>
 											</div>
 										</div>

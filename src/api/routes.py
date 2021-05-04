@@ -132,7 +132,7 @@ def forgot_password():
     return jsonify({"url": url}), 200
    
 
-@api.route('/new-password', methods=['POST'])
+@api.route('/newPassword', methods=['POST'])
 def reset_password():
     request_json = request.get_json()
     email = request_json["email"]

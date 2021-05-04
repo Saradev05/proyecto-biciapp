@@ -23,6 +23,7 @@
     width: 100%;
     height: 700px;
 }
+
 .home_body {
     width:100%;
     background-repeat: no-repeat;
@@ -48,6 +49,13 @@
 .forgot_body {
     background-image:url("https://cdn.pixabay.com/photo/2018/02/03/16/17/wheel-3127945_1280.jpg");
     width:100%;
+    height:700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.newPassword {
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/15/23/44/rider-1827833_960_720.jpg");
+     width:100%;
     height:700px;
     background-repeat: no-repeat;
     background-size: cover;
