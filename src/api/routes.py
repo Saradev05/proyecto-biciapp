@@ -135,7 +135,7 @@ def forgot_password():
 @api.route('/newPassword', methods=['POST'])
 def reset_password():
     request_json = request.get_json()
-    email = request_json["email"]
+    # email = request_json["email"]
     token = request_json["token"]
     password = request_json["password"]
 

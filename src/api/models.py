@@ -171,3 +171,9 @@ class ForgotPasswordEmail():
         url = os.getenv("FRONTEND_URL") + "/newPassword/" + str(self.token)
         # return True
         return url
+
+    def passUpdate(self, json):
+        self.newPass= json["newPass"]
+        
+        db.session.add(self)
+        db.session.commit()
