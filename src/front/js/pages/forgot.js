@@ -18,7 +18,7 @@ export const Forgot = () => {
 			return;
 		}
 		let responseOk = false;
-		fetch(process.env.BACKEND_URL + "/api/forgot-password", {
+		fetch(process.env.BACKEND_URL + "/api/forgotPassword", {
 			method: "POST",
 			headers: {
 				"content-Type": "application/json"

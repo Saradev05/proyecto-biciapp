@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
@@ -8,6 +8,8 @@ export const NewPassword = () => {
 	const [passError, setPassError] = useState("");
 	const [confirmNewPass, setConfirmNewPass] = useState("");
 	const [newPass, setNewPass] = useState("");
+	const { actions } = useContext(Context);
+
 	// const [email, setEmail] = useState("");
 	const history = useHistory();
 
@@ -19,25 +21,26 @@ export const NewPassword = () => {
 		fetch(process.env.BACKEND_URL + "/api/newPassword", {
 			method: "POST",
 			heathers: {
-				"content-Type": "application/json"
+				"content-Type": "application/json",
+				Authorization: "Bearer " + actions.getAccessToken()
 			},
 			body: JSON.stringify({
 				newPass: newPass,
 				confirmNewPass: confirmNewPass
 			})
-				.then(response => {
-					responseOk = response.ok;
-					return response.json();
-				})
-				.then(responseJson => {
-					if (responseOk) {
-						setMessage("ya puedes usar la nueva contraseña!");
-						history.push("/login");
-					} else {
-						setError(responseJson.message);
-					}
-				})
-		});
+		})
+			.then(response => {
+				responseOk = response.ok;
+				return response.json();
+			})
+			.then(responseJson => {
+				if (responseOk) {
+					setMessage("ya puedes usar la nueva contraseña!");
+					history.push("/login");
+				} else {
+					setError(responseJson.message);
+				}
+			});
 	}
 
 	return (
@@ -85,7 +88,7 @@ export const NewPassword = () => {
 													required
 													placeholder="confirma contraseña"
 													onChange={event => {
-														setNewPass(event.target.value);
+														setConfirmNewPass(event.target.value);
 													}}
 												/>
 											</div>

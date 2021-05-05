@@ -109,7 +109,7 @@ def user_bikes():
 
 
 
-@api.route('/forgot-password', methods=['POST'])
+@api.route('/forgotPassword', methods=['POST'])
 def forgot_password():
     request_json = request.get_json()
     print(request_json)
@@ -121,7 +121,6 @@ def forgot_password():
     token = random.randint(100000000,199990000)
     user = User.get_user_email(email)
     user.token = token
-
     db.session.commit()
 
     forgot_password = ForgotPasswordEmail(email,token)
@@ -135,9 +134,10 @@ def forgot_password():
 @api.route('/newPassword', methods=['POST'])
 def reset_password():
     request_json = request.get_json()
-    email = request_json["email"]
-    token = request_json["token"]
-    password = request_json["password"]
+    current_user = User.get(current_user_id)
+    email = current_user["email"]
+    token = current_user["token"]
+    password = current_user["password"]
 
     user = User.get_for_forgot(email, token)
     user.password = password
@@ -145,5 +145,5 @@ def reset_password():
 
     db.session.commit()
 
-    return jsonify({}), 200
+    return jsonify("Ya puedes usar tu nueva contraseña"), 200
     #mensaje respuesta
