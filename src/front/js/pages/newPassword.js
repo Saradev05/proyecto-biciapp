@@ -17,15 +17,15 @@ export const NewPassword = () => {
 			setPassError("las contraseñas son distintas");
 		}
 
+		let responseOk = false;
 		fetch(process.env.BACKEND_URL + "/api/newPassword", {
 			method: "POST",
-			heathers: {
-				"content-Type": "application/json",
-				Authorization: "Bearer " + actions.getAccessToken()
+			headers: {
+				"content-Type": "application/json"
 			},
 			body: JSON.stringify({
-				newPass: newPass,
-				confirmNewPass: confirmNewPass
+				password: newPass,
+				token: actions.getForgotPasswordToken()
 			})
 		})
 			.then(response => {
@@ -34,7 +34,7 @@ export const NewPassword = () => {
 			})
 			.then(responseJson => {
 				if (responseOk) {
-					setMessage("ya puedes usar la nueva contraseña!");
+					// setMessage("ya puedes usar la nueva contraseña!");
 					history.push("/login");
 				} else {
 					setError(responseJson.message);
@@ -87,7 +87,7 @@ export const NewPassword = () => {
 													required
 													placeholder="confirma contraseña"
 													onChange={event => {
-														setNewPass(event.target.value);
+														setConfirmNewPass(event.target.value);
 													}}
 												/>
 											</div>

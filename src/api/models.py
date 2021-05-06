@@ -66,6 +66,12 @@ class User(db.Model):
         db.session.add(self)
         db.session.commit()
 
+
+    @classmethod
+    def get_for_forgot(cls, token):
+        return cls.query.filter_by(token = token ).one_or_none()
+  
+
     @classmethod
     def get_login_credentials(cls, email, password):
         return cls.query.filter_by(email = email).filter_by(password = password).one_or_none()
@@ -172,8 +178,5 @@ class ForgotPasswordEmail():
         # return True
         return url
 
-    def passUpdate(self, json):
-        self.newPass= json["newPass"]
-        
-        db.session.add(self)
-        db.session.commit()
+   
+

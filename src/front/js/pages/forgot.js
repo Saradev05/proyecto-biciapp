@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
@@ -8,7 +8,9 @@ export const Forgot = () => {
 	const [emailError, setEmailError] = useState("");
 	const [error, setError] = useState("");
 	const [message, setMessage] = useState("");
+	const [token, setToken] = useState("");
 	const history = useHistory();
+	const { actions } = useContext(Context);
 
 	function requestForgotPassword(event) {
 		event.preventDefault();
@@ -33,8 +35,9 @@ export const Forgot = () => {
 			})
 			.then(responseJson => {
 				if (responseOk) {
+					actions.saveForgotPasswordToken(responseJson.token);
 					setMessage("ves a tu correo para reestablecer la contraseña!");
-					history.push("/newPassword/token");
+					history.push("/newPassword/" + responseJson.token);
 				} else {
 					setError(responseJson.message);
 				}

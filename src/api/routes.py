@@ -120,7 +120,7 @@ def forgot_password():
     
     token = random.randint(100000000,199990000)
     user = User.get_user_email(email)
-    user.token = token
+    user.token = str(token)
 
     db.session.commit()
 
@@ -129,17 +129,18 @@ def forgot_password():
     url= forgot_password.send()
 
     # return jsonify({}), 200
-    return jsonify({"url": url}), 200
+    return jsonify({"url": url, "token": token }), 200
    
 
 @api.route('/newPassword', methods=['POST'])
 def reset_password():
     request_json = request.get_json()
+    print(type(request_json["token"]))
     # email = request_json["email"]
-    token = request_json["token"]
+    token = str(request_json["token"])
     password = request_json["password"]
 
-    user = User.get_for_forgot(email, token)
+    user = User.get_for_forgot( token)
     user.password = password
     user.token = None
 
