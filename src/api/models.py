@@ -67,6 +67,7 @@ class User(db.Model):
         db.session.commit()
 
 
+
     @classmethod
     def get_for_forgot(cls, token):
         return cls.query.filter_by(token = token ).one_or_none()
