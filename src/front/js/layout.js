@@ -13,7 +13,9 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Profile } from "./pages/profile";
-import { Activity } from "./pages/Activity";
+import { Activity } from "./pages/activity";
+import { Forgot } from "./pages/forgot";
+import { NewPassword } from "./pages/newPassword";
 import { Events } from "./pages/events";
 import { Montain } from "./pages/montain";
 import { Beach } from "./pages/beach";
@@ -50,6 +52,12 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/activity/theid">
 							<Activity />
+						</Route>
+						<Route exact path="/forgot">
+							<Forgot />
+						</Route>
+						<Route exact path="/newPassword/:token">
+							<NewPassword />
 						</Route>
 						<Route exact path="/events">
 							<Events />

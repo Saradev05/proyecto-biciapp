@@ -5,7 +5,7 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import CostaIMG from "../../img/costa01.jpg";
 import MontanaIMG from "../../img/montana02.jpg";
 import FamilyIMG from "../../img/family_home.jpg";
-
+import Cyclists from "../../img/cyclists.jpg";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 
@@ -13,8 +13,12 @@ export const Home = () => {
 	const { store } = useContext(Context);
 	return (
 		<div className="jumbotron-fluid">
-			<div className="container-fluid">
-				<img src={FamilyIMG} className="family-img" />
+			<div className="container-fluid p-0 ">
+				<img
+					src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
+					className="imgCyclists img-fluid jumbotron"
+					width="100%"
+				/>{" "}
 			</div>
 
 			<div className="container py-5 my-5">

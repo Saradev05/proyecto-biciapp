@@ -45,13 +45,13 @@ export const SignUp = () => {
 	return (
 		<div id="backgrd" className="text-center ">
 			<div className="login_body container-fluid row " width="100%">
-				<div className=" container ">
+				<div className=" container py-4 ">
 					<div className="row justify-content-center">
-						<div className="col-md-8">
+						<div className="col-md-8 pt-2">
 							<div className="card">
-								<div className="card-header">Crear cuenta de usuario</div>
+								<div className="card-header h4">Crear cuenta de usuario</div>
 								<div className="card-body">
-									{error ? <h3>{error}</h3> : ""}
+									{error ? <h5>{error}</h5> : ""}
 									{message ? <h5>{message}</h5> : ""}
 									<form>
 										<div className="form-group row">

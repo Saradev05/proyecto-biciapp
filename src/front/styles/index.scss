@@ -1,3 +1,31 @@
 /* 
     General Styles
 */
+
+
+
+
+
+
+
+
+// #heroku
+// //Instalamos la libreria de Heroku
+// npm i heroku
+// //Logueamos la terminal en Heroku
+// heroku login -i
+// //Creamos un proyecto en Heroku para nuestro código
+// heroku create <nombre-proyecto>
+// //Añadimos los buildpacks de python y nodejs
+// heroku buildpacks:add --index 1 heroku/python
+// heroku buildpacks:add --index 2 heroku/nodejs
+// //Añadimos el addon de una base de datos de postgresql en nuestro proyecto
+// heroku addons:create heroku-postgresql:hobby-dev
+// //Añadimos las variables de entorno en el proyecto
+// heroku config:set FLASK_APP_KEY="any key works"
+// heroku config:set FLASK_APP=src/app.py
+// heroku config:set FLASK_ENV=production
+// heroku config:set BASENAME=/
+// heroku config:set BACKEND_URL=https://biciapp1.herokuapp.com/
+// //Pusheamos nuestro código de main a Heroku
+// git push heroku main

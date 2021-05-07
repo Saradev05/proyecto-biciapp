@@ -1,4 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
+import os
+
 db = SQLAlchemy()
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -64,6 +66,12 @@ class User(db.Model):
         db.session.add(self)
         db.session.commit()
 
+
+    @classmethod
+    def get_for_forgot(cls, token):
+        return cls.query.filter_by(token = token ).one_or_none()
+  
+
     @classmethod
     def get_login_credentials(cls, email, password):
         return cls.query.filter_by(email = email).filter_by(password = password).one_or_none()
@@ -72,7 +80,11 @@ class User(db.Model):
     def get(cls, id):
         return cls.query.get(id)
 
-
+    @classmethod
+    def get_user_email(cls, email):
+        return cls.query.filter_by(email = email).one_or_none()
+    
+     
 class Bike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     b_type = db.Column(db.String(80), unique=False, nullable=False)
@@ -154,3 +166,17 @@ class Activity(db.Model):
         self.description = json["description"]
         db.session.add(self)
         db.session.commit()
+    
+class ForgotPasswordEmail():
+    def __init__(self, email, token):
+        super().__init__()
+        self.email = email
+        self.token = token
+
+    def send (self):
+        url = os.getenv("FRONTEND_URL") + "/newPassword/" + str(self.token)
+        # return True
+        return url
+
+   
+

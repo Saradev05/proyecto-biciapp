@@ -2,11 +2,13 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Bike,  Activity
+from api.models import db, User, Bike,  Activity, ForgotPasswordEmail
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import get_jwt_identity
+import random
+import os
 
 api = Blueprint('api', __name__)
 
@@ -79,7 +81,7 @@ def show_activity():
     for activity in activities :
         activities_serialized.append(activity.serialize())
        
-    return jsonify(activities_serialized)
+    return jsonify(activities_serialized),200
 
 
 @api.route('/activity', methods=['POST'])
@@ -102,4 +104,47 @@ def user_bikes():
     bikes_serialized = []
     for bike in bikes : 
         bikes_serialized.append(bike.serialize())
-    return jsonify(bikes_serialized)
+            
+    return jsonify(bikes_serialized), 200
+
+
+
+@api.route('/forgot-password', methods=['POST'])
+def forgot_password():
+    request_json = request.get_json()
+    print(request_json)
+    email = request_json["email"]
+    
+    if email is None:
+        raise APIException("Email required")
+    
+    token = random.randint(100000000,199990000)
+    user = User.get_user_email(email)
+    user.token = str(token)
+
+    db.session.commit()
+
+    forgot_password = ForgotPasswordEmail(email,token)
+    # forgot_password.send()      
+    url= forgot_password.send()
+
+    # return jsonify({}), 200
+    return jsonify({"url": url, "token": token }), 200
+   
+
+@api.route('/newPassword', methods=['POST'])
+def reset_password():
+    request_json = request.get_json()
+    print(type(request_json["token"]))
+    # email = request_json["email"]
+    token = str(request_json["token"])
+    password = request_json["password"]
+
+    user = User.get_for_forgot( token)
+    user.password = password
+    user.token = None
+
+    db.session.commit()
+
+    return jsonify({}), 200
+    #mensaje respuesta
