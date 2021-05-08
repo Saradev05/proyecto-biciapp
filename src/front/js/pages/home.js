@@ -32,7 +32,7 @@ export const Home = () => {
 						<img className="card-img-top" src={FamilyIMG} alt="Card image cap" />
 						<div className="card-body">
 							<h5 className="card-title text-center">Eventos</h5>
-							<Link to={"/events"}>
+							<Link to={"/activity"}>
 								<button className="btn btn-outline-warning">ver detalles</button>
 							</Link>
 						</div>

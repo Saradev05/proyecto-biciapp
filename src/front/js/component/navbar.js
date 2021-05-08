@@ -27,6 +27,11 @@ export const Navbar = () => {
 							Perfil
 						</button>
 					</Link>
+					<Link to="/activity">
+						<button className="btn btn-warning font-weight-bold h1 m-2" type="button">
+							Actividades
+						</button>
+					</Link>
 				</div>
 			</div>
 		</nav>

@@ -167,7 +167,13 @@ class Activity(db.Model):
         self.description = json["description"]
         db.session.add(self)
         db.session.commit()
+
     
+    @classmethod
+    def get_by_user(cls, user_id):
+        return cls.query.filter_by(user_id = user_id).all()
+
+
 class ForgotPasswordEmail():
     def __init__(self, email, token):
         super().__init__()

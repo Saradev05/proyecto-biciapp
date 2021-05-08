@@ -25,7 +25,7 @@ export const Footer = () => (
 	<footer className="text-center  ">
 		<div className="container">
 			<p className="float-right">
-				<Link to="/activity">
+				<Link to="/administ">
 					<button className="btn btn-light bg-transparent border-0 font-weight-light h4 m-2" type="button">
 						Acceso Administrador
 					</button>
