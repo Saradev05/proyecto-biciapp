@@ -53,6 +53,7 @@ export const Profile = () => {
 			.then(responseJson => setBike(responseJson));
 	}, []);
 
+	// coment
 	function update(event) {
 		event.preventDefault();
 		fetch(process.env.BACKEND_URL + "/api/profile", {
