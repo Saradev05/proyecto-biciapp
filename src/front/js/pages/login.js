@@ -36,7 +36,7 @@ export const LogIn = () => {
 			})
 			.then(responseJson => {
 				if (responseOk) {
-					actions.saveAccessToken(responseJson.access_token);
+					actions.saveAccessToken(responseJson.access_token, responseJson.user.is_admin);
 
 					history.push("/home");
 				} else {
@@ -99,10 +99,8 @@ export const LogIn = () => {
 											<button type="submit" className="btn btn-primary">
 												Acceder
 											</button>
-											<Link to="/forgot">
-												<a href="#" className="btn btn-link">
-													No recuerdas la contraseña?
-												</a>
+											<Link to="/forgot" className="btn btn-link">
+												No recuerdas la contraseña?
 											</Link>
 										</div>
 									</form>

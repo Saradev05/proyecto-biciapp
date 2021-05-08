@@ -17,11 +17,25 @@ export const Navbar = () => {
 							Registro
 						</button>
 					</Link>
-					<Link to="/login">
-						<button className="btn btn-warning font-weight-bold h1 m-2" type="button">
-							Entrar
-						</button>
-					</Link>
+					{actions.getAccessToken() ? (
+						<Link to="/">
+							<button
+								onClick={() => {
+									actions.removeToken();
+								}}
+								className="btn btn-warning font-weight-bold h1 m-2"
+								type="button">
+								Salir
+							</button>
+						</Link>
+					) : (
+						<Link to="/login">
+							<button className="btn btn-warning font-weight-bold h1 m-2" type="button">
+								Entrar
+							</button>
+						</Link>
+					)}
+
 					<Link to="/profile">
 						<button className="btn btn-warning font-weight-bold h1 m-2" type="button">
 							Perfil

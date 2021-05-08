@@ -18,6 +18,13 @@ const getState = ({ getStore, getAction, setStore }) => {
 				setStore({ forgotPasswordToken: forgotPasswordToken });
 				localStorage.setItem("forgotPasswordToken", forgotPasswordToken);
 			},
+			removeToken: () => {
+				setStore({ accessToken: "" });
+				localStorage.removeItem("access_token");
+
+				setStore({ isAdmin: null });
+				localStorage.removeItem("isAdmin");
+			},
 			getAccessToken: () => {
 				let store = getStore();
 				if (store.accessToken) {
@@ -33,6 +40,13 @@ const getState = ({ getStore, getAction, setStore }) => {
 				} else {
 					return localStorage.getItem("forgotPasswordToken");
 				}
+			},
+			isAdmin: () => {
+				let store = getStore();
+				if (store.isAdmin === null) {
+					return localStorage.getItem("isAdmin");
+				}
+				return store.isAdmin;
 			}
 		}
 	};

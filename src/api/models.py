@@ -92,6 +92,7 @@ class Bike(db.Model):
     name = db.Column(db.String(80), unique=False, nullable=True)
     wheel_inches = db.Column(db.String(80), unique=False, nullable=True)
     gears = db.Column(db.String(60),unique=False,nullable=True )
+
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship("User", back_populates="bikes")
 
@@ -100,6 +101,7 @@ class Bike(db.Model):
 
     def serialize(self):
         return {
+            "id": self.id,
             "user_id": self.user_id,
             "b_type": self.b_type,
             "name": self.name,

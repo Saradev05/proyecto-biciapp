@@ -50,7 +50,7 @@ export const Profile = () => {
 			}
 		})
 			.then(response => response.json())
-			.then(responseJson => setBike(responseJson));
+			.then(responseJson => setBikes(responseJson));
 	}, []);
 
 	// coment
@@ -94,6 +94,9 @@ export const Profile = () => {
 			})
 			.then(responseJson => {
 				setBike(responseJson);
+				let bikesCopy = [...bikes];
+				bikesCopy.push(responseJson);
+				setBikes(bikesCopy);
 				setMessageBike("Bici guardada correctamente!");
 			})
 			.catch(error => setMessage(error.message));
@@ -102,7 +105,7 @@ export const Profile = () => {
 	if (!user) {
 		return <h1>Loading user....</h1>;
 	}
-	if (!bike) {
+	if (!bikes) {
 		return <h1>Loading bikes....</h1>;
 	}
 
@@ -360,100 +363,30 @@ export const Profile = () => {
 													<div id="allBikes" className="bikes">
 														<div className="card-header h4">Mis bicicletas</div>
 														<div className="card-body py-5">
-															{messageBike ? <h5>{messageBike}</h5> : ""}
-															<form className=" row g-3  col-md-10 " id="bikes">
-																<div className="col-md-6">
-																	<label htmlFor="b_type" className="form-label">
-																		Tipo de bici
-																	</label>
-																	<select
-																		type="text"
-																		placeholder="seleccionar tipo de bici"
-																		className="form-control "
-																		defaultValue={bike ? bike.b_type : ""}
-																		onChange={event => {
-																			setBType(event.target.value);
-																		}}>
-																		<option value="sin seleccionar">
-																			escoger una opción{" "}
-																		</option>
-																		<option value="MTB">MTB</option>
-																		<option value="Carretera">Carretera</option>
-																		<option value="paseo">paseo</option>
-																	</select>
-																</div>
-																<div className="col-md-6">
-																	<label className="form-label">
-																		Le has puesto nombre?
-																	</label>
-																	<input
-																		type="text"
-																		className="form-control"
-																		placeholder="Nombre"
-																		aria-label="First name"
-																		defaultValue={bike.name}
-																		onChange={event => {
-																			setName(event.target.value);
-																		}}
-																	/>
-																</div>
-																<div className="col-md-6">
-																	<label
-																		htmlFor="wheel_inches"
-																		className="form-label">
-																		diametro de rueda
-																	</label>
-																	<select
-																		type="text"
-																		placeholder="diametro de rueda"
-																		className="form-control"
-																		defaultValue={bike ? bike.wheel_inches : ""}
-																		onChange={event => {
-																			setWheelInches(event.target.value);
-																		}}>
-																		<option value="sin seleccionar">
-																			escoger una opción{" "}
-																		</option>
-																		<option value="28+">28 pulgadas o más</option>
-																		<option value="20-27">20 a 27 pulgadas</option>
-																		<option value="19-">
-																			menos de 20 pulgadas
-																		</option>
-																	</select>
-																</div>
-																<div className="col-md-6">
-																	<label htmlFor="gears" className="form-label">
-																		marchas
-																	</label>
-																	<select
-																		type="text"
-																		placeholder="marchas de la bici"
-																		className="form-control"
-																		defaultValue={bike ? bike.gears : ""}
-																		onChange={event => {
-																			setGears(event.target.value);
-																		}}>
-																		<option value="sin seleccionar">
-																			escoger una opción{" "}
-																		</option>
-																		<option value="30+">30 marchas o mas</option>
-																		<option value="15+">15 a 29 marchas</option>
-																		<option value="-15">menos de 15 marchas</option>
-																	</select>
-																</div>
-																<div className="col-12 m-2">
-																	<button
-																		type="submit"
-																		className="btn btn-primary"
-																		onClick={bikeUpdate}>
-																		home
-																	</button>
-																	{"  "}
-																	<button type="submit" className="btn btn-primary">
-																		Borrar
-																	</button>
-																</div>
-															</form>
+															<table className="table">
+																<thead>
+																	<tr>
+																		<th scope="col">#</th>
+																		<th scope="col">Tipo</th>
+																		<th scope="col">Marchas</th>
+																		<th scope="col">Nombre</th>
+																		<th scope="col">Pulgadas</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	{bikes.map(bike => {
+																		return (
+																			<tr key={bike.id}>
+																				<th scope="row">{bike.id}</th>
+																				<td>{bike.b_type}</td>
+																				<td>{bike.gears}</td>
+																				<td>{bike.name}</td>
+																				<td>{bike.wheel_inches}</td>
+																			</tr>
+																		);
+																	})}
+																</tbody>
+															</table>
 														</div>
 													</div>
 												</Col>
@@ -496,7 +429,7 @@ export const Profile = () => {
 																		className="form-control"
 																		placeholder="Nombre"
 																		aria-label="First name"
-																		defaultValue={bike.name}
+																		defaultValue={bike ? bike.name : ""}
 																		onChange={event => {
 																			setName(event.target.value);
 																		}}
