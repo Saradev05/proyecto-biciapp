@@ -135,9 +135,7 @@ export const Activity = () => {
 									<button type="submit" className="btn btn-primary">
 										Crear actividad
 									</button>
-									<a href="" className="btn btn-link">
-										No recuerdas la contraseña?
-									</a>
+									<a href="" className="btn btn-link" />
 								</div>
 							</form>
 						</div>

@@ -76,7 +76,7 @@ def new_user_bike():
 def show_activity():
     current_user_id = get_jwt_identity()
     user = User.get(current_user_id)
-    activities = User.activity
+    activities = user.activities
     activity_serialized = []
     for activity in activities :
         activities_serialized.append(activity.serialize())
