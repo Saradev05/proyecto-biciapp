@@ -116,7 +116,8 @@ export const Profile = () => {
 					<div className="container py-4">
 						<div className="row justify-content-center">
 							<div className="card col-md-10 col-md-6 pt-2">
-								<div className="card-header h4">
+								<div className="card-header " />
+								<div className="">
 									<Nav tabs>
 										<NavItem>
 											<NavLink
@@ -362,15 +363,15 @@ export const Profile = () => {
 												<Col sm="12">
 													<div id="allBikes" className="bikes">
 														<div className="card-header h4">Mis bicicletas</div>
-														<div className="card-body py-5">
-															<table className="table">
+														<div className="card-body">
+															<table className="table ">
 																<thead>
 																	<tr>
-																		<th scope="col">#</th>
-																		<th scope="col">Tipo</th>
-																		<th scope="col">Marchas</th>
-																		<th scope="col">Nombre</th>
-																		<th scope="col">Pulgadas</th>
+																		<th scope="col-12">#</th>
+																		<th scope="col-12">Tipo</th>
+																		<th scope="col-12">Marchas</th>
+																		<th scope="col-12">Nombre</th>
+																		<th scope="col-12">Pulgadas</th>
 																	</tr>
 																</thead>
 																<tbody>
