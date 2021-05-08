@@ -50,7 +50,7 @@ const Layout = () => {
 						<Route exact path="/profile">
 							<Profile />
 						</Route>
-						<Route exact path="/activity/theid">
+						<Route exact path="/activity">
 							<Activity />
 						</Route>
 						<Route exact path="/forgot">
