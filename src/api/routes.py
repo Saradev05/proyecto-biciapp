@@ -120,11 +120,13 @@ def forgot_password():
     
     token = random.randint(100000000,199990000)
     user = User.get_user_email(email)
+    if user is None:
+        raise APIException("user no encontrado")
     user.token = str(token)
 
     db.session.commit()
 
-    forgot_password = ForgotPasswordEmail(email,token)
+    forgot_password = ForgotPasswordEmail(email, token)
     # forgot_password.send()      
     url= forgot_password.send()
 
