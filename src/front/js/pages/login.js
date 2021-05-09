@@ -56,8 +56,8 @@ export const LogIn = () => {
 					<div className="row justify-content-center">
 						<div className="col-md-8  pt-2">
 							<div className="card">
-								<div className="card-header h4">Entrar en Biciapp</div>
-								<div className="card-body">
+								<div className="css-header card-header h4">Entrar en Biciapp</div>
+								<div className="css-body card-body">
 									{error ? <h5>{error}</h5> : ""}
 									{message ? <h5>{message}</h5> : ""}
 									<form onSubmit={logIn}>

@@ -49,8 +49,8 @@ export const NewPassword = () => {
 					<div className="row justify-content-center">
 						<div className="col-md-8">
 							<div className="card">
-								<div className="card-header h4">Recuperar la contraseña</div>
-								<div className="card-body">
+								<div className="css-header card-header h4">Recuperar la contraseña</div>
+								<div className="css-body card-body">
 									<form>
 										<div className="form-group row">
 											<label

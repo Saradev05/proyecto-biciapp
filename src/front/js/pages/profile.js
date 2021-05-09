@@ -115,10 +115,9 @@ export const Profile = () => {
 				<div className="profile_body container-fluid row " width="100%">
 					<div className="container py-4">
 						<div className="row justify-content-center">
-							<div className="card col-md-10 col-md-6 pt-2">
-								<div className="card-header " />
-								<div className="">
-									<Nav tabs>
+							<div className="body-profile card col-md-10 col-md-6 pt-2">
+								<div className="card ">
+									<Nav tabs className="header-profile">
 										<NavItem>
 											<NavLink
 												className={classnames({ active: activeTab === "1" })}
@@ -147,13 +146,15 @@ export const Profile = () => {
 											</NavLink>
 										</NavItem>
 									</Nav>
-									<TabContent activeTab={activeTab}>
+									<TabContent activeTab={activeTab} className="body-profile">
 										<TabPane tabId="1">
 											<Row>
 												<Col sm="12">
-													<div className="card-body  ">
-														<div id="profile" className="perfil">
-															<div className="card-header  h4">Perfil de usuario </div>{" "}
+													<div className="card-body p-0">
+														<div id="profile" className="perfil ">
+															<div className="header-profile card-header  h4">
+																Perfil de usuario{" "}
+															</div>{" "}
 															<div className="card-body ">
 																{message ? <h5>{message}</h5> : ""}
 																<form className="row g-3 ">
@@ -362,7 +363,9 @@ export const Profile = () => {
 											<Row>
 												<Col sm="12">
 													<div id="allBikes" className="bikes">
-														<div className="card-header h4">Mis bicicletas</div>
+														<div className="header-profile card-header h4">
+															Mis bicicletas
+														</div>
 														<div className="card-body">
 															<table className="table ">
 																<thead>
@@ -397,7 +400,9 @@ export const Profile = () => {
 											<Row>
 												<Col sm="12">
 													<div id="bikeAdd" className="bike">
-														<div className="card-header h4">Añadir una bici</div>
+														<div className="header-profile card-header h4">
+															Añadir una bici
+														</div>
 														<div className="card-body py-5">
 															{messageBike ? <h5>{messageBike}</h5> : ""}
 															<form className=" row g-3  col-md-10 " id="bikes">

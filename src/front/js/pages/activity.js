@@ -24,8 +24,8 @@ export const Activity = () => {
 		activitymap = activity.map((eachactivity, index) => {
 			return (
 				<div key={index}>
-					<div className="card-header">Actividad</div>
-					<div className="card-body">
+					<div className="css-header card-header">Actividad</div>
+					<div className="css-body card-body">
 						<p>
 							nombre:
 							{eachactivity.name}

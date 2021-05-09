@@ -49,8 +49,8 @@ export const SignUp = () => {
 					<div className="row justify-content-center">
 						<div className="col-md-8 pt-2">
 							<div className="card">
-								<div className="card-header h4">Crear cuenta de usuario</div>
-								<div className="card-body">
+								<div className="css-header card-header h4">Crear cuenta de usuario</div>
+								<div className="css-body card-body">
 									{error ? <h5>{error}</h5> : ""}
 									{message ? <h5>{message}</h5> : ""}
 									<form>
