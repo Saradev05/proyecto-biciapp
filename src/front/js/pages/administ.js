@@ -59,119 +59,93 @@ export const Administ = () => {
 				setError(error.message);
 			});
 	}
-	// let activitymap = [];
-	// if (activity != null) {
-	// 	activitymap = activity.map((eachactivity, index) => {
-	// 		return (
-	// 			<div key={index}>
-	// 				<div className="card-header">Actividad</div>
-	// 				<div className="card-body">
-	// 					<p>
-	// 						nombre:
-	// 						{eachactivity.name}
-	// 					</p>
-	// 					<p>
-	// 						ruta:
-	// 						{eachactivity.route}
-	// 					</p>
-	// 					<p>
-	// 						dificultad:
-	// 						{eachactivity.dificulty}
-	// 					</p>
-	// 					<p>
-	// 						descripcion:
-	// 						{eachactivity.description}
-	// 					</p>
-	// 				</div>
-	// 			</div>
-	// 		);
-	// 	});
-	// }
+
 	return (
-		<div className=" container  py-5 my-5">
-			{error ? <h1>{error}</h1> : ""}
-			{message ? <h1>{message}</h1> : ""}
-			<div className="row justify-content-center">
-				<div className="col-md-8">
-					<div className="card">
-						<div className="card-header">Añadir actividad</div>
-						<div className="card-body">
-							<form onSubmit={activityUpdate}>
-								<div className="form-group row">
-									<label htmlFor="name" className="col-md-4 col-form-label text-md-right">
-										Nombre de la actividad
-									</label>
-									<div className="col-md-6">
-										<input
-											type="name"
-											id="name"
-											className="name"
-											name="name"
-											required
-											placeholder="nombre"
-											onChange={event => setName(event.target.value)}
-										/>
+		<div id="backgrd" className="content-center ">
+			<div className="profile_body container-fluid row " width="100%">
+				<div className="container py-4">
+					<div className="row justify-content-center">
+						<div className="card col-md-10 pt-2">
+							<div className="card-header h4">Añadir actividad</div>
+							{error ? <h1>{error}</h1> : ""}
+							{message ? <h1>{message}</h1> : ""}
+							<div className="card-body">
+								<form onSubmit={activityUpdate}>
+									<div className="form-group col-10">
+										<label htmlFor="name" className="form-label">
+											Nombre de la actividad
+										</label>
+										<div className="col-md-10">
+											<input
+												type="name"
+												id="name"
+												className="name form-control"
+												name="name"
+												required
+												placeholder="nombre"
+												onChange={event => setName(event.target.value)}
+											/>
+										</div>
 									</div>
-								</div>
-								<div className="form-group row">
-									<label htmlFor="route" className="col-md-4 col-form-label text-md-right">
-										Ruta
-									</label>
-									<div className="col-md-6">
-										<input
-											type="route"
-											className="route"
-											name="route"
-											required
-											placeholder="Ruta"
-											onChange={event => setRoute(event.target.value)}
-										/>
+									<div className="form-group col-10">
+										<label htmlFor="route" className="form-label ">
+											Ruta
+										</label>
+										<div className="col-md-10">
+											<input
+												type="route"
+												className="route form-control"
+												name="route"
+												required
+												placeholder="Ruta"
+												onChange={event => setRoute(event.target.value)}
+											/>
+										</div>
 									</div>
-								</div>
-								<div className="form-group row">
-									<label htmlFor="dificulty" className="col-md-4 col-form-label text-md-right">
-										dificultad
-									</label>
-									<div className="col-md-6">
-										<input
-											type="dificulty"
-											className="dificulty"
-											name="dificulty"
-											required
-											placeholder="dificultad"
-											onChange={event => setDificulty(event.target.value)}
-										/>
+									<div className="form-group col-10">
+										<label htmlFor="dificulty" className="form-label ">
+											dificultad
+										</label>
+										<div className="col-md-10">
+											<input
+												type="dificulty"
+												className="dificulty form-control"
+												name="dificulty"
+												required
+												placeholder="dificultad"
+												onChange={event => setDificulty(event.target.value)}
+											/>
+										</div>
 									</div>
-								</div>
-								<div className="form-group row">
-									<label htmlFor="description" className="col-md-4 col-form-label text-md-right">
-										descripción
-									</label>
-									<div className="col-md-6">
-										<input
-											type="description"
-											className="description"
-											name="description"
-											required
-											placeholder="descripcion"
-											onChange={event => setDescription(event.target.value)}
-										/>
+									<div className="form-group col-10">
+										<label htmlFor="description" className="form-label  ">
+											descripción
+										</label>
+
+										<div className="col-md-10">
+											<textarea
+												type="description"
+												row="3"
+												className="form-control "
+												name="description"
+												required
+												placeholder="descripcion"
+												onChange={event => setDescription(event.target.value)}
+											/>
+										</div>
 									</div>
-								</div>
-								<div className="col-md-6 offset-md-4">
-									<button type="submit" className="btn btn-primary">
-										Crear actividad
-									</button>
-									<a href="" className="btn btn-link" />
-								</div>
-							</form>
+									<div className="col-md-6 offset-md-4">
+										<button type="submit" className="btn btn-primary">
+											Crear actividad
+										</button>
+										<a href="" className="btn btn-link" />
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			{/* <div className="row">
-				<div className="card card-vista">{activity ? activitymap : ""}</div>
-			</div> */}
 		</div>
 	);
 };

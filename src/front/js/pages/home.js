@@ -20,6 +20,12 @@ export const Home = () => {
 					width="100%"
 				/>{" "}
 			</div>
+			<p className="bienvenido-home">
+				Bienvenido a BiciApp, estamos deseando conocerte en nuestra próxima actividad. Te recomendamos que pases
+				a ver las próximas actividades, solo son una muestra de lo que acsotumbramos a hacer. No dejes de
+				visitar la web ya que vamos actualizando rutas a menudo...
+			</p>
+			<p className="text-unete">¡¡¡¡ÚNETE A BICIAPP!!!!</p>
 
 			<div className="container py-5 my-5">
 				<div className="row text-center ">
@@ -33,7 +39,7 @@ export const Home = () => {
 						<div className="card-body">
 							<h5 className="card-title text-center">Eventos</h5>
 							<Link to={"/activity"}>
-								<button className="btn btn-outline-warning">ver detalles</button>
+								<button className="btn btn-warning">ver detalles</button>
 							</Link>
 						</div>
 					</div>
@@ -43,7 +49,7 @@ export const Home = () => {
 						<div className="card-body">
 							<h5 className="card-title text-center">En Montaña</h5>
 							<Link to={"/montain"}>
-								<button className="btn btn-outline-warning">ver detalles</button>
+								<button className="btn btn-warning">ver detalles</button>
 							</Link>
 						</div>
 					</div>
@@ -53,7 +59,7 @@ export const Home = () => {
 						<div className="card-body">
 							<h5 className="card-title text-center">En Costa</h5>
 							<Link to={"/beach"}>
-								<button className="btn btn-outline-warning">ver detalles</button>
+								<button className="btn btn-warning">ver detalles</button>
 							</Link>
 						</div>
 					</div>
