@@ -5,8 +5,11 @@ import { func } from "prop-types";
 export const Ruta_completa = () => {
 	return (
 		<div className="">
+<<<<<<< HEAD
 			<h2 className="card-title  text-center">Senda costera en bici de Llanes a Borizu, Asturias</h2>
 
+=======
+>>>>>>> d9ed469826de1fde3e07f31942e991512c029546
 			<img
 				className="card-img-top"
 				src="https://i.pinimg.com/originals/22/ba/5a/22ba5a6124273c42823f3572878b02ea.jpg"
