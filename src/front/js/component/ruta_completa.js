@@ -6,8 +6,11 @@ export const Ruta_completa = () => {
 	return (
 		<div className="">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<h2 className="card-title  text-center">Senda costera en bici de Llanes a Borizu, Asturias</h2>
 
+=======
+>>>>>>> d9ed469826de1fde3e07f31942e991512c029546
 =======
 >>>>>>> d9ed469826de1fde3e07f31942e991512c029546
 			<img
