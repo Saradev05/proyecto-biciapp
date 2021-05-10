@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/demo.scss";
+import MasaIMG from "../../img/masacrit.jpg";
 
 export const Activity = () => {
 	const { actions } = useContext(Context);
@@ -48,8 +49,11 @@ export const Activity = () => {
 		});
 	}
 	return (
-		<div className="row">
-			<div className="card card-vista">{activity ? activitymap : ""}</div>
+		<div>
+			<img src={MasaIMG} />
+			<div className="row">
+				<div className="card card-vista">{activity ? activitymap : ""}</div>
+			</div>
 		</div>
 	);
 };

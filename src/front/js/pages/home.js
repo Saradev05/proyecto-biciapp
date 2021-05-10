@@ -38,7 +38,7 @@ export const Home = () => {
 						<img className="card-img-top" src={FamilyIMG} alt="Card image cap" />
 						<div className="card-body">
 							<h5 className="card-title text-center">Eventos</h5>
-							<Link to={"/activity"}>
+							<Link to={"/events"}>
 								<button className="btn btn-warning">ver detalles</button>
 							</Link>
 						</div>
