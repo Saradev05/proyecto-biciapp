@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
+import MasaIMG from "../../img/masacrit.jpg";
 
 export const Events = () => {
 	const [message, setMessage] = useState(null);
@@ -12,10 +13,7 @@ export const Events = () => {
 		<div className="css-body container  py-5 my-5 ">
 			<h2 className="card-title text-center">Masa Crítica</h2>
 
-			<img
-				className="card-img-top"
-				src="http://3.bp.blogspot.com/-6H949auMUAw/U9nLW1fbSxI/AAAAAAAAKkM/3sUxlurnNdA/s1600/Ruta+del+Alba-+R%C3%ADo+Llaimo+(1).JPG"
-			/>
+			<img className="card-img-top" src={MasaIMG} />
 			<div className="card-body">
 				<h5 className="">
 					La masa crítica es un movimiento social que tiene lugar todos los meses en numerosas ciudades del
