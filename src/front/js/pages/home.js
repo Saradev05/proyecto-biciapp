@@ -49,6 +49,7 @@ export const Home = () => {
 					width="100%"
 				/>{" "}
 			</div>
+
 			<p className="bienvenido-home">
 				Bienvenido a BiciApp, estamos deseando conocerte en nuestra próxima actividad. Te recomendamos que pases
 				a ver las próximas actividades, solo son una muestra de lo que acsotumbramos a hacer. No dejes de

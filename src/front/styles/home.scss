@@ -3,14 +3,13 @@
     margin: 0;
     width: 100%;
     height: 100 px;
-    
 }
 
-
 .navbar{
+   
   min-height: 120px;
    font-weight: larger ;
-   
+  background-color:white antiquewhite;
    }
 
    .nav-tabs{
@@ -26,6 +25,7 @@
 }
 
 .imgCyclists{
+   
     object-fit: cover;
     object-position: center top;
     width: 100%;
@@ -33,6 +33,8 @@
 }
 
 .home_body {
+   
+				
     background-color: rgb(194, 241, 241);
     width:100%;
     background-repeat: no-repeat;
