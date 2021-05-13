@@ -10,13 +10,13 @@ export const Montain = () => {
 
 	return (
 		<div className="css-body container  py-5 my-5 ">
-			<h2 className="card-title text-center">Ruta Alba, Asturias</h2>
+			<h1 className="card-title text-center p-3">Ruta Alba, Asturias</h1>
 
 			<img
-				className="card-img-top"
+				className="card-img-top p-5 "
 				src="http://3.bp.blogspot.com/-6H949auMUAw/U9nLW1fbSxI/AAAAAAAAKkM/3sUxlurnNdA/s1600/Ruta+del+Alba-+R%C3%ADo+Llaimo+(1).JPG"
 			/>
-			<div className="card-body">
+			<div className="card-body text justify-center p-5">
 				<h5>
 					Esta es una de las más conocidas de Asturias y una de esas rutas que podemos hacer una y mil veces y
 					que siempre acaba siendo una gran opción. Declarada Monumento Natural en el año 2001, esta ruta de

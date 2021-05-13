@@ -54,9 +54,9 @@ export const LogIn = () => {
 			<div className="login_body container-fluid row " width="100%">
 				<div className=" container py-4 ">
 					<div className="row justify-content-center">
-						<div className="col-md-8  pt-2">
+						<div className="col-md-8  pt-5 mt-5">
 							<div className="card">
-								<div className="css-header card-header h4">Entrar en Biciapp</div>
+								<div className="css-header card-header h4 py-4">Entrar en Biciapp</div>
 								<div className="css-body card-body">
 									{error ? <h5>{error}</h5> : ""}
 									{message ? <h5>{message}</h5> : ""}
@@ -64,7 +64,7 @@ export const LogIn = () => {
 										<div className="form-group row">
 											<label
 												htmlFor="email_address"
-												className="col-md-4 col-form-label text-md-right">
+												className="col-md-4 col-form-label text-md-right py-3">
 												E-mail
 											</label>
 											<div className="col-md-6">
@@ -80,7 +80,9 @@ export const LogIn = () => {
 											</div>
 										</div>
 										<div className="form-group row">
-											<label htmlFor="password" className="col-md-4 col-form-label text-md-right">
+											<label
+												htmlFor="password"
+												className="col-md-4 col-form-label text-md-right py-3">
 												Contraseña
 											</label>
 											<div className="col-md-6">
@@ -95,7 +97,7 @@ export const LogIn = () => {
 												/>
 											</div>
 										</div>
-										<div className="col-md-6 offset-md-4">
+										<div className="col-md-6 offset-md-4 py-4">
 											<button type="submit" className="btn btn-primary">
 												Acceder
 											</button>

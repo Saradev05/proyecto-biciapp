@@ -115,7 +115,7 @@ export const Profile = () => {
 				<div className="profile_body container-fluid row " width="100%">
 					<div className="container py-4">
 						<div className="row justify-content-center">
-							<div className="body-profile card col-md-10 col-md-6 pt-2">
+							<div className="body-profile card col-md-10 col-md-6 pt-5">
 								<div className="card ">
 									<Nav tabs className="header-profile">
 										<NavItem>
@@ -150,18 +150,18 @@ export const Profile = () => {
 										<TabPane tabId="1">
 											<Row>
 												<Col sm="12">
-													<div className="card-body p-0">
+													<div className="card-body p-3">
 														<div id="profile" className="perfil ">
-															<div className="header-profile card-header  h4">
+															{/* <div className="header-profile card-header h4">
 																Perfil de usuario{" "}
-															</div>{" "}
+															</div>{" "} */}
 															<div className="card-body ">
 																{message ? <h5>{message}</h5> : ""}
 																<form className="row g-3 ">
-																	<div className="col-6">
+																	<div className="col-6 p-2">
 																		<label
-																			htmlFor="inputEmail4"
-																			className="form-label">
+																			htmlFor="inputEmail4 "
+																			className="form-label ">
 																			Email
 																		</label>
 																		<input
@@ -177,7 +177,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6">
+																	<div className="col-6  p-2">
 																		<label
 																			htmlFor="inputPassword4"
 																			className="form-label">
@@ -196,8 +196,8 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6">
-																		<label className="form-label">Nombre</label>
+																	<div className="col-6 p-2">
+																		<label className="form-label ">Nombre</label>
 																		<input
 																			type="text"
 																			className="form-control"
@@ -212,7 +212,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6">
+																	<div className="col-6 p-2">
 																		<label className="form-label">Apellidos</label>
 																		<input
 																			type="text"
@@ -228,7 +228,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6">
+																	<div className="col-6 p-2">
 																		<label className="form-label">Usuario</label>
 																		<input
 																			type="text"
@@ -244,7 +244,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6">
+																	<div className="col-6 p-2">
 																		<label className="form-label">Edad</label>
 																		<input
 																			type="text"
@@ -260,7 +260,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6">
+																	<div className="col-6 p-2">
 																		<label
 																			htmlFor="inputAddress"
 																			className="form-label">
@@ -280,7 +280,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6">
+																	<div className="col-6 p-2">
 																		<label
 																			htmlFor="inputAddress"
 																			className="form-label">
@@ -300,7 +300,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6">
+																	<div className="col-6 p-2">
 																		<label
 																			htmlFor="inputCity"
 																			className="form-label">
@@ -319,7 +319,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6">
+																	<div className="col-6 p-2">
 																		<label
 																			htmlFor="inputZip"
 																			className="form-label">
@@ -338,7 +338,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-12">
+																	<div className="col-12 p-3 ">
 																		<button
 																			type="submit"
 																			className="btn btn-primary m-2"
@@ -348,7 +348,7 @@ export const Profile = () => {
 																		{"  "}
 																		<button
 																			type="submit"
-																			className="btn btn-primary">
+																			className="btn btn-primary ">
 																			Borrar
 																		</button>
 																	</div>
@@ -363,10 +363,10 @@ export const Profile = () => {
 											<Row>
 												<Col sm="12">
 													<div id="allBikes" className="bikes">
-														<div className="header-profile card-header h4">
+														{/* <div className="header-profile card-header h4 p-3">
 															Mis bicicletas
-														</div>
-														<div className="card-body">
+														</div> */}
+														<div className="card-body p-3">
 															<table className="table ">
 																<thead>
 																	<tr>
@@ -400,13 +400,13 @@ export const Profile = () => {
 											<Row>
 												<Col sm="12">
 													<div id="bikeAdd" className="bike">
-														<div className="header-profile card-header h4">
+														{/* <div className="header-profile card-header h4 p-3">
 															Añadir una bici
-														</div>
+														</div> */}
 														<div className="card-body py-5">
 															{messageBike ? <h5>{messageBike}</h5> : ""}
 															<form className=" row g-3  col-md-10 " id="bikes">
-																<div className="col-md-6">
+																<div className="col-md-6 p-2">
 																	<label htmlFor="b_type" className="form-label">
 																		Tipo de bici
 																	</label>
@@ -426,7 +426,7 @@ export const Profile = () => {
 																		<option value="paseo">paseo</option>
 																	</select>
 																</div>
-																<div className="col-md-6">
+																<div className="col-md-6 p-2">
 																	<label className="form-label">
 																		Nombre de la bici
 																	</label>
@@ -441,7 +441,7 @@ export const Profile = () => {
 																		}}
 																	/>
 																</div>
-																<div className="col-md-6">
+																<div className="col-md-6 p-2">
 																	<label
 																		htmlFor="wheel_inches"
 																		className="form-label">
@@ -465,7 +465,7 @@ export const Profile = () => {
 																		</option>
 																	</select>
 																</div>
-																<div className="col-md-6">
+																<div className="col-md-6 p-2">
 																	<label htmlFor="gears" className="form-label">
 																		marchas
 																	</label>
@@ -485,7 +485,7 @@ export const Profile = () => {
 																		<option value="-15">menos de 15 marchas</option>
 																	</select>
 																</div>
-																<div className="col-12 m-2">
+																<div className="col-12 m-2 p-3">
 																	<button
 																		type="submit"
 																		className="btn btn-primary"
