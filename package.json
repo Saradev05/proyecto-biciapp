@@ -78,7 +78,8 @@
 	"dependencies": {
 		"@stripe/stripe-js": "^1.14.0",
 		"bootstrap": "^4.6.0",
-		"heroku": "^7.53.0",
+		"flask": "^0.2.10",
+		"heroku": "^7.53.1",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-bootstrap": "^1.5.2",
