@@ -11,19 +11,22 @@ export const Events = () => {
 
 	return (
 		<div className="css-body container  py-5 my-5 ">
-			<h2 className="card-title text-center">Masa Crítica</h2>
+			<h1 className="card-title text-center p-3">Masa Crítica</h1>
 
-			<img className="card-img-top" src={MasaIMG} />
+			<img className="card-img-top p-5" src={MasaIMG} />
 			<div className="card-body">
-				<h5 className="">
-					La masa crítica es un movimiento social que tiene lugar todos los meses en numerosas ciudades del
-					mundo. Es una salida mensual en bici para reclamar los derechos del ciclista y promover un modelo de
-					movilidad sostenible en zonas urbanas. No es una manifestación ni una organización, sólo gente de
-					todas las edades montando en bicicleta. Tampoco es una carrera. Es una manera de establecer un
-					espacio público donde la gente pueda juntarse, reunirse y conocerse. No tiene dirigentes, no hay una
-					organización que autorice los paseos. Un conjunto de ciclistas se reúnen en el mismo lugar, a la
-					misma hora y deciden pedalear juntos por un rato, llevando consigo sus ideales y sus formas de
-					vivir, compartiéndolas con los demás.
+				<h5 className="tex justify-center p-3">
+					Es un movimiento social que tiene lugar todos los meses en numerosas ciudades del mundo. Es una
+					salida en bici para reclamar los derechos del ciclista y promover un modelo de movilidad sostenible
+					en zonas urbanas.
+				</h5>
+				<h4> No es una manifestación ni una organización, tampoco es una carrera.</h4>
+				<h5>
+					{" "}
+					Es una manera de establecer un espacio público donde la gente pueda juntarse, reunirse y conocerse.
+					No tiene dirigentes, no hay una organización que autorice los paseos. Un conjunto de ciclistas se
+					reúnen en el mismo lugar, a la misma hora y deciden pedalear juntos por un rato, llevando consigo
+					sus ideales y sus formas de vivir, compartiéndolas con los demás.
 				</h5>
 				<h5>
 					El nombre de la Masa Crítica se cogió del documental sobre ciclismo de Ted White, Return of the

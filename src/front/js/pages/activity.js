@@ -25,7 +25,7 @@ export const Activity = () => {
 		activitymap = activity.map((eachactivity, index) => {
 			return (
 				<div key={index}>
-					<div className="css-header card-header">Actividad</div>
+					<div className="css-header card-header p-4">Actividad</div>
 					<div className="css-body card-body">
 						<p>
 							nombre:
@@ -50,7 +50,7 @@ export const Activity = () => {
 	}
 	return (
 		<div>
-			<img src={MasaIMG} />
+			<img className="img-activity py-4 rounded border border-warning" src={MasaIMG} />
 			<div className="row">
 				<div className="card card-vista">{activity ? activitymap : ""}</div>
 			</div>

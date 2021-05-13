@@ -6,7 +6,7 @@ import LogoIMG from "../../img/logo.png";
 export const Navbar = () => {
 	const { actions, store } = useContext(Context);
 	return (
-		<nav className="navbar ">
+		<nav className="navbar border border-warning">
 			<Link to="/">
 				<img src={LogoIMG} className="rounded-right" alt="..." />
 			</Link>
@@ -46,19 +46,16 @@ export const Navbar = () => {
 							Actividades
 						</button>
 					</Link>
-					<div className="container">
-						{actions.isAdmin() ? (
-							<p className="float-right">
-								<Link to="/administ">
-									<button className="btn btn-outline-warning font-weight-bold h1 m-2" type="button">
-										Acceso Administrador
-									</button>
-								</Link>
-							</p>
-						) : (
-							""
-						)}
-					</div>
+
+					{actions.isAdmin() ? (
+						<Link to="/administ">
+							<button className="btn btn-outline-warning font-weight-bold h1 m-2" type="button">
+								Acceso Administrador
+							</button>
+						</Link>
+					) : (
+						""
+					)}
 				</div>
 			</div>
 		</nav>

@@ -65,7 +65,7 @@ export const Administ = () => {
 			<div className="profile_body container-fluid row " width="100%">
 				<div className="container py-4">
 					<div className="row justify-content-center">
-						<div className="card col-md-10 pt-2">
+						<div className="card col-md-10 p-2">
 							<div className="css-header card-header h4">Añadir actividad</div>
 							{error ? <h1>{error}</h1> : ""}
 							{message ? <h1>{message}</h1> : ""}

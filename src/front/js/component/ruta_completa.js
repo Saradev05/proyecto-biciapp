@@ -5,13 +5,13 @@ import { func } from "prop-types";
 export const Ruta_completa = () => {
 	return (
 		<div className="">
-			<h2 className="card-title  text-center">Senda costera en bici de Llanes a Borizu, Asturias</h2>
+			<h1 className="card-title text-center p-3">Senda costera en bici de Llanes a Borizu, Asturias</h1>
 
 			<img
-				className="card-img-top"
+				className="card-img-top p-5"
 				src="https://i.pinimg.com/originals/22/ba/5a/22ba5a6124273c42823f3572878b02ea.jpg"
 			/>
-			<div className="card-body">
+			<div className="card-body tex justify-center p-3">
 				<h5>
 					La senda costera recorre la costa oriental de Asturias. Parte de Bustio, pueblo limítrofe con
 					Cantabria, y llega hasta Guadamía. Unos 65km de paisajes, playas y prados, que se pueden ir

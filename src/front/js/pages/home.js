@@ -22,7 +22,7 @@ export const Home = () => {
 	async function handleClick() {
 		const stripe = await stripePromise;
 
-		const response = await fetch("https://3001-red-bass-pgvwzi28.ws-eu04.gitpod.io/api/create-checkout-session", {
+		const response = await fetch("https://3001-brown-ox-1ah0k064.ws-eu04.gitpod.io/api/create-checkout-session", {
 			method: "POST"
 		});
 
@@ -51,68 +51,73 @@ export const Home = () => {
 			</div>
 
 			<p className="bienvenido-home text-justify">
-				Bienvenido a BiciApp, estamos deseando conocerte en nuestra próxima actividad. Te recomendamos que pases
-				a ver las próximas actividades, solo son una muestra de lo que acostumbramos a hacer. No dejes de
-				visitar la web ya que vamos actualizando rutas a menudo...
+				<h1 className="text-center">Bienvenido a BiciApp</h1>
+				<span>Estamos encantados de tenerte por aquí y esperamos conocerte en nuestra próxima actividad.</span>
+				<p>
+					Aquí debajo encontrarás una muestra de lo que acostumbramos a hacer. No dejes de visitar la web ya
+					que vamos actualizando rutas a menudo...
+				</p>
 			</p>
 			<center>
 				<Link to={"/events"}>
-					{/* <button className="btn btn-warning">Quiero saber más</button> */}
-					<div className="card-body rounded-pill p-3 text-center border-0 shadow">
+					<div className="card-body rounded-pill p-3 text-center border-0 shadow ">
 						<h5 className="text-center ">Quiero saber más</h5>
 					</div>
 				</Link>
 			</center>
 
-			<div className="container text-center mt-5" />
-			{/* <div className="product"> */}
-
 			<div className="description">
-				<h5>$20.00</h5>
+				<h5>2,00€</h5>
 			</div>
 
 			<button type="button" id="checkout-button" role="link" onClick={handleClick}>
-				Checkout
+				Inscripción
 			</button>
 
 			<div className="container py-5 my-5" />
 			<div className="row text-center ">
 				<div className="col mx-auto mb-3">
-					<h2 className="text-muted ">PROXIMAS ACTIVIDADES</h2>
+					<h2 className="text-black mb-5">PROXIMAS ACTIVIDADES</h2>
 				</div>
 			</div>
 			<div className="card-deck">
 				<div className="card">
-					<img className="card-img-top" src={FamilyIMG} alt="Card image cap" />
+					<img className="1card-img-top" src={FamilyIMG} alt="Card image cap" />
 					<div className="card-body">
 						<h5 className="card-title text-center">Eventos</h5>
 						<center>
 							<Link to={"/events"}>
-								<button className="btn btn-warning">ver detalles</button>
+								<button className="btn btn-outline-primary font-weight-bold h1 m-2 p-3">
+									ver detalles
+								</button>
 							</Link>
 						</center>
 					</div>
 				</div>
 
 				<div className="card">
-					<img className="card-img-top" src={MontanaIMG} alt="Card image cap" />
+					<img className="1card-img-top" src={MontanaIMG} alt="Card image cap" />
 					<div className=" card-body">
 						<h5 className="card-title text-center">En Montaña</h5>
 						<center>
 							<Link to={"/montain"}>
-								<button className="btn btn-warning">ver detalles</button>
+								<button className="btn btn-outline-primary font-weight-bold h1 m-2 p-3">
+									ver detalles
+								</button>
 							</Link>
 						</center>
 					</div>
 				</div>
 
 				<div className="card">
-					<img className="card-img-top" src={CostaIMG} alt="Card image cap" />
+					<img className="1card-img-top" src={CostaIMG} alt="Card image cap" />
 					<div className="card-body">
 						<h5 className="card-title text-center">En Costa</h5>
 						<center>
 							<Link to={"/beach"}>
-								<button className="btn btn-warning">ver detalles</button>
+								<button className="btn btn-outline-primary font-weight-bold h1 m-2 p-3">
+									ver detalles
+								</button>
 							</Link>
 						</center>
 					</div>
