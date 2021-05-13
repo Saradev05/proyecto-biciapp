@@ -22,9 +22,12 @@ export const Home = () => {
 	async function handleClick() {
 		const stripe = await stripePromise;
 
-		const response = await fetch("https://3001-brown-ox-1ah0k064.ws-eu04.gitpod.io/api/create-checkout-session", {
-			method: "POST"
-		});
+		const response = await fetch(
+			"https://3001-gray-anglerfish-bl28sxkk.ws-eu04.gitpod.io/api/create-checkout-session",
+			{
+				method: "POST"
+			}
+		);
 
 		const session = await response.json();
 
@@ -66,14 +69,6 @@ export const Home = () => {
 				</Link>
 			</center>
 
-			<div className="description">
-				<h5>2,00€</h5>
-			</div>
-
-			<button type="button" id="checkout-button" role="link" onClick={handleClick}>
-				Inscripción
-			</button>
-
 			<div className="container py-5 my-5" />
 			<div className="row text-center ">
 				<div className="col mx-auto mb-3">
@@ -86,11 +81,20 @@ export const Home = () => {
 					<div className="card-body">
 						<h5 className="card-title text-center">Eventos</h5>
 						<center>
-							<Link to={"/events"}>
-								<button className="btn btn-outline-primary font-weight-bold h1 m-2 p-3">
-									ver detalles
+							<div>
+								<Link to={"/events"}>
+									<button className="btn btn-outline-primary font-weight-bold h1 m-2 p-3">
+										ver detalles
+									</button>
+								</Link>
+								<div className="description">
+									<h5>2,00€</h5>
+								</div>
+
+								<button type="button" id="checkout-button" role="link" onClick={handleClick}>
+									Inscripción
 								</button>
-							</Link>
+							</div>
 						</center>
 					</div>
 				</div>
