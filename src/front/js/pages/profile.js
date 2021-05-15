@@ -1,9 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
 import classnames from "classnames";
+
 import "../../styles/profile.scss";
 
 export const Profile = () => {
@@ -115,7 +116,7 @@ export const Profile = () => {
 				<div className="profile_body container-fluid row " width="100%">
 					<div className="container py-4">
 						<div className="row justify-content-center">
-							<div className="body-profile card col-md-10 col-md-6 pt-5">
+							<div className="body-profile card col-md-10 col-md-6 pt-1">
 								<div className="card ">
 									<Nav tabs className="header-profile">
 										<NavItem>
@@ -345,6 +346,13 @@ export const Profile = () => {
 																			onClick={update}>
 																			Guardar datos
 																		</button>
+																		<Link to="/uploadFoto">
+																			<button
+																				type="button"
+																				className="btn btn-outline-light font-weight-bold h1 m-2">
+																				Subir foto
+																			</button>
+																		</Link>
 																		{"  "}
 																		<button
 																			type="submit"

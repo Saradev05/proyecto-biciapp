@@ -88,7 +88,7 @@ export const Home = () => {
 									</button>
 								</Link>
 								<div className="description">
-									<h5>2,00€</h5>
+									<h5>20,00€</h5>
 								</div>
 
 								<button type="button" id="checkout-button" role="link" onClick={handleClick}>
