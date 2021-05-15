@@ -183,7 +183,9 @@ class ForgotPasswordEmail():
         self.token = token
 
     def send (self):
-        url = os.getenv("FRONTEND_URL") + "/newPassword/" + str(self.token)
+        # url = os.getenv("FRONTEND_URL") + "/newPassword/" + str(self.token)
+        url = os.getenv("FRONTEND_URL") + "/newPassword/" + format(self.token)
+
         # return True
         return url
 
