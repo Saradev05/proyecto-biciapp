@@ -72,8 +72,8 @@ export const UploadFoto = () => {
                                                         setFiles(event.target.files);
                                                     }}
                                                 />
-                                                	</label>
-                                            </div>
+                                        	</label>
+                                        </div>
 
                                             {fotoError ? (
                                                 <span className="col-md-6 text-md-right ml-4 mt-1">{fotoError} </span>
@@ -88,7 +88,6 @@ export const UploadFoto = () => {
                                                     onClick={uploadFiles}
                                                 />
                                             </div>
-                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -155,6 +154,4 @@ export const UploadFoto = () => {
             </div>
         </div>
     );
-};
-	);
 };

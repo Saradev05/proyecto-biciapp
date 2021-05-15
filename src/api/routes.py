@@ -199,7 +199,7 @@ def upload_fotos():
     # user id =request.form.get("iduser")
     for key in files:
         file = files[key]
-        url_image = 
+        url_image = ""
         try: 
             url_image = upload_file_to_s3(file, os.environ.get("S3_BUCKET_NAME"))
         except Exception as e:
