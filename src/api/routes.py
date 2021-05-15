@@ -10,6 +10,7 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import get_jwt_identity
 import random
+from api.aws import upload_file_to_s3
 
 
 
@@ -189,3 +190,22 @@ def reset_password():
 
     return jsonify({}), 200
     #mensaje respuesta
+
+
+
+@api.route('/uploadFoto', methods=['POST'])
+def upload_fotos():
+    files = request.files
+    # user id =request.form.get("iduser")
+    for key in files:
+        file = files[key]
+        url_image = 
+        try: 
+            url_image = upload_file_to_s3(file, os.environ.get("S3_BUCKET_NAME"))
+        except Exception as e:
+            raise APIException("ha fallado la subida de la imagen")
+
+        # now = datetime.datetime.now()
+
+
+    return jsonify({}), 200
