@@ -50,7 +50,7 @@ export const Home = () => {
 					src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
 					className="imgCyclists img-fluid jumbotron"
 					width="100%"
-				/>{" "}
+				/>
 			</div>
 
 			<p className="bienvenido-home text-justify">
