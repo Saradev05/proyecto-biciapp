@@ -9,7 +9,7 @@ import Cyclists from "../../img/cyclists.jpg";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 import { func } from "prop-types";
-
+// stripe Aleida
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(
@@ -47,10 +47,12 @@ export const Home = () => {
 		<div className="jumbotron-fluid">
 			<div className="container-fluid ">
 				<img
-					src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
 					className="imgCyclists img-fluid jumbotron"
+					src={Cyclists}
+					alt="Card image cap"
+					// src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
 					width="100%"
-				/>{" "}
+				/>
 			</div>
 
 			<p className="bienvenido-home text-justify">
@@ -88,7 +90,7 @@ export const Home = () => {
 									</button>
 								</Link>
 								<div className="description">
-									<h5>2,00€</h5>
+									<h5>20,00€</h5>
 								</div>
 
 								<button type="button" id="checkout-button" role="link" onClick={handleClick}>

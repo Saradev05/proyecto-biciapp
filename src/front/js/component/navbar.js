@@ -6,12 +6,12 @@ import LogoIMG from "../../img/logo.png";
 export const Navbar = () => {
 	const { actions, store } = useContext(Context);
 	return (
-		<nav className="navbar border border-warning">
+		<nav className="navbar navbar-expand-lg  border border-warning">
 			<Link to="/">
 				<img src={LogoIMG} className="rounded-right" alt="..." />
 			</Link>
 			<div className="ml-auto">
-				<div className="d-grid gap-2 d-md-block m-0 ">
+				<div className="d-grid gap-2 .d-md-block .d-sm-none col-md-12 col-sm-12 m-0 ">
 					<Link to="/signup">
 						<button type="button" className="btn btn-outline-warning font-weight-bold h1 m-2">
 							Registro

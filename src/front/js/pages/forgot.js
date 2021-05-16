@@ -49,7 +49,7 @@ export const Forgot = () => {
 			<div className=" container-fluid row " width="100%">
 				<div className=" container py-4 ">
 					<div className="row justify-content-center">
-						<div className="col-md-8 pt-2">
+						<div className="col-md-8  pt-2">
 							<div className="card">
 								<div className="css-header card-header h4">Recuperar la contraseña</div>
 								<div className="css-body card-body">

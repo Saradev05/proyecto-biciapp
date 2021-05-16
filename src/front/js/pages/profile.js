@@ -112,10 +112,10 @@ export const Profile = () => {
 	return (
 		<>
 			<div id="backgrd" className="content-center ">
-				<div className="profile_body container-fluid row " width="100%">
+				<div className="profile_body container-fluid row  " width="100%">
 					<div className="container py-4">
 						<div className="row justify-content-center">
-							<div className="body-profile card col-md-10 col-md-6 pt-5">
+							<div className="body-profile card col-md-12 col-sm-12 pt-5">
 								<div className="card ">
 									<Nav tabs className="header-profile">
 										<NavItem>
@@ -124,7 +124,7 @@ export const Profile = () => {
 												onClick={() => {
 													toggle("1");
 												}}>
-												Perfil de usuario
+												Perfil
 											</NavLink>
 										</NavItem>
 										<NavItem>
@@ -158,7 +158,7 @@ export const Profile = () => {
 															<div className="card-body ">
 																{message ? <h5>{message}</h5> : ""}
 																<form className="row g-3 ">
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputEmail4 "
 																			className="form-label ">
@@ -177,7 +177,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6  p-2">
+																	<div className="col-md-6 col-sm-12  p-2">
 																		<label
 																			htmlFor="inputPassword4"
 																			className="form-label">
@@ -196,7 +196,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label className="form-label ">Nombre</label>
 																		<input
 																			type="text"
@@ -212,7 +212,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label className="form-label">Apellidos</label>
 																		<input
 																			type="text"
@@ -228,7 +228,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label className="form-label">Usuario</label>
 																		<input
 																			type="text"
@@ -244,7 +244,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label className="form-label">Edad</label>
 																		<input
 																			type="text"
@@ -260,7 +260,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputAddress"
 																			className="form-label">
@@ -280,7 +280,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputAddress"
 																			className="form-label">
@@ -300,7 +300,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputCity"
 																			className="form-label">
@@ -319,7 +319,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputZip"
 																			className="form-label">
@@ -338,7 +338,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-12 p-3 ">
+																	<div className="col-md-6 col-sm-12 p-3 ">
 																		<button
 																			type="submit"
 																			className="btn btn-primary m-2"
@@ -361,20 +361,20 @@ export const Profile = () => {
 										</TabPane>
 										<TabPane tabId="2">
 											<Row>
-												<Col sm="12">
+												<Col md="6" sm="12">
 													<div id="allBikes" className="bikes">
 														{/* <div className="header-profile card-header h4 p-3">
 															Mis bicicletas
 														</div> */}
-														<div className="card-body p-3">
+														<div className="card-body container  p-3">
 															<table className="table ">
 																<thead>
 																	<tr>
-																		<th scope="col-12">#</th>
-																		<th scope="col-12">Tipo</th>
-																		<th scope="col-12">Marchas</th>
-																		<th scope="col-12">Nombre</th>
-																		<th scope="col-12">Pulgadas</th>
+																		<th scope="col-md-6 col-sm-12">#</th>
+																		<th scope="col-md-6 col-sm-12">Tipo</th>
+																		<th scope="col-md-6 col-sm-12">Marchas</th>
+																		<th scope="col-md-6 col-sm-12">Nombre</th>
+																		<th scope="col-md-6 col-sm-12">Pulgadas</th>
 																	</tr>
 																</thead>
 																<tbody>
@@ -398,7 +398,7 @@ export const Profile = () => {
 										</TabPane>
 										<TabPane tabId="3">
 											<Row>
-												<Col sm="12">
+												<Col md="6" sm="12">
 													<div id="bikeAdd" className="bike">
 														{/* <div className="header-profile card-header h4 p-3">
 															Añadir una bici
@@ -406,7 +406,7 @@ export const Profile = () => {
 														<div className="card-body py-5">
 															{messageBike ? <h5>{messageBike}</h5> : ""}
 															<form className=" row g-3  col-md-10 " id="bikes">
-																<div className="col-md-6 p-2">
+																<div className="col-md-6 col-sm-12 p-2">
 																	<label htmlFor="b_type" className="form-label">
 																		Tipo de bici
 																	</label>
@@ -426,7 +426,7 @@ export const Profile = () => {
 																		<option value="paseo">paseo</option>
 																	</select>
 																</div>
-																<div className="col-md-6 p-2">
+																<div className="col-md-6 col-sm-12 p-2">
 																	<label className="form-label">
 																		Nombre de la bici
 																	</label>
@@ -441,7 +441,7 @@ export const Profile = () => {
 																		}}
 																	/>
 																</div>
-																<div className="col-md-6 p-2">
+																<div className="col-md-6 col-sm-12 p-2">
 																	<label
 																		htmlFor="wheel_inches"
 																		className="form-label">
@@ -465,7 +465,7 @@ export const Profile = () => {
 																		</option>
 																	</select>
 																</div>
-																<div className="col-md-6 p-2">
+																<div className="col-md-6 col-sm-12 p-2">
 																	<label htmlFor="gears" className="form-label">
 																		marchas
 																	</label>
@@ -485,14 +485,13 @@ export const Profile = () => {
 																		<option value="-15">menos de 15 marchas</option>
 																	</select>
 																</div>
-																<div className="col-12 m-2 p-3">
+																<div className="col-md-6 col-sm-12 p-2  ">
 																	<button
 																		type="submit"
-																		className="btn btn-primary"
+																		className="btn btn-primary m-2"
 																		onClick={bikeUpdate}>
 																		Guardar bici
 																	</button>
-																	{"  "}
 																	<button type="submit" className="btn btn-primary">
 																		Borrar
 																	</button>
