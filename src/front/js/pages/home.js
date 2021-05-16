@@ -71,7 +71,7 @@ export const Home = () => {
 				</Link>
 			</center>
 
-			<div className="container py-5 my-5" />
+			<div className="container py-4 my-5" />
 			<div className="row text-center ">
 				<div className="col mx-auto mb-3">
 					<h2 className="text-black mb-5">PROXIMAS ACTIVIDADES</h2>

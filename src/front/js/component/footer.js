@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 export const Footer = () => {
 	const { actions } = useContext(Context);
 	return (
-		<footer className="text-center  ">
+		<footer className="container mt-auto py-3 text-center  ">
 			<h5 className="d-flex align-items-center">
 				Made by
 				<a className="p-2" href="mailto:info@aleidagonzalez.com">
