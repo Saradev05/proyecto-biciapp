@@ -12,7 +12,7 @@ export const Pago = () => {
 	async function handleClick() {
 		const stripe = await stripePromise;
 
-		const response = await fetch("https://3001-red-bass-pgvwzi28.ws-eu04.gitpod.io/api/create-checkout-session", {
+		const response = await fetch(process.env.BACKEND_URL + "/api/create-checkout-session", {
 			method: "POST"
 		});
 
@@ -29,7 +29,7 @@ export const Pago = () => {
 			// error, display the localized error message to your customer
 			// using `result.error.message`.
 		}
-	}
+	};
 	return (
 		<div>
 			<div className="description">

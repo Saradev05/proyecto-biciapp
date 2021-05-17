@@ -9,7 +9,7 @@ import Cyclists from "../../img/cyclists.jpg";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 import { func } from "prop-types";
-
+// stripe en repo biciapp4 fotos branch Sara
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(
@@ -22,12 +22,9 @@ export const Home = () => {
 	async function handleClick() {
 		const stripe = await stripePromise;
 
-		const response = await fetch(
-			"https://3001-gray-anglerfish-bl28sxkk.ws-eu04.gitpod.io/api/create-checkout-session",
-			{
-				method: "POST"
-			}
-		);
+		const response = await fetch(process.env.BACKEND_URL + "/api/create-checkout-session", {
+			method: "POST"
+		});
 
 		const session = await response.json();
 
@@ -47,7 +44,9 @@ export const Home = () => {
 		<div className="jumbotron-fluid">
 			<div className="container-fluid ">
 				<img
-					src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
+					src={Cyclists}
+					alt="Card image cap"
+					// src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
 					className="imgCyclists img-fluid jumbotron"
 					width="100%"
 				/>

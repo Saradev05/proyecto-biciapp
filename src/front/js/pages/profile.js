@@ -6,6 +6,7 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Ca
 import classnames from "classnames";
 
 import "../../styles/profile.scss";
+import { UploadFoto } from "./uploadFoto";
 
 export const Profile = () => {
 	// const [password, setPassword] = useState(""); tabs funcionen 7may
@@ -159,7 +160,13 @@ export const Profile = () => {
 															<div className="card-body ">
 																{message ? <h5>{message}</h5> : ""}
 																<form className="row g-3 ">
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
+																		<label className="form-label ">
+																			Foto de Perfil
+																		</label>
+																		<UploadFoto />
+																	</div>
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputEmail4 "
 																			className="form-label ">
@@ -178,7 +185,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6  p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputPassword4"
 																			className="form-label">
@@ -197,7 +204,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label className="form-label ">Nombre</label>
 																		<input
 																			type="text"
@@ -213,7 +220,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label className="form-label">Apellidos</label>
 																		<input
 																			type="text"
@@ -229,7 +236,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label className="form-label">Usuario</label>
 																		<input
 																			type="text"
@@ -245,7 +252,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label className="form-label">Edad</label>
 																		<input
 																			type="text"
@@ -261,7 +268,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputAddress"
 																			className="form-label">
@@ -281,7 +288,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputAddress"
 																			className="form-label">
@@ -301,7 +308,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputCity"
 																			className="form-label">
@@ -320,7 +327,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-6 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputZip"
 																			className="form-label">
@@ -339,7 +346,7 @@ export const Profile = () => {
 																			}}
 																		/>
 																	</div>
-																	<div className="col-12 p-3 ">
+																	<div className="col-md-6 col-sm-12 p-2 ">
 																		<button
 																			type="submit"
 																			className="btn btn-primary m-2"
@@ -414,7 +421,13 @@ export const Profile = () => {
 														<div className="card-body py-5">
 															{messageBike ? <h5>{messageBike}</h5> : ""}
 															<form className=" row g-3  col-md-10 " id="bikes">
-																<div className="col-md-6 p-2">
+																<div className="col-md-6 col-sm-12 p-2">
+																	<label className="form-label ">
+																		Foto de bicicleta
+																	</label>
+																	<UploadFoto />
+																</div>
+																<div className="col-md-6 col-sm-12 p-2">
 																	<label htmlFor="b_type" className="form-label">
 																		Tipo de bici
 																	</label>
@@ -434,7 +447,7 @@ export const Profile = () => {
 																		<option value="paseo">paseo</option>
 																	</select>
 																</div>
-																<div className="col-md-6 p-2">
+																<div className="col-md-6 col-sm-12 p-2">
 																	<label className="form-label">
 																		Nombre de la bici
 																	</label>
@@ -449,7 +462,7 @@ export const Profile = () => {
 																		}}
 																	/>
 																</div>
-																<div className="col-md-6 p-2">
+																<div className="col-md-6 col-sm-12 p-2">
 																	<label
 																		htmlFor="wheel_inches"
 																		className="form-label">
@@ -473,7 +486,7 @@ export const Profile = () => {
 																		</option>
 																	</select>
 																</div>
-																<div className="col-md-6 p-2">
+																<div className="col-md-6 col-sm-12 p-2">
 																	<label htmlFor="gears" className="form-label">
 																		marchas
 																	</label>
@@ -493,7 +506,7 @@ export const Profile = () => {
 																		<option value="-15">menos de 15 marchas</option>
 																	</select>
 																</div>
-																<div className="col-12 m-2 p-3">
+																<div className="col-md-6 col-sm-12 p-2">
 																	<button
 																		type="submit"
 																		className="btn btn-primary"
