@@ -160,7 +160,7 @@ export const Profile = () => {
 															<div className="card-body ">
 																{message ? <h5>{message}</h5> : ""}
 																<form className="row g-3 ">
-																	<div className="imagenYperfil1 d-flex col-md-12 col-sm-6">
+																	<div className="imagenYperfil1 d-flex col-md-12 col-sm-12 mt-4 p-2">
 																		<div className="imagenPerfil d-flex flex-column col-md-6 col-sm-12 p-2">
 																			<label className="form-label ">
 																				Foto de Perfil
@@ -306,7 +306,7 @@ export const Profile = () => {
 																				}}
 																			/>
 																		</div>
-																		<div className="col-md-6 col-sm-12 ">
+																		<div className="col-md-6 col-sm-12 p-2">
 																			<label
 																				htmlFor="inputAddress"
 																				className="form-label">
@@ -437,105 +437,126 @@ export const Profile = () => {
 														{/* <div className="header-profile card-header h4 p-3">
 															Añadir una bici
 														</div> */}
-														<div className="card-body py-5">
+														<div className="card-body py-2">
 															{messageBike ? <h5>{messageBike}</h5> : ""}
-															<form className=" row g-3  col-md-10 " id="bikes">
-																<div className="col-md-6 col-sm-12 p-2">
-																	<label className="form-label ">
-																		Foto de bicicleta
-																	</label>
-																	<UploadFoto />
-																</div>
-																<div className="col-md-6 col-sm-12 p-2">
-																	<label htmlFor="b_type" className="form-label">
-																		Tipo de bici
-																	</label>
-																	<select
-																		type="text"
-																		placeholder="seleccionar tipo de bici"
-																		className="form-control "
-																		defaultValue={bike ? bike.b_type : ""}
-																		onChange={event => {
-																			setBType(event.target.value);
-																		}}>
-																		<option value="sin seleccionar">
-																			escoger una opción{" "}
-																		</option>
-																		<option value="MTB">MTB</option>
-																		<option value="Carretera">Carretera</option>
-																		<option value="paseo">paseo</option>
-																	</select>
-																</div>
-																<div className="col-md-6 col-sm-12 p-2">
-																	<label className="form-label">
-																		Nombre de la bici
-																	</label>
-																	<input
-																		type="text"
-																		className="form-control"
-																		placeholder="Nombre"
-																		aria-label="First name"
-																		defaultValue={bike ? bike.name : ""}
-																		onChange={event => {
-																			setName(event.target.value);
-																		}}
+															<form className=" row g-3   " id="bikes">
+																<div className="imagenBici  d-flex flex-column col-md-6 col-sm-12 p-2">
+																	<label className="form-label ">Foto de bici</label>
+																	<img
+																		className="fotoProfile w-100 h-100 bg-color-danger"
+																		variant="top"
+																		src=""
 																	/>
 																</div>
-																<div className="col-md-6 col-sm-12 p-2">
-																	<label
-																		htmlFor="wheel_inches"
-																		className="form-label">
-																		diametro de rueda
-																	</label>
-																	<select
-																		type="text"
-																		placeholder="diametro de rueda"
-																		className="form-control"
-																		defaultValue={bike ? bike.wheel_inches : ""}
-																		onChange={event => {
-																			setWheelInches(event.target.value);
-																		}}>
-																		<option value="sin seleccionar">
-																			escoger una opción{" "}
-																		</option>
-																		<option value="28+">28 pulgadas o más</option>
-																		<option value="20-27">20 a 27 pulgadas</option>
-																		<option value="19-">
-																			menos de 20 pulgadas
-																		</option>
-																	</select>
-																</div>
-																<div className="col-md-6 col-sm-12 p-2">
-																	<label htmlFor="gears" className="form-label">
-																		marchas
-																	</label>
-																	<select
-																		type="text"
-																		placeholder="marchas de la bici"
-																		className="form-control"
-																		defaultValue={bike ? bike.gears : ""}
-																		onChange={event => {
-																			setGears(event.target.value);
-																		}}>
-																		<option value="sin seleccionar">
-																			escoger una opción{" "}
-																		</option>
-																		<option value="30+">30 marchas o mas</option>
-																		<option value="15+">15 a 29 marchas</option>
-																		<option value="-15">menos de 15 marchas</option>
-																	</select>
-																</div>
-																<div className="col-md-6 col-sm-12 p-2">
-																	<button
-																		type="submit"
-																		className="btn btn-primary"
-																		onClick={bikeUpdate}>
-																		Guardar bici
-																	</button>
-																	{"  "}
-																	<button type="submit" className="btn btn-primary">
-																		Borrar
-																	</button>
+																<div className="addBici col-md-6 col-sm-12 p-2">
+																	<div className="col-md-12 col-sm-12 p-2">
+																		<label htmlFor="b_type" className="form-label">
+																			Tipo de bici
+																		</label>
+																		<select
+																			type="text"
+																			placeholder="seleccionar tipo de bici"
+																			className="form-control "
+																			defaultValue={bike ? bike.b_type : ""}
+																			onChange={event => {
+																				setBType(event.target.value);
+																			}}>
+																			<option value="sin seleccionar">
+																				escoger una opción{" "}
+																			</option>
+																			<option value="MTB">MTB</option>
+																			<option value="Carretera">Carretera</option>
+																			<option value="paseo">paseo</option>
+																		</select>
+																	</div>
+																	<div className="col-md-12 col-sm-12 p-2">
+																		<label className="form-label">
+																			Nombre de la bici
+																		</label>
+																		<input
+																			type="text"
+																			className="form-control"
+																			placeholder="Nombre"
+																			aria-label="First name"
+																			defaultValue={bike ? bike.name : ""}
+																			onChange={event => {
+																				setName(event.target.value);
+																			}}
+																		/>
+																	</div>
+																	<div className="col-md-12 col-sm-12 p-2">
+																		<label
+																			htmlFor="wheel_inches"
+																			className="form-label">
+																			diametro de rueda
+																		</label>
+																		<select
+																			type="text"
+																			placeholder="diametro de rueda"
+																			className="form-control"
+																			defaultValue={bike ? bike.wheel_inches : ""}
+																			onChange={event => {
+																				setWheelInches(event.target.value);
+																			}}>
+																			<option value="sin seleccionar">
+																				escoger una opción{" "}
+																			</option>
+																			<option value="28+">
+																				28 pulgadas o más
+																			</option>
+																			<option value="20-27">
+																				20 a 27 pulgadas
+																			</option>
+																			<option value="19-">
+																				menos de 20 pulgadas
+																			</option>
+																		</select>
+																	</div>
+																	<div className="col-md-12 col-sm-12 p-2">
+																		<label htmlFor="gears" className="form-label">
+																			marchas
+																		</label>
+																		<select
+																			type="text"
+																			placeholder="marchas de la bici"
+																			className="form-control"
+																			defaultValue={bike ? bike.gears : ""}
+																			onChange={event => {
+																				setGears(event.target.value);
+																			}}>
+																			<option value="sin seleccionar">
+																				escoger una opción{" "}
+																			</option>
+																			<option value="30+">
+																				30 marchas o mas
+																			</option>
+																			<option value="15+">15 a 29 marchas</option>
+																			<option value="-15">
+																				menos de 15 marchas
+																			</option>
+																		</select>
+																	</div>
+																	<div className="col-md-12 col-sm-12 p-2">
+																		<button
+																			type="submit"
+																			className="btn btn-primary"
+																			onClick={bikeUpdate}>
+																			Guardar bici
+																		</button>
+																		<Link to="/uploadFoto">
+																			<button
+																				type="button"
+																				className="btn btn-primary  h1 m-2">
+																				Subir foto
+																			</button>
+																		</Link>
+																		{"  "}
+																		<button
+																			type="submit"
+																			className="btn btn-primary">
+																			Borrar
+																		</button>
+																	</div>
 																</div>
 															</form>
 														</div>
@@ -553,6 +574,3 @@ export const Profile = () => {
 		</>
 	);
 };
-{
-	/* <UploadFoto /> */
-}
