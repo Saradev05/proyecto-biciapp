@@ -117,7 +117,7 @@ export const Profile = () => {
 				<div className="profile_body container-fluid row " width="100%">
 					<div className="container py-4">
 						<div className="row justify-content-center">
-							<div className="body-profile card col-md-10 col-md-6 pt-1">
+							<div className="body-profile card col-md-12 col-sm-6 pt-1">
 								<div className="card ">
 									<Nav tabs className="header-profile">
 										<NavItem>
@@ -164,208 +164,221 @@ export const Profile = () => {
 																		<label className="form-label ">
 																			Foto de Perfil
 																		</label>
-																		<UploadFoto />
+																		<input
+																			type="image"
+																			id="image"
+																			src="/media/examples/login-button.png"></input>
 																	</div>
 																	<div className="col-md-6 col-sm-12 p-2">
-																		<label
-																			htmlFor="inputEmail4 "
-																			className="form-label ">
-																			Email
-																		</label>
-																		<input
-																			type="email"
-																			className="form-control"
-																			id="inputEmail4"
-																			defaultValue={user.email}
-																			onChange={event => {
-																				setUser({
-																					...user,
-																					email: event.target.value
-																				});
-																			}}
-																		/>
+																		<div className="col-md-12 col-sm-12 p-2">
+																			<label
+																				htmlFor="inputEmail4 "
+																				className="form-label ">
+																				Email
+																			</label>
+																			<input
+																				type="email"
+																				className="form-control"
+																				id="inputEmail4"
+																				defaultValue={user.email}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						email: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-12 col-sm-12 p-2">
+																			<label
+																				htmlFor="inputPassword4"
+																				className="form-label">
+																				Contraseña
+																			</label>
+																			<input
+																				type="password"
+																				className="form-control"
+																				id="inputPassword4"
+																				defaultValue={user.password}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						password: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-12 col-sm-12 p-2">
+																			<label className="form-label ">
+																				Nombre
+																			</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				placeholder="Nombre"
+																				aria-label="First name"
+																				defaultValue={user.name}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						name: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-12 col-sm-12 p-2">
+																			<label className="form-label">
+																				Apellidos
+																			</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				placeholder="Apellidos"
+																				aria-label="Last name"
+																				defaultValue={user.surname}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						surname: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
 																	</div>
-																	<div className="col-md-6 col-sm-12 p-2">
-																		<label
-																			htmlFor="inputPassword4"
-																			className="form-label">
-																			Contraseña
-																		</label>
-																		<input
-																			type="password"
-																			className="form-control"
-																			id="inputPassword4"
-																			defaultValue={user.password}
-																			onChange={event => {
-																				setUser({
-																					...user,
-																					password: event.target.value
-																				});
-																			}}
-																		/>
-																	</div>
-																	<div className="col-md-6 col-sm-12 p-2">
-																		<label className="form-label ">Nombre</label>
-																		<input
-																			type="text"
-																			className="form-control"
-																			placeholder="Nombre"
-																			aria-label="First name"
-																			defaultValue={user.name}
-																			onChange={event => {
-																				setUser({
-																					...user,
-																					name: event.target.value
-																				});
-																			}}
-																		/>
-																	</div>
-																	<div className="col-md-6 col-sm-12 p-2">
-																		<label className="form-label">Apellidos</label>
-																		<input
-																			type="text"
-																			className="form-control"
-																			placeholder="Apellidos"
-																			aria-label="Last name"
-																			defaultValue={user.surname}
-																			onChange={event => {
-																				setUser({
-																					...user,
-																					surname: event.target.value
-																				});
-																			}}
-																		/>
-																	</div>
-																	<div className="col-md-6 col-sm-12 p-2">
-																		<label className="form-label">Usuario</label>
-																		<input
-																			type="text"
-																			className="form-control"
-																			placeholder="Nombre a mostrar"
-																			aria-label="First name"
-																			defaultValue={user.nick_name}
-																			onChange={event => {
-																				setUser({
-																					...user,
-																					nick_name: event.target.value
-																				});
-																			}}
-																		/>
-																	</div>
-																	<div className="col-md-6 col-sm-12 p-2">
-																		<label className="form-label">Edad</label>
-																		<input
-																			type="text"
-																			className="form-control"
-																			placeholder="edad"
-																			aria-label="First name"
-																			defaultValue={user.age}
-																			onChange={event => {
-																				setUser({
-																					...user,
-																					age: event.target.value
-																				});
-																			}}
-																		/>
-																	</div>
-																	<div className="col-md-6 col-sm-12 p-2">
-																		<label
-																			htmlFor="inputAddress"
-																			className="form-label">
-																			dirección
-																		</label>
-																		<input
-																			type="text"
-																			className="form-control"
-																			id="inputAddress"
-																			placeholder="Calle , num"
-																			defaultValue={user.address1}
-																			onChange={event => {
-																				setUser({
-																					...user,
-																					address1: event.target.value
-																				});
-																			}}
-																		/>
-																	</div>
-																	<div className="col-md-6 col-sm-12 p-2">
-																		<label
-																			htmlFor="inputAddress"
-																			className="form-label">
-																			detalles de dirección
-																		</label>
-																		<input
-																			type="text"
-																			className="form-control"
-																			id="inputAddress"
-																			placeholder="piso, escalera, puerta"
-																			defaultValue={user.address2}
-																			onChange={event => {
-																				setUser({
-																					...user,
-																					address2: event.target.value
-																				});
-																			}}
-																		/>
-																	</div>
-																	<div className="col-md-6 col-sm-12 p-2">
-																		<label
-																			htmlFor="inputCity"
-																			className="form-label">
-																			Ciudad
-																		</label>
-																		<input
-																			type="text"
-																			className="form-control"
-																			id="inputCity"
-																			defaultValue={user.city}
-																			onChange={event => {
-																				setUser({
-																					...user,
-																					city: event.target.value
-																				});
-																			}}
-																		/>
-																	</div>
-																	<div className="col-md-6 col-sm-12 p-2">
-																		<label
-																			htmlFor="inputZip"
-																			className="form-label">
-																			Codigo postal
-																		</label>
-																		<input
-																			type="text"
-																			className="form-control"
-																			id="inputZip"
-																			defaultValue={user.postal_code}
-																			onChange={event => {
-																				setUser({
-																					...user,
-																					postal_code: event.target.value
-																				});
-																			}}
-																		/>
-																	</div>
-																	<div className="col-md-6 col-sm-12 p-2 ">
-																		<button
-																			type="submit"
-																			className="btn btn-primary m-2"
-																			onClick={update}>
-																			Guardar datos
-																		</button>
-																		<Link to="/uploadFoto">
+																	<div className="col-md-12 col-sm-12 p-2">
+																		<div className="col-md-6 col-sm-12 p-2">
+																			<label className="form-label">
+																				Usuario
+																			</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				placeholder="Nombre a mostrar"
+																				aria-label="First name"
+																				defaultValue={user.nick_name}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						nick_name: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-6 col-sm-12 p-2">
+																			<label className="form-label">Edad</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				placeholder="edad"
+																				aria-label="First name"
+																				defaultValue={user.age}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						age: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-6 col-sm-12 p-2">
+																			<label
+																				htmlFor="inputAddress"
+																				className="form-label">
+																				dirección
+																			</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				id="inputAddress"
+																				placeholder="Calle , num"
+																				defaultValue={user.address1}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						address1: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-6 col-sm-12 p-2">
+																			<label
+																				htmlFor="inputAddress"
+																				className="form-label">
+																				detalles de dirección
+																			</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				id="inputAddress"
+																				placeholder="piso, escalera, puerta"
+																				defaultValue={user.address2}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						address2: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-6 col-sm-12 p-2">
+																			<label
+																				htmlFor="inputCity"
+																				className="form-label">
+																				Ciudad
+																			</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				id="inputCity"
+																				defaultValue={user.city}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						city: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-6 col-sm-12 p-2">
+																			<label
+																				htmlFor="inputZip"
+																				className="form-label">
+																				Codigo postal
+																			</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				id="inputZip"
+																				defaultValue={user.postal_code}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						postal_code: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-6 col-sm-12 p-2 ">
 																			<button
-																				type="button"
-																				className="btn btn-outline-light font-weight-bold h1 m-2">
-																				Subir foto
+																				type="submit"
+																				className="btn btn-primary m-2"
+																				onClick={update}>
+																				Guardar datos
 																			</button>
-																		</Link>
-																		{"  "}
-																		<button
-																			type="submit"
-																			className="btn btn-primary ">
-																			Borrar
-																		</button>
+																			<Link to="/uploadFoto">
+																				<button
+																					type="button"
+																					className="btn btn-primary  h1 m-2">
+																					Subir foto
+																				</button>
+																			</Link>
+																			{"  "}
+																			<button
+																				type="submit"
+																				className="btn btn-primary ">
+																				Borrar
+																			</button>
+																		</div>
 																	</div>
 																</form>
 															</div>
@@ -534,3 +547,6 @@ export const Profile = () => {
 		</>
 	);
 };
+{
+	/* <UploadFoto /> */
+}
