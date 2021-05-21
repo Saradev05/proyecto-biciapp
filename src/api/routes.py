@@ -195,17 +195,39 @@ def reset_password():
 
 @api.route('/uploadFoto', methods=['POST'])
 def upload_fotos():
+#     files = request.files
+#     current_user_id = get_jwt_identity()
+#     user = User.get(current_user_id)
+#     # user id =request.form.get("id_user")
+#     for key in files:
+#         file = files[key]
+#         url_image = ""
+#         try: 
+#             url_image = upload_file_to_s3(file, os.environ.get("S3_BUCKET_NAME"))
+#         except Exception as e:
+#             raise APIException("ha fallado la subida de la imagen")
+
+#         # now = datetime.datetime.now()
+
+
+#     return jsonify({}), 200
+
+# @api.route("/upload-images", methods=["POST"])
+# def upload_images():
+    url_image= ''
     files = request.files
-    # user id =request.form.get("iduser")
+    print(files)
     for key in files:
         file = files[key]
-        url_image = ""
-        try: 
-            url_image = upload_file_to_s3(file, os.environ.get("S3_BUCKET_NAME"))
+        print(file)
+        # user_id = 10
+        try:
+            # new_filename ="{}-{}".format(user_id, file.filename)
+            url_image = upload_file_to_s3(file, os.environ.get('S3_BUCKET_NAME'))
         except Exception as e:
-            raise APIException("ha fallado la subida de la imagen")
+            print(e)
+            raise APIException(e)
 
-        # now = datetime.datetime.now()
+    return jsonify({"url":url_image}), 200
 
 
-    return jsonify({}), 200

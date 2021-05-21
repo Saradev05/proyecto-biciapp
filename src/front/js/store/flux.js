@@ -3,7 +3,8 @@ const getState = ({ getStore, getAction, setStore }) => {
 		store: {
 			accessToken: "",
 			isAdmin: null,
-			forgotPasswordToken: ""
+			forgotPasswordToken: "",
+			fotos: []
 		},
 
 		actions: {
@@ -47,6 +48,15 @@ const getState = ({ getStore, getAction, setStore }) => {
 					return localStorage.getItem("isAdmin");
 				}
 				return store.isAdmin;
+			},
+
+			getFormValue: value => {
+				let store = getStore();
+				return store[value];
+			},
+			setFormValue: (target, value) => {
+				let store = getStore();
+				setStore({ [target]: value });
 			}
 		}
 	};

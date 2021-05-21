@@ -4,7 +4,7 @@ import { useHistory, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
 import classnames from "classnames";
-
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "../../styles/profile.scss";
 import { UploadFoto } from "./uploadFoto";
 
@@ -151,8 +151,8 @@ export const Profile = () => {
 									<TabContent activeTab={activeTab} className="body-profile">
 										<TabPane tabId="1">
 											<Row>
-												<Col sm="12">
-													<div className="card-body p-3">
+												<Col sm="10">
+													<div className="card-body p-1">
 														<div id="profile" className="perfil ">
 															{/* <div className="header-profile card-header h4">
 																Perfil de usuario{" "}
@@ -401,17 +401,17 @@ export const Profile = () => {
 															Mis bicicletas
 														</div> */}
 														<div className="card-body p-3">
-															<table className="table ">
-																<thead>
-																	<tr>
-																		<th scope="col-12">#</th>
-																		<th scope="col-12">Tipo</th>
-																		<th scope="col-12">Marchas</th>
-																		<th scope="col-12">Nombre</th>
-																		<th scope="col-12">Pulgadas</th>
-																	</tr>
-																</thead>
-																<tbody>
+															<Table className="table ">
+																<Thead>
+																	<Tr>
+																		<Th scope="col-12">#</Th>
+																		<Th scope="col-12">Tipo</Th>
+																		<Th scope="col-12">Marchas</Th>
+																		<Th scope="col-12">Nombre</Th>
+																		<Th scope="col-12">Pulgadas</Th>
+																	</Tr>
+																</Thead>
+																<Tbody>
 																	{bikes.map(bike => {
 																		return (
 																			<tr key={bike.id}>
@@ -423,8 +423,8 @@ export const Profile = () => {
 																			</tr>
 																		);
 																	})}
-																</tbody>
-															</table>
+																</Tbody>
+															</Table>
 														</div>
 													</div>
 												</Col>

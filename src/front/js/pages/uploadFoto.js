@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 
 import rigoImageUrl from "../../img/rigo-baby.jpg";
@@ -9,7 +9,7 @@ import "../../styles/home.scss";
 import { func } from "prop-types";
 
 export const UploadFoto = () => {
-	const { store } = useContext(Context);
+	const { actions, store } = useContext(Context);
 	const [files, setFiles] = useState(null);
 	const [error, setError] = useState("");
 	const [message, setMessage] = useState("");
@@ -22,15 +22,40 @@ export const UploadFoto = () => {
 		// 	return;
 		// }
 		const formData = new FormData();
-		formData, append;
+		formData;
+		// loop con nueva foto
 		for (var i = 0; i < files.lenght; i++) {
 			formData.append("document" + i, files[i]);
 		}
 		fetch(process.env.BACKEND_URL + "/api/uploadFoto", {
 			method: "POST",
 			body: formData
-		}).then();
+		})
+			.then(response => {
+				if (response.ok) {
+					return setFiles(response.json());
+				}
+				if (response.ok) {
+					history.push("/home");
+					return;
+				}
+			})
+			.then(responseJson => {
+				if (!response.ok) {
+					return console.log("error");
+				}
+			});
 	}
+	// useEffect(() => {
+	// 	actions.setFormValue("fotos", files);
+	// }, [files]);
+
+	// const acceptedFileItems = files.map(file => (
+	// 	<li key={file.path}>
+	// 		{file.path} - {file.size} bytes
+	// 	</li>
+	// ));
+
 	return (
 		<div id="backgrd" className=" forgot_body text-center ">
 			<div className=" container-fluid row " width="100%">
@@ -55,6 +80,7 @@ export const UploadFoto = () => {
 													placeholder="1ª foto"
 													onChange={event => {
 														setFiles(event.target.files);
+														// setFiles(files.concat(...acceptedFiles))
 													}}
 												/>
 											</label>
@@ -71,6 +97,9 @@ export const UploadFoto = () => {
 												className="btn btn-primary m-2"
 												value="Cargar foto"
 												onClick={uploadFiles}
+												// onClick={acceptedFiles => {
+												// 	setFiles(files.concat(...acceptedFiles));
+												// }}
 											/>
 										</div>
 									</form>
@@ -81,6 +110,7 @@ export const UploadFoto = () => {
 								<div className="row text-center ">
 									<div className="col mx-auto mb-3">
 										<h2 className="text-black mb-5">Fotos cargadas</h2>
+										{/* <ul>{acceptedFileItems}</ul> */}
 									</div>
 								</div>
 								<div className="card-deck">
