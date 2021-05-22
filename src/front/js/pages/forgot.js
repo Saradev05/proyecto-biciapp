@@ -46,10 +46,10 @@ export const Forgot = () => {
 
 	return (
 		<div id="backgrd" className=" forgot_body text-center ">
-			<div className=" container-fluid row " width="100%">
-				<div className=" container py-4 ">
+			<div className=" container-fluid row py-5 " width="100%">
+				<div className=" container py-5 ">
 					<div className="row justify-content-center">
-						<div className="col-md-8 pt-2">
+						<div className="col-md-8 pt-2 py-5">
 							<div className="card">
 								<div className="css-header card-header h4">Recuperar la contraseña</div>
 								<div className="css-body card-body">
@@ -84,7 +84,7 @@ export const Forgot = () => {
 											<div className="col-md-6 offset-md-4 mt-2">
 												<input
 													type="button"
-													className="btn btn-primary m-2"
+													className="btn btnb m-2"
 													value="Recuperar contraseña"
 													onClick={requestForgotPassword}
 												/>

@@ -44,8 +44,8 @@ export const NewPassword = () => {
 
 	return (
 		<div id="backgrd" className="text-center ">
-			<div className="newPassword container-fluid row " width="100%">
-				<div className="  container py-4  ">
+			<div className="newPassword container-fluid py-5  row " width="100%">
+				<div className="  container py-5 mt-5 ">
 					<div className="row justify-content-center">
 						<div className="col-md-8">
 							<div className="card">
@@ -101,7 +101,7 @@ export const NewPassword = () => {
 										<div className="col-md-6 offset-md-4">
 											<input
 												type="button"
-												className="btn btn-primary m-2"
+												className="btn btnb m-2"
 												value="Cambiar contraseña"
 												onClick={newPassword}
 											/>

@@ -94,7 +94,7 @@ export const UploadFoto = () => {
 										<div className="col-md-6 offset-md-4 mt-2">
 											<input
 												type="button"
-												className="btn btn-primary m-2"
+												className="btn btnb m-2"
 												value="Cargar foto"
 												onClick={uploadFiles}
 												// onClick={acceptedFiles => {
@@ -121,7 +121,7 @@ export const UploadFoto = () => {
 											<center>
 												<div>
 													<Link to={"/profile"}>
-														<button className="btn btn-outline-primary font-weight-bold h1 m-2 p-3"></button>
+														<button className="btn btnb font-weight-bold h1 m-2 p-3"></button>
 													</Link>
 
 													{/* <button type="button" id="checkout-button" role="link" onClick={}>

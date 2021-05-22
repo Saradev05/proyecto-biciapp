@@ -62,8 +62,8 @@ export const Administ = () => {
 
 	return (
 		<div id="backgrd" className="content-center ">
-			<div className="profile_body container-fluid row " width="100%">
-				<div className="container py-4">
+			<div className="profile_body container-fluid py-5 row " width="100%">
+				<div className="container py-5 mt-5">
 					<div className="row justify-content-center">
 						<div className="card col-md-10 p-2">
 							<div className="css-header card-header h4">Añadir actividad</div>
@@ -135,7 +135,7 @@ export const Administ = () => {
 										</div>
 									</div>
 									<div className="col-md-6 offset-md-4">
-										<button type="submit" className="btn btn-primary">
+										<button type="submit" className="btn btnb">
 											Crear actividad
 										</button>
 										<a href="" className="btn btn-link" />

@@ -114,10 +114,10 @@ export const Profile = () => {
 	return (
 		<>
 			<div id="backgrd" className="content-center ">
-				<div className="profile_body container-fluid row " width="100%">
-					<div className="container py-4">
+				<div className="profile_body container-fluid row py-5" width="100%">
+					<div className="container py-5 mt-5">
 						<div className="row justify-content-center">
-							<div className="body-profile card col-md-10 col-sm-6 pt-1">
+							<div className="body-profile card col-md-10 col-sm-6 pt-1 ">
 								<div className="card ">
 									<Nav tabs className="header-profile">
 										<NavItem>
@@ -367,21 +367,21 @@ export const Profile = () => {
 																		<div className="col-md-6 col-sm-12 p-2 ">
 																			<button
 																				type="submit"
-																				className="btn btn-primary m-2"
+																				className="btn btnb m-2"
 																				onClick={update}>
 																				Guardar datos
 																			</button>
 																			<Link to="/uploadFoto">
 																				<button
 																					type="button"
-																					className="btn btn-primary  h1 m-2">
+																					className="btn btnb h1 m-2">
 																					Subir foto
 																				</button>
 																			</Link>
 																			{"  "}
 																			<button
 																				type="submit"
-																				className="btn btn-primary ">
+																				className="btn btnb  ">
 																				Borrar
 																			</button>
 																		</div>
@@ -539,21 +539,19 @@ export const Profile = () => {
 																	<div className="col-md-12 col-sm-12 p-2">
 																		<button
 																			type="submit"
-																			className="btn btn-primary"
+																			className="btn btnb"
 																			onClick={bikeUpdate}>
 																			Guardar bici
 																		</button>
 																		<Link to="/uploadFoto">
 																			<button
 																				type="button"
-																				className="btn btn-primary  h1 m-2">
+																				className="btn btnb  h1 m-2">
 																				Subir foto
 																			</button>
 																		</Link>
 																		{"  "}
-																		<button
-																			type="submit"
-																			className="btn btn-primary">
+																		<button type="submit" className="btn btnb ">
 																			Borrar
 																		</button>
 																	</div>

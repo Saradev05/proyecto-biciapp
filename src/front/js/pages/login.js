@@ -52,7 +52,7 @@ export const LogIn = () => {
 	return (
 		<div id="backgrd" className="text-center ">
 			<div className="login_body container-fluid row " width="100%">
-				<div className=" container py-4 ">
+				<div className=" container py-5 ">
 					<div className="row justify-content-center">
 						<div className="col-md-8  pt-5 mt-5">
 							<div className="card">
@@ -98,7 +98,7 @@ export const LogIn = () => {
 											</div>
 										</div>
 										<div className="col-md-6 offset-md-4 py-4">
-											<button type="submit" className="btn btn-primary">
+											<button type="submit" className="btn btnb">
 												Acceder
 											</button>
 											<Link to="/forgot" className="btn btn-link">

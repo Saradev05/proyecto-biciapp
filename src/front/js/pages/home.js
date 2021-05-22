@@ -47,8 +47,8 @@ export const Home = () => {
 					src={Cyclists}
 					alt="Card image cap"
 					// src="https://cdn.pixabay.com/photo/2019/11/08/07/05/cyclists-4610614_960_720.jpg"
-					className="imgCyclists img-fluid jumbotron"
-					width="100%"
+					className="imagenb imgCyclists img-fluid jumbotron"
+					width="100% "
 				/>
 			</div>
 
@@ -68,7 +68,7 @@ export const Home = () => {
 				</Link>
 			</center>
 
-			<div className="container py-5 my-5" />
+			<div className="actividades container py-5 my-5" />
 			<div className="row text-center ">
 				<div className="col mx-auto mb-3">
 					<h2 className="text-black mb-5">PROXIMAS ACTIVIDADES</h2>

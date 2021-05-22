@@ -45,10 +45,10 @@ export const SignUp = () => {
 	return (
 		<div id="backgrd " className="text-center">
 			<div className="login_body container-fluid row " width="100%">
-				<div className=" container py-4 ">
+				<div className=" container py-5 ">
 					<div className="row justify-content-center">
 						<div className="col-md-8 pt-5 mt-5">
-							<div className="card">
+							<div className="card ">
 								<div className="css-header card-header h4 py-4">Crear cuenta de usuario</div>
 								<div className="css-body card-body">
 									{error ? <h5>{error}</h5> : ""}
@@ -112,7 +112,7 @@ export const SignUp = () => {
 											<button
 												type="submit"
 												value="registro"
-												className="btn btn-primary"
+												className="btn btnb "
 												onClick={signup}>
 												Crear usuario
 											</button>
