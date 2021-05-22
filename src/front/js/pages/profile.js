@@ -117,441 +117,265 @@ export const Profile = () => {
 				<div className="profile_body container-fluid row py-5" width="100%">
 					<div className="container py-5 mt-5">
 						<div className="row justify-content-center">
-							<div className="body-profile card col-md-10 col-sm-6 pt-1 ">
-								<div className="card ">
-									<Nav tabs className="header-profile">
-										<NavItem>
-											<NavLink
-												className={classnames({ active: activeTab === "1" })}
-												onClick={() => {
-													toggle("1");
-												}}>
-												Perfil de usuario
-											</NavLink>
-										</NavItem>
-										<NavItem>
-											<NavLink
-												className={classnames({ active: activeTab === "2" })}
-												onClick={() => {
-													toggle("2");
-												}}>
-												Bicis
-											</NavLink>
-										</NavItem>
-										<NavItem>
-											<NavLink
-												className={classnames({ active: activeTab === "3" })}
-												onClick={() => {
-													toggle("3");
-												}}>
-												Añadir bici
-											</NavLink>
-										</NavItem>
-									</Nav>
-									<TabContent activeTab={activeTab} className="body-profile">
-										<TabPane tabId="1">
-											<Row>
-												<Col sm="10">
-													<div className="card-body p-1">
-														<div id="profile" className="perfil ">
-															{/* <div className="header-profile card-header h4">
+							<div className="body-profile card col-md-10 col-sm-6 p-1 ">
+								<Nav tabs className="header-profile">
+									<NavItem>
+										<NavLink
+											className={classnames({ active: activeTab === "1" })}
+											onClick={() => {
+												toggle("1");
+											}}>
+											Perfil de usuario
+										</NavLink>
+									</NavItem>
+									<NavItem>
+										<NavLink
+											className={classnames({ active: activeTab === "2" })}
+											onClick={() => {
+												toggle("2");
+											}}>
+											Bicis
+										</NavLink>
+									</NavItem>
+									<NavItem>
+										<NavLink
+											className={classnames({ active: activeTab === "3" })}
+											onClick={() => {
+												toggle("3");
+											}}>
+											Añadir bici
+										</NavLink>
+									</NavItem>
+								</Nav>
+								<TabContent activeTab={activeTab} className="body-profile">
+									<TabPane tabId="1">
+										<Row>
+											<Col sm="10">
+												<div className="card-body p-1">
+													<div id="profile" className="perfil ">
+														{/* <div className="header-profile card-header h4">
 																Perfil de usuario{" "}
 															</div>{" "} */}
-															<div className="card-body ">
-																{message ? <h5>{message}</h5> : ""}
-																<form className="row g-3 ">
-																	<div className="imagenYperfil1 d-flex col-md-12 col-sm-12 mt-4 p-2">
-																		<div className="imagenPerfil d-flex flex-column col-md-6 col-sm-12 p-2">
-																			<label className="form-label ">
-																				Foto de Perfil
-																			</label>
-																			<img
-																				className="fotoProfile w-100 h-100 bg-color-danger"
-																				variant="top"
-																				src=""
-																			/>
-																		</div>
-																		<div className="perfil1 col-md-6 col-sm-12 p-2">
-																			<div className="col-md-12 col-sm-12 p-2">
-																				<label
-																					htmlFor="inputEmail4 "
-																					className="form-label ">
-																					Email
-																				</label>
-																				<input
-																					type="email"
-																					className="form-control"
-																					id="inputEmail4"
-																					defaultValue={user.email}
-																					onChange={event => {
-																						setUser({
-																							...user,
-																							email: event.target.value
-																						});
-																					}}
-																				/>
-																			</div>
-																			<div className="col-md-12 col-sm-12 p-2">
-																				<label
-																					htmlFor="inputPassword4"
-																					className="form-label">
-																					Contraseña
-																				</label>
-																				<input
-																					type="password"
-																					className="form-control"
-																					id="inputPassword4"
-																					defaultValue={user.password}
-																					onChange={event => {
-																						setUser({
-																							...user,
-																							password: event.target.value
-																						});
-																					}}
-																				/>
-																			</div>
-																			<div className="col-md-12 col-sm-12 p-2">
-																				<label className="form-label ">
-																					Nombre
-																				</label>
-																				<input
-																					type="text"
-																					className="form-control"
-																					placeholder="Nombre"
-																					aria-label="First name"
-																					defaultValue={user.name}
-																					onChange={event => {
-																						setUser({
-																							...user,
-																							name: event.target.value
-																						});
-																					}}
-																				/>
-																			</div>
-																			<div className="col-md-12 col-sm-12 p-2">
-																				<label className="form-label">
-																					Apellidos
-																				</label>
-																				<input
-																					type="text"
-																					className="form-control"
-																					placeholder="Apellidos"
-																					aria-label="Last name"
-																					defaultValue={user.surname}
-																					onChange={event => {
-																						setUser({
-																							...user,
-																							surname: event.target.value
-																						});
-																					}}
-																				/>
-																			</div>
-																			<div className="col-md-12 col-sm-12 p-2">
-																				<label className="form-label">
-																					Usuario
-																				</label>
-																				<input
-																					type="text"
-																					className="form-control"
-																					placeholder="Nombre a mostrar"
-																					aria-label="First name"
-																					defaultValue={user.nick_name}
-																					onChange={event => {
-																						setUser({
-																							...user,
-																							nick_name:
-																								event.target.value
-																						});
-																					}}
-																				/>
-																			</div>
-																			<div className="col-md-12 col-sm-12 p-2">
-																				<label className="form-label">
-																					Edad
-																				</label>
-																				<input
-																					type="text"
-																					className="form-control"
-																					placeholder="edad"
-																					aria-label="First name"
-																					defaultValue={user.age}
-																					onChange={event => {
-																						setUser({
-																							...user,
-																							age: event.target.value
-																						});
-																					}}
-																				/>
-																			</div>
-																		</div>
-																	</div>
-																	<div className="restoPerfil  d-flex row p-2">
-																		<div className="col-md-6 col-sm-12 p-2">
-																			<label
-																				htmlFor="inputAddress"
-																				className="form-label">
-																				dirección
-																			</label>
-																			<input
-																				type="text"
-																				className="form-control "
-																				id="inputAddress"
-																				placeholder="Calle , num"
-																				defaultValue={user.address1}
-																				onChange={event => {
-																					setUser({
-																						...user,
-																						address1: event.target.value
-																					});
-																				}}
-																			/>
-																		</div>
-																		<div className="col-md-6 col-sm-12 p-2">
-																			<label
-																				htmlFor="inputAddress"
-																				className="form-label">
-																				detalles de dirección
-																			</label>
-																			<input
-																				type="text"
-																				className="form-control p-2"
-																				id="inputAddress"
-																				placeholder="piso, escalera, puerta"
-																				defaultValue={user.address2}
-																				onChange={event => {
-																					setUser({
-																						...user,
-																						address2: event.target.value
-																					});
-																				}}
-																			/>
-																		</div>
-																		<div className="col-md-6 col-sm-12 p-2">
-																			<label
-																				htmlFor="inputCity"
-																				className="form-label">
-																				Ciudad
-																			</label>
-																			<input
-																				type="text"
-																				className="form-control"
-																				id="inputCity"
-																				defaultValue={user.city}
-																				onChange={event => {
-																					setUser({
-																						...user,
-																						city: event.target.value
-																					});
-																				}}
-																			/>
-																		</div>
-																		<div className="col-md-6 col-sm-12 p-2">
-																			<label
-																				htmlFor="inputZip"
-																				className="form-label">
-																				Codigo postal
-																			</label>
-																			<input
-																				type="text"
-																				className="form-control"
-																				id="inputZip"
-																				defaultValue={user.postal_code}
-																				onChange={event => {
-																					setUser({
-																						...user,
-																						postal_code: event.target.value
-																					});
-																				}}
-																			/>
-																		</div>
-																		<div className="col-md-6 col-sm-12 p-2 ">
-																			<button
-																				type="submit"
-																				className="btn btnb m-2"
-																				onClick={update}>
-																				Guardar datos
-																			</button>
-																			<Link to="/uploadFoto">
-																				<button
-																					type="button"
-																					className="btn btnb h1 m-2">
-																					Subir foto
-																				</button>
-																			</Link>
-																			{"  "}
-																			<button
-																				type="submit"
-																				className="btn btnb  ">
-																				Borrar
-																			</button>
-																		</div>
-																	</div>
-																</form>
-															</div>
-														</div>
-													</div>
-												</Col>
-											</Row>
-										</TabPane>
-										<TabPane tabId="2">
-											<Row>
-												<Col sm="12">
-													<div id="allBikes" className="bikes">
-														{/* <div className="header-profile card-header h4 p-3">
-															Mis bicicletas
-														</div> */}
-														<div className="card-body p-3">
-															<Table className="table ">
-																<Thead>
-																	<Tr>
-																		<Th scope="col-12">#</Th>
-																		<Th scope="col-12">Tipo</Th>
-																		<Th scope="col-12">Marchas</Th>
-																		<Th scope="col-12">Nombre</Th>
-																		<Th scope="col-12">Pulgadas</Th>
-																	</Tr>
-																</Thead>
-																<Tbody>
-																	{bikes.map(bike => {
-																		return (
-																			<tr key={bike.id}>
-																				<th scope="row">{bike.id}</th>
-																				<td>{bike.b_type}</td>
-																				<td>{bike.gears}</td>
-																				<td>{bike.name}</td>
-																				<td>{bike.wheel_inches}</td>
-																			</tr>
-																		);
-																	})}
-																</Tbody>
-															</Table>
-														</div>
-													</div>
-												</Col>
-											</Row>
-										</TabPane>
-										<TabPane tabId="3">
-											<Row>
-												<Col sm="12">
-													<div id="bikeAdd" className="bike">
-														{/* <div className="header-profile card-header h4 p-3">
-															Añadir una bici
-														</div> */}
-														<div className="card-body py-2">
-															{messageBike ? <h5>{messageBike}</h5> : ""}
-															<form className=" row g-3   " id="bikes">
-																<div className="imagenBici  d-flex flex-column col-md-6 col-sm-12 p-2">
-																	<label className="form-label ">Foto de bici</label>
-																	<img
-																		className="fotoProfile w-100 h-100 bg-color-danger"
-																		variant="top"
-																		src=""
-																	/>
-																</div>
-																<div className="addBici col-md-6 col-sm-12 p-2">
-																	<div className="col-md-12 col-sm-12 p-2">
-																		<label htmlFor="b_type" className="form-label">
-																			Tipo de bici
+														<div className="card-body ">
+															{message ? <h5>{message}</h5> : ""}
+															<form className="row g-3 ">
+																<div className="imagenYperfil1 d-flex col-md-12 col-sm-12 mt-4">
+																	<div className="imagenPerfil d-flex flex-column col-md-6 col-sm-12 p-2">
+																		<label className="form-label ">
+																			Foto de Perfil
 																		</label>
-																		<select
-																			type="text"
-																			placeholder="seleccionar tipo de bici"
-																			className="form-control "
-																			defaultValue={bike ? bike.b_type : ""}
-																			onChange={event => {
-																				setBType(event.target.value);
-																			}}>
-																			<option value="sin seleccionar">
-																				escoger una opción{" "}
-																			</option>
-																			<option value="MTB">MTB</option>
-																			<option value="Carretera">Carretera</option>
-																			<option value="paseo">paseo</option>
-																		</select>
+																		<img
+																			className="fotoProfile w-100 h-100"
+																			variant="top"
+																			src=""
+																		/>
 																	</div>
-																	<div className="col-md-12 col-sm-12 p-2">
-																		<label className="form-label">
-																			Nombre de la bici
+																	<div className="perfil1 col-md-6 col-sm-12 p-2">
+																		<div className="col-md-12 col-sm-12 p-2">
+																			<label
+																				htmlFor="inputEmail4 "
+																				className="form-label ">
+																				Email
+																			</label>
+																			<input
+																				type="email"
+																				className="form-control"
+																				id="inputEmail4"
+																				defaultValue={user.email}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						email: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-12 col-sm-12 p-2">
+																			<label
+																				htmlFor="inputPassword4"
+																				className="form-label">
+																				Contraseña
+																			</label>
+																			<input
+																				type="password"
+																				className="form-control"
+																				id="inputPassword4"
+																				defaultValue={user.password}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						password: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-12 col-sm-12 p-2">
+																			<label className="form-label ">
+																				Nombre
+																			</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				placeholder="Nombre"
+																				aria-label="First name"
+																				defaultValue={user.name}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						name: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-12 col-sm-12 p-2">
+																			<label className="form-label">
+																				Apellidos
+																			</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				placeholder="Apellidos"
+																				aria-label="Last name"
+																				defaultValue={user.surname}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						surname: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-12 col-sm-12 p-2">
+																			<label className="form-label">
+																				Usuario
+																			</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				placeholder="Nombre a mostrar"
+																				aria-label="First name"
+																				defaultValue={user.nick_name}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						nick_name: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																		<div className="col-md-12 col-sm-12 p-2">
+																			<label className="form-label">Edad</label>
+																			<input
+																				type="text"
+																				className="form-control"
+																				placeholder="edad"
+																				aria-label="First name"
+																				defaultValue={user.age}
+																				onChange={event => {
+																					setUser({
+																						...user,
+																						age: event.target.value
+																					});
+																				}}
+																			/>
+																		</div>
+																	</div>
+																</div>
+																<div className="restoPerfil  d-flex row p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
+																		<label
+																			htmlFor="inputAddress"
+																			className="form-label">
+																			dirección
+																		</label>
+																		<input
+																			type="text"
+																			className="form-control "
+																			id="inputAddress"
+																			placeholder="Calle , num"
+																			defaultValue={user.address1}
+																			onChange={event => {
+																				setUser({
+																					...user,
+																					address1: event.target.value
+																				});
+																			}}
+																		/>
+																	</div>
+																	<div className="col-md-6 col-sm-12 p-2">
+																		<label
+																			htmlFor="inputAddress"
+																			className="form-label">
+																			detalles de dirección
+																		</label>
+																		<input
+																			type="text"
+																			className="form-control p-2"
+																			id="inputAddress"
+																			placeholder="piso, escalera, puerta"
+																			defaultValue={user.address2}
+																			onChange={event => {
+																				setUser({
+																					...user,
+																					address2: event.target.value
+																				});
+																			}}
+																		/>
+																	</div>
+																	<div className="col-md-6 col-sm-12 p-2">
+																		<label
+																			htmlFor="inputCity"
+																			className="form-label">
+																			Ciudad
 																		</label>
 																		<input
 																			type="text"
 																			className="form-control"
-																			placeholder="Nombre"
-																			aria-label="First name"
-																			defaultValue={bike ? bike.name : ""}
+																			id="inputCity"
+																			defaultValue={user.city}
 																			onChange={event => {
-																				setName(event.target.value);
+																				setUser({
+																					...user,
+																					city: event.target.value
+																				});
 																			}}
 																		/>
 																	</div>
-																	<div className="col-md-12 col-sm-12 p-2">
+																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
-																			htmlFor="wheel_inches"
+																			htmlFor="inputZip"
 																			className="form-label">
-																			diametro de rueda
+																			Codigo postal
 																		</label>
-																		<select
+																		<input
 																			type="text"
-																			placeholder="diametro de rueda"
 																			className="form-control"
-																			defaultValue={bike ? bike.wheel_inches : ""}
+																			id="inputZip"
+																			defaultValue={user.postal_code}
 																			onChange={event => {
-																				setWheelInches(event.target.value);
-																			}}>
-																			<option value="sin seleccionar">
-																				escoger una opción{" "}
-																			</option>
-																			<option value="28+">
-																				28 pulgadas o más
-																			</option>
-																			<option value="20-27">
-																				20 a 27 pulgadas
-																			</option>
-																			<option value="19-">
-																				menos de 20 pulgadas
-																			</option>
-																		</select>
+																				setUser({
+																					...user,
+																					postal_code: event.target.value
+																				});
+																			}}
+																		/>
 																	</div>
-																	<div className="col-md-12 col-sm-12 p-2">
-																		<label htmlFor="gears" className="form-label">
-																			marchas
-																		</label>
-																		<select
-																			type="text"
-																			placeholder="marchas de la bici"
-																			className="form-control"
-																			defaultValue={bike ? bike.gears : ""}
-																			onChange={event => {
-																				setGears(event.target.value);
-																			}}>
-																			<option value="sin seleccionar">
-																				escoger una opción{" "}
-																			</option>
-																			<option value="30+">
-																				30 marchas o mas
-																			</option>
-																			<option value="15+">15 a 29 marchas</option>
-																			<option value="-15">
-																				menos de 15 marchas
-																			</option>
-																		</select>
-																	</div>
-																	<div className="col-md-12 col-sm-12 p-2">
+																	<div className="col-md-6 col-sm-12 p-2 ">
 																		<button
 																			type="submit"
-																			className="btn btnb"
-																			onClick={bikeUpdate}>
-																			Guardar bici
+																			className="btn btnb m-2"
+																			onClick={update}>
+																			Guardar datos
 																		</button>
 																		<Link to="/uploadFoto">
 																			<button
 																				type="button"
-																				className="btn btnb  h1 m-2">
+																				className="btn btnb h1 m-2">
 																				Subir foto
 																			</button>
 																		</Link>
 																		{"  "}
-																		<button type="submit" className="btn btnb ">
+																		<button type="submit" className="btn btnb  ">
 																			Borrar
 																		</button>
 																	</div>
@@ -559,11 +383,172 @@ export const Profile = () => {
 															</form>
 														</div>
 													</div>
-												</Col>
-											</Row>
-										</TabPane>
-									</TabContent>
-								</div>
+												</div>
+											</Col>
+										</Row>
+									</TabPane>
+									<TabPane tabId="2">
+										<Row>
+											<Col sm="12">
+												<div id="allBikes" className="bikes">
+													{/* <div className="header-profile card-header h4 p-3">
+															Mis bicicletas
+														</div> */}
+													<div className="card-body p-3">
+														<Table className="table ">
+															<Thead>
+																<Tr>
+																	<Th scope="col-12">#</Th>
+																	<Th scope="col-12">Tipo</Th>
+																	<Th scope="col-12">Marchas</Th>
+																	<Th scope="col-12">Nombre</Th>
+																	<Th scope="col-12">Pulgadas</Th>
+																</Tr>
+															</Thead>
+															<Tbody>
+																{bikes.map(bike => {
+																	return (
+																		<tr key={bike.id}>
+																			<th scope="row">{bike.id}</th>
+																			<td>{bike.b_type}</td>
+																			<td>{bike.gears}</td>
+																			<td>{bike.name}</td>
+																			<td>{bike.wheel_inches}</td>
+																		</tr>
+																	);
+																})}
+															</Tbody>
+														</Table>
+													</div>
+												</div>
+											</Col>
+										</Row>
+									</TabPane>
+									<TabPane tabId="3">
+										<Row>
+											<Col sm="12">
+												<div id="bikeAdd" className="bike">
+													{/* <div className="header-profile card-header h4 p-3">
+															Añadir una bici
+														</div> */}
+													<div className="card-body py-2">
+														{messageBike ? <h5>{messageBike}</h5> : ""}
+														<form className=" row g-3   " id="bikes">
+															<div className="imagenBici  d-flex flex-column col-md-6 col-sm-12 p-2">
+																<label className="form-label ">Foto de bici</label>
+																<img
+																	className="fotoProfile w-100 h-100 bg-color-danger"
+																	variant="top"
+																	src=""
+																/>
+															</div>
+															<div className="addBici col-md-6 col-sm-12 p-2">
+																<div className="col-md-12 col-sm-12 p-2">
+																	<label htmlFor="b_type" className="form-label">
+																		Tipo de bici
+																	</label>
+																	<select
+																		type="text"
+																		placeholder="seleccionar tipo de bici"
+																		className="form-control "
+																		defaultValue={bike ? bike.b_type : ""}
+																		onChange={event => {
+																			setBType(event.target.value);
+																		}}>
+																		<option value="sin seleccionar">
+																			escoger una opción{" "}
+																		</option>
+																		<option value="MTB">MTB</option>
+																		<option value="Carretera">Carretera</option>
+																		<option value="paseo">paseo</option>
+																	</select>
+																</div>
+																<div className="col-md-12 col-sm-12 p-2">
+																	<label className="form-label">
+																		Nombre de la bici
+																	</label>
+																	<input
+																		type="text"
+																		className="form-control"
+																		placeholder="Nombre"
+																		aria-label="First name"
+																		defaultValue={bike ? bike.name : ""}
+																		onChange={event => {
+																			setName(event.target.value);
+																		}}
+																	/>
+																</div>
+																<div className="col-md-12 col-sm-12 p-2">
+																	<label
+																		htmlFor="wheel_inches"
+																		className="form-label">
+																		diametro de rueda
+																	</label>
+																	<select
+																		type="text"
+																		placeholder="diametro de rueda"
+																		className="form-control"
+																		defaultValue={bike ? bike.wheel_inches : ""}
+																		onChange={event => {
+																			setWheelInches(event.target.value);
+																		}}>
+																		<option value="sin seleccionar">
+																			escoger una opción{" "}
+																		</option>
+																		<option value="28+">28 pulgadas o más</option>
+																		<option value="20-27">20 a 27 pulgadas</option>
+																		<option value="19-">
+																			menos de 20 pulgadas
+																		</option>
+																	</select>
+																</div>
+																<div className="col-md-12 col-sm-12 p-2">
+																	<label htmlFor="gears" className="form-label">
+																		marchas
+																	</label>
+																	<select
+																		type="text"
+																		placeholder="marchas de la bici"
+																		className="form-control"
+																		defaultValue={bike ? bike.gears : ""}
+																		onChange={event => {
+																			setGears(event.target.value);
+																		}}>
+																		<option value="sin seleccionar">
+																			escoger una opción{" "}
+																		</option>
+																		<option value="30+">30 marchas o mas</option>
+																		<option value="15+">15 a 29 marchas</option>
+																		<option value="-15">menos de 15 marchas</option>
+																	</select>
+																</div>
+																<div className="col-md-12 col-sm-12 p-2">
+																	<button
+																		type="submit"
+																		className="btn btnb"
+																		onClick={bikeUpdate}>
+																		Guardar bici
+																	</button>
+																	<Link to="/uploadFoto">
+																		<button
+																			type="button"
+																			className="btn btnb  h1 m-2">
+																			Subir foto
+																		</button>
+																	</Link>
+																	{"  "}
+																	<button type="submit" className="btn btnb ">
+																		Borrar
+																	</button>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</Col>
+										</Row>
+									</TabPane>
+								</TabContent>
 							</div>
 						</div>
 					</div>
