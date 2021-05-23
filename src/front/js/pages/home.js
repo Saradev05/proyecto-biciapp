@@ -53,8 +53,8 @@ export const Home = () => {
 				/>
 			</div>
 
-			<p className="bienvenido-home text-justify">
-				<h1 className="text-center">Bienvenido a BiciApp</h1>
+			<p className="bienvenido-home texto-negro text-justify">
+				<h1 className=" text-center">Bienvenido a BiciApp</h1>
 				<span>Estamos encantados de tenerte por aquí y esperamos conocerte en nuestra próxima actividad.</span>
 				<p>
 					Aquí debajo encontrarás una muestra de lo que acostumbramos a hacer. No dejes de visitar la web ya
@@ -62,7 +62,7 @@ export const Home = () => {
 				</p>
 			</p>
 			<center>
-				<Link to={"/sobre-nosotros"}>
+				<Link to={"/sobreNosotros"}>
 					<button className="button-card-body rounded-pill p-3 text-center border-0 shadow ">
 						<h5 className="text-center ">Quiero saber más</h5>
 					</button>
@@ -72,7 +72,7 @@ export const Home = () => {
 			<div className="actividades container py-5 ">
 				<div className="row text-center ">
 					<div className="col mx-auto mb-3">
-						<h2 className="text-black mb-5">PROXIMAS ACTIVIDADES</h2>
+						<h2 className="texto-negro mb-5">PROXIMAS ACTIVIDADES</h2>
 					</div>
 				</div>
 				<div className="card-deck flex-box ">
@@ -83,7 +83,7 @@ export const Home = () => {
 							<center>
 								<div>
 									<Link to={"/events"}>
-										<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-3">
+										<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-2">
 											ver detalles
 										</button>
 									</Link>
@@ -97,10 +97,21 @@ export const Home = () => {
 							<h5 className="card-title text-center">En Montaña</h5>
 							<center>
 								<Link to={"/montain"}>
-									<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-3">
+									<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-2">
 										ver detalles
 									</button>
 								</Link>
+								<div className="description">
+									<h5>20,00€</h5>
+								</div>
+								<button
+									type="button "
+									id="checkout-button"
+									className="btn btn-outline-primary btnb"
+									role="link"
+									onClick={handleClick}>
+									Inscripción
+								</button>
 							</center>
 						</div>
 					</div>
@@ -110,7 +121,7 @@ export const Home = () => {
 							<h5 className="card-title text-center">En Costa</h5>
 							<center>
 								<Link to={"/beach"}>
-									<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-3">
+									<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-2">
 										ver detalles
 									</button>
 								</Link>

@@ -286,7 +286,7 @@ export const Profile = () => {
 																		<label
 																			htmlFor="inputAddress"
 																			className="form-label">
-																			dirección
+																			Dirección
 																		</label>
 																		<input
 																			type="text"
@@ -306,7 +306,7 @@ export const Profile = () => {
 																		<label
 																			htmlFor="inputAddress"
 																			className="form-label">
-																			detalles de dirección
+																			Detalles de dirección
 																		</label>
 																		<input
 																			type="text"
@@ -399,6 +399,7 @@ export const Profile = () => {
 															<Thead>
 																<Tr>
 																	<Th scope="col-12">#</Th>
+																	<Th scope="col-12">Foto</Th>
 																	<Th scope="col-12">Tipo</Th>
 																	<Th scope="col-12">Marchas</Th>
 																	<Th scope="col-12">Nombre</Th>
@@ -410,6 +411,14 @@ export const Profile = () => {
 																	return (
 																		<tr key={bike.id}>
 																			<th scope="row">{bike.id}</th>
+																			<td>
+																				{" "}
+																				<img
+																					className="fotoProfile w-100 h-100 bg-color-danger"
+																					variant="top"
+																					src=""
+																				/>{" "}
+																			</td>
 																			<td>{bike.b_type}</td>
 																			<td>{bike.gears}</td>
 																			<td>{bike.name}</td>

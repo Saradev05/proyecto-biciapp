@@ -191,3 +191,62 @@ display: inline;
 padding: 2.1rem;
 
 }
+.card-img-aboutUs{
+    width: 400px;
+    height: 300px;
+}
+
+.route-title{
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    font-size:xx-large ;
+    font-weight: bolder;
+    color :#004AAD;
+    border-bottom: 4px solid rgb(157, 181, 255) ;
+
+}
+
+.route-descripcion{
+    margin-top: 3rem;
+    text-align: justify;
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+ul{ list-style: none;padding: 0; margin: 0;}
+
+.card-body-route{
+
+border-radius:10px;
+
+}
+
+
+.listado-ruta{
+      border-bottom: 1px solid rgb(157, 181, 255) ;
+      margin-bottom: 2rem;
+      line-height: 1.25rem;
+
+
+}
+.listado-ruta b{
+    margin-bottom: 1rem;
+}
+.detalles-ruta{
+    margin-bottom: 2rem;
+    font-weight: bold;
+      background-color: #98ec95;
+padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 1rem;
+    justify-content:center ;
+    align-items: center
+
+}
+
+
+
+
+
+
+
+

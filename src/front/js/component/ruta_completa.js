@@ -4,22 +4,46 @@ import { func } from "prop-types";
 
 export const Ruta_completa = () => {
 	return (
-		<div className="">
-			<h1 className="card-title text-center p-3">Senda costera en bici de Llanes a Borizu, Asturias</h1>
+		<>
+			<div className="d-flex col-lg-12 ruta-card mb-5">
+				<div className="col-md-8 ">
+					<img
+						src="https://i.pinimg.com/originals/22/ba/5a/22ba5a6124273c42823f3572878b02ea.jpg "
+						className=" w-100"
+						alt="..."
+					/>
+				</div>
+				<div className="col-lg-4">
+					<div className="card-body-route ">
+						<h3 className="card-header-route">
+							<div className="detalles-ruta">DETALLES DE TU RUTA</div>
+						</h3>
 
-			<img
-				className="card-img-top p-5"
-				src="https://i.pinimg.com/originals/22/ba/5a/22ba5a6124273c42823f3572878b02ea.jpg"
-			/>
-			<div className="card-body tex justify-center ">
-				<h5 className="routesText name pb-4">Nombre</h5>
-				Senda costera de Llanes a Borizu
-				<h5 className="routesText  route p-4">Ruta</h5>
-				La senda costera recorre la costa oriental de Asturias. Parte de Bustio, pueblo limítrofe con Cantabria,
-				y llega hasta Guadamía. Unos 65km de paisajes, playas y prados, que se pueden ir descubriendo por etapas
-				<h5 className="routesText dificulty p-4">Dificultad</h5>
-				Distancia 12km ida y vuelta. Dificultad baja. Apta para niños.
-				<h5 className="routesText descripcion p-4">Descripción</h5>
+						<ul>
+							<li className="listado-ruta">
+								<div className="detalles-ruta-listado">Nombre </div>
+								<br />
+								Senda costera de Llanes a Borizu
+							</li>
+							<li className="listado-ruta">
+								<div className="detalles-ruta-listado">Ruta</div>
+								<br />
+								La senda costera recorre la costa oriental de Asturias. Parte de Bustio, pueblo
+								limítrofe con Cantabria, y llega hasta Guadamía. Unos 65km de paisajes, playas y prados,
+								que se pueden ir descubriendo por etapas
+							</li>
+							<li className="listado-ruta">
+								<div className="detalles-ruta-listado">Dificultad</div>
+								<br />
+								Distancia 12km ida y vuelta. Dificultad baja. Apta para niños.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<h4 className="route-title">Descripción</h4>
+			<p className="route-descripcion">
 				Llanes se encuentra enclavada en la franja costera entre la sierra del Cuera y el mar Cantábrico, área
 				incluida en el paisaje protegido de la Costa Oriental, rica en paisaje y en historia, con abundantes
 				muestras de actuaciones del hombre desde el paleolítico. Por aquí pasaba la vía romana entre Oyarzum y
@@ -38,7 +62,7 @@ export const Ruta_completa = () => {
 				los islotes, que aquí llaman castros: castro de Poo, Pelau, San Martín, Gaiteru, Amielles. Se alcanza La
 				Boriza a 6 km. Sólo queda ir bajando hacia Celorio, a los 6,8 km, aparece la hermosa playa de Las
 				Cámaras, final de recorrido.
-			</div>
-		</div>
+			</p>
+		</>
 	);
 };

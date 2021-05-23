@@ -4,6 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
 import { UploadFoto } from "./pages/uploadFoto";
+import { SobreNosotros } from "./pages/sobreNosotros";
 
 import { SignUp } from "./pages/signup";
 import { LogIn } from "./pages/login";
@@ -42,6 +43,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/uploadFoto">
 							<UploadFoto />
+						</Route>
+						<Route exact path="/sobreNosotros">
+							<SobreNosotros />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
