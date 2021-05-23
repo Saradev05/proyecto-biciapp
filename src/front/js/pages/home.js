@@ -62,68 +62,71 @@ export const Home = () => {
 				</p>
 			</p>
 			<center>
-				<Link to={"/events"}>
-					<div className="card-body rounded-pill p-3 text-center border-0 shadow ">
+				<Link to={"/sobre-nosotros"}>
+					<button className="button-card-body rounded-pill p-3 text-center border-0 shadow ">
 						<h5 className="text-center ">Quiero saber más</h5>
-					</div>
+					</button>
 				</Link>
 			</center>
 
-			<div className="actividades container py-5 my-5" />
-			<div className="row text-center ">
-				<div className="col mx-auto mb-3">
-					<h2 className="text-black mb-5">PROXIMAS ACTIVIDADES</h2>
+			<div className="actividades container py-5 ">
+				<div className="row text-center ">
+					<div className="col mx-auto mb-3">
+						<h2 className="text-black mb-5">PROXIMAS ACTIVIDADES</h2>
+					</div>
 				</div>
-			</div>
-			<div className="card-deck">
-				<div className="card">
-					<img className="1card-img-top" src={FamilyIMG} alt="Card image cap" />
-					<div className="card-body">
-						<h5 className="card-title text-center">Eventos</h5>
-						<center>
-							<div>
-								<Link to={"/events"}>
-									<button className="btn btn-outline-primary font-weight-bold h1 m-2 p-3">
+				<div className="card-deck flex-box ">
+					<div className="card evento">
+						<img className="1card-img-top" src={FamilyIMG} alt="Card image cap" />
+						<div className="card-body">
+							<h5 className="card-title text-center">Eventos</h5>
+							<center>
+								<div>
+									<Link to={"/events"}>
+										<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-3">
+											ver detalles
+										</button>
+									</Link>
+								</div>
+							</center>
+						</div>
+					</div>
+					<div className="card montaña">
+						<img className="1card-img-top" src={MontanaIMG} alt="Card image cap" />
+						<div className=" card-body">
+							<h5 className="card-title text-center">En Montaña</h5>
+							<center>
+								<Link to={"/montain"}>
+									<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-3">
+										ver detalles
+									</button>
+								</Link>
+							</center>
+						</div>
+					</div>
+					<div className="card costa">
+						<img className="1card-img-top" src={CostaIMG} alt="Card image cap" />
+						<div className="card-body">
+							<h5 className="card-title text-center">En Costa</h5>
+							<center>
+								<Link to={"/beach"}>
+									<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-3">
 										ver detalles
 									</button>
 								</Link>
 								<div className="description">
 									<h5>20,00€</h5>
 								</div>
-
-								<button type="button" id="checkout-button" role="link" onClick={handleClick}>
+								<button
+									type="button "
+									id="checkout-button"
+									className="btn btn-outline-primary btnb"
+									role="link"
+									onClick={handleClick}>
 									Inscripción
 								</button>
-							</div>
-						</center>
-					</div>
-				</div>
-
-				<div className="card">
-					<img className="1card-img-top" src={MontanaIMG} alt="Card image cap" />
-					<div className=" card-body">
-						<h5 className="card-title text-center">En Montaña</h5>
-						<center>
-							<Link to={"/montain"}>
-								<button className="btn btn-outline-primary font-weight-bold h1 m-2 p-3">
-									ver detalles
-								</button>
-							</Link>
-						</center>
-					</div>
-				</div>
-
-				<div className="card">
-					<img className="1card-img-top" src={CostaIMG} alt="Card image cap" />
-					<div className="card-body">
-						<h5 className="card-title text-center">En Costa</h5>
-						<center>
-							<Link to={"/beach"}>
-								<button className="btn btn-outline-primary font-weight-bold h1 m-2 p-3">
-									ver detalles
-								</button>
-							</Link>
-						</center>
+							</center>
+						</div>
 					</div>
 				</div>
 			</div>

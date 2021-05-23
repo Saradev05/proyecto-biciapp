@@ -150,7 +150,7 @@ export const Profile = () => {
 								<TabContent activeTab={activeTab} className="body-profile">
 									<TabPane tabId="1">
 										<Row>
-											<Col sm="10">
+											<Col md="12" sm="12">
 												<div className="card-body p-1">
 													<div id="profile" className="perfil ">
 														{/* <div className="header-profile card-header h4">
@@ -159,7 +159,7 @@ export const Profile = () => {
 														<div className="card-body ">
 															{message ? <h5>{message}</h5> : ""}
 															<form className="row g-3 ">
-																<div className="imagenYperfil1 d-flex col-md-12 col-sm-12 mt-4">
+																<div className="imagenYperfil1 d-flex col-md-12 col-sm-12 mt-4 ">
 																	<div className="imagenPerfil d-flex flex-column col-md-6 col-sm-12 p-2">
 																		<label className="form-label ">
 																			Foto de Perfil
@@ -281,7 +281,7 @@ export const Profile = () => {
 																		</div>
 																	</div>
 																</div>
-																<div className="restoPerfil  d-flex row p-2">
+																<div className="restoPerfil  d-flex row ">
 																	<div className="col-md-6 col-sm-12 p-2">
 																		<label
 																			htmlFor="inputAddress"
