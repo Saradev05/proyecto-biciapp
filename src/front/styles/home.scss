@@ -1,3 +1,5 @@
+// general
+
 .jumbotron{
     padding: 0;
     margin: 0;
@@ -5,16 +7,11 @@
     height: 100 px;
 }
 
+// navbar
 .navbar{  
-min-height: 110px;
+min-height: 105px;
 font-weight: larger ;
    }
-
-   .nav-tabs{
-       font-weight: bold;
-      font-size: 1.3rem;
-   }   
-
 .img-logo{
  
     height: 100px;
@@ -24,73 +21,7 @@ font-weight: larger ;
     font-weight: bolder;
 }
 
-.imgCyclists{
-   margin-top: -8rem;
-    object-fit: cover;
-    object-position: center top;
-    width: 100%;
-    height: auto;
-}
-
-.home_body {
-    // width:100%;
-    background-repeat: repeat;
-    background-size: cover;
-   
-}
-.bienvenido-home{
-    margin-left: 300px;
-    margin-right:300px ;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-family: Roboto,-apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: normal;
-    font-size: 1.5rem;
-   color :#000000;
-  
-
-}
-
-.login_body {
-    background-image:url("https://cdn.pixabay.com/photo/2018/11/27/18/47/bike-3842079_1280.jpg");
-    width:100%;
-       margin-top: -7rem;
-
-    height:750px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.profile_body {
-    background-image:url("https://cdn.pixabay.com/photo/2017/07/30/17/43/bicycle-2554980_1280.jpg");
-    width:100%;
-       margin-top: -7rem;
-
-    height:750px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.forgot_body {
-    background-image:url("https://cdn.pixabay.com/photo/2018/02/03/16/17/wheel-3127945_1280.jpg");
-    width:100%;
-       margin-top: -7rem;
-
-    height:750px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.newPassword {
-    background-image: url("https://cdn.pixabay.com/photo/2016/11/15/23/44/rider-1827833_960_720.jpg");
-     width:100%;
-        margin-top: -7rem;
-
-    height:750px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-background-image{
-
-}
+// footer
 
 .madeBy{
     align-items: center;
@@ -101,6 +32,110 @@ background-image{
 footer .footerB {
     align-items: center;
 }
+
+// Home
+
+.imgCyclists{
+   margin-top: -8rem;
+    object-fit: cover;
+    object-position: center top;
+    width: 100%;
+    height: auto;
+}
+
+.home_body {
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.bienvenido-home{
+    margin-left: 300px;
+    margin-right:300px ;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: Roboto,-apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+.bienvenidoAboutUs{
+    margin-left: 50px;
+    margin-right:50px ;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: Roboto,-apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+// Login
+.login_body {
+    background-image:url("https://cdn.pixabay.com/photo/2018/11/27/18/47/bike-3842079_1280.jpg");
+    width:100%;
+       margin-top: -7rem;
+
+    height:750px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// Profile
+
+   .nav-tabs{
+       font-weight: bold;
+      font-size: 1.3rem;
+   }   
+
+.profile_body {
+    background-image:url("https://cdn.pixabay.com/photo/2017/07/30/17/43/bicycle-2554980_1280.jpg");
+    width:100%;
+       margin-top: -7rem;
+
+    height:750px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-profile{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.5 rem;
+    font-weight: 500;
+    line-height: 1.1;
+ background-color: #edeef7;}
+
+.body-profile{
+
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.5 rem;
+    font-weight: 500;
+    line-height: 1.1;
+    // background-color: #ccfbff;
+
+}
+
+// Forgot
+
+.forgot_body {
+    background-image:url("https://cdn.pixabay.com/photo/2018/02/03/16/17/wheel-3127945_1280.jpg");
+    width:100%;
+       margin-top: -7rem;
+
+    height:750px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// newPassword
+.newPassword {
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/15/23/44/rider-1827833_960_720.jpg");
+     width:100%;
+        margin-top: -7rem;
+
+    height:750px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// Forms general menos profile
 
  .css-header{
     display: inline;
@@ -120,22 +155,6 @@ footer .footerB {
     font-weight: 500;
     line-height: 1.1;
     // background-color: #ccfbff;
-}
-.header-profile{
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.5 rem;
-    font-weight: 500;
-    line-height: 1.1;
- background-color: #edeef7;}
-
-.body-profile{
-
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.5 rem;
-    font-weight: 500;
-    line-height: 1.1;
-    // background-color: #ccfbff;
-
 }
 .text-body{
      display: inline;
@@ -163,6 +182,7 @@ display: inline;
   margin-right: auto;
  }
 
+//  Activities
 .img-activity{
      width: 600px;
      height: 600px;
@@ -191,10 +211,25 @@ display: inline;
 padding: 2.1rem;
 
 }
+// aboutUs
+
 .card-img-aboutUs{
-    width: 400px;
-    height: 300px;
+    width: 100%;
+    height: auto;
+    
 }
+.aboutUsContainer{
+    border-color: white;
+    background-color: white;
+    box-shadow: 0px 10px 10px #b8b5ff;
+    // box-shadow:
+    //    inset 0 -3em 3em rgba(0,0,0,0.1),
+    //          0 0  0 2px rgb(255,255,255),
+    //          0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+
+// Ruta completa
 
 .route-title{
     margin-top: 5rem;
@@ -234,8 +269,8 @@ border-radius:10px;
 .detalles-ruta{
     margin-bottom: 2rem;
     font-weight: bold;
-      background-color: #98ec95;
-padding: 1rem 0;
+    background-color: #98ec95;
+    padding: 1rem 0;
     text-align: center;
     margin-bottom: 1rem;
     justify-content:center ;

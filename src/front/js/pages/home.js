@@ -62,7 +62,7 @@ export const Home = () => {
 				</p>
 			</p>
 			<center>
-				<Link to={"/sobreNosotros"}>
+				<Link to={"/aboutUs"}>
 					<button className="button-card-body rounded-pill p-3 text-center border-0 shadow ">
 						<h5 className="text-center ">Quiero saber más</h5>
 					</button>
