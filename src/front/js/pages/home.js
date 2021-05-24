@@ -78,9 +78,9 @@ export const Home = () => {
 					</div>
 				</div>
 				<div className="card-deck flex-box ">
-					<div className="card evento">
+					<div className="card-activities card evento">
 						<img className="1card-img-top" src={FamilyIMG} alt="Card image cap" />
-						<div className="card-body">
+						<div className=" card-body">
 							<h5 className="card-title text-black text-center">Eventos</h5>
 							<center>
 								<div>
@@ -93,7 +93,7 @@ export const Home = () => {
 							</center>
 						</div>
 					</div>
-					<div className="card montaña">
+					<div className="card-activities card montaña">
 						<img className="1card-img-top" src={MontanaIMG} alt="Card image cap" />
 						<div className=" card-body">
 							<h5 className="card-title text-center">En Montaña</h5>
@@ -117,7 +117,7 @@ export const Home = () => {
 							</center>
 						</div>
 					</div>
-					<div className="card costa">
+					<div className="card-activities card costa">
 						<img className="1card-img-top" src={CostaIMG} alt="Card image cap" />
 						<div className="card-body">
 							<h5 className="card-title text-center">En Costa</h5>

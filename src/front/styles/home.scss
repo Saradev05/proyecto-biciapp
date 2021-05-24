@@ -198,6 +198,9 @@ display: inline;
 .actividades{
     width:90%;
 }
+.card-activities{
+    box-shadow: 0px 10px 10px #b8b5ff;
+}
 .button-card-body{
     background-color: rgb(157, 181, 255);
 }
@@ -231,10 +234,6 @@ padding: 2.1rem;
     border-color: white;
     background-color: white;
     box-shadow: 0px 10px 10px #b8b5ff;
-    // box-shadow:
-    //    inset 0 -3em 3em rgba(0,0,0,0.1),
-    //          0 0  0 2px rgb(255,255,255),
-    //          0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 
 
@@ -286,6 +285,8 @@ border-radius:10px;
     align-items: center
 
 }
+
+// Ruta Mountain
 .img-mountain{
     width: 102%;
 }
