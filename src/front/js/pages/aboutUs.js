@@ -19,14 +19,14 @@ export const AboutUs = () => {
 				</div>
 			</div>
 			<div className="card-deck flex-box  py-5 ">
-				<div className="card fotoAboutUs col-mb-6 col-sm-12 aleida">
+				<div className="card-about-us card fotoAboutUs col-mb-6 col-sm-12 aleida">
 					<img className="card-img-aboutUs mr-5" src={Aleida} alt="Card imgage cap" />
 				</div>
-				<div className="card fotoAboutUs col-mb-6 col-sm-12 sara">
+				<div className="card-about-us card fotoAboutUs col-mb-6 col-sm-12 sara">
 					<img className="card-img-aboutUs" src={Sara} alt="Card imgage cap" />
 				</div>
 			</div>
-			<div className="card col-mb-12 col-sm-12 card-body">
+			<div className="card-about-us card col-mb-12 col-sm-12 card-body">
 				<p className="bienvenidoAboutUs texto-negro text-justify">
 					<p>
 						Esta aplicación nace de nuestro deseo de compartir nuestra afición de salir en bici en grupo a
