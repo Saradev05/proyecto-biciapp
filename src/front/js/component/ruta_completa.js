@@ -16,10 +16,10 @@ export const Ruta_completa = () => {
 				<div className="col-lg-4">
 					<div className="card-body-route ">
 						<h3 className="card-header-route">
-							<div className="detalles-ruta">DETALLES DE TU RUTA</div>
+							<div className="detalles-ruta">DETALLES DE LA RUTA</div>
 						</h3>
 
-						<ul>
+						<ul className="ulCss">
 							<li className="listado-ruta">
 								<div className="detalles-ruta-listado">Nombre </div>
 								<br />
@@ -28,9 +28,9 @@ export const Ruta_completa = () => {
 							<li className="listado-ruta">
 								<div className="detalles-ruta-listado">Ruta</div>
 								<br />
-								La senda costera recorre la costa oriental de Asturias. Parte de Bustio, pueblo
-								limítrofe con Cantabria, y llega hasta Guadamía. Unos 65km de paisajes, playas y prados,
-								que se pueden ir descubriendo por etapas
+								Punto de encuentro: Fecha: La senda costera recorre la costa oriental de Asturias. Parte
+								de Bustio, pueblo limítrofe con Cantabria, y llega hasta Guadamía. Unos 65km de
+								paisajes, playas y prados, que se pueden ir descubriendo por etapas
 							</li>
 							<li className="listado-ruta">
 								<div className="detalles-ruta-listado">Dificultad</div>

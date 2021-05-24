@@ -20,7 +20,7 @@ import { Administ } from "./pages/administ";
 import { Forgot } from "./pages/forgot";
 import { NewPassword } from "./pages/newPassword";
 import { Events } from "./pages/events";
-import { Montain } from "./pages/montain";
+import { Mountain } from "./pages/mountain";
 import { Beach } from "./pages/beach";
 import { Activity } from "./pages/activity";
 //create your first component
@@ -74,8 +74,8 @@ const Layout = () => {
 						<Route exact path="/events">
 							<Events />
 						</Route>
-						<Route exact path="/montain">
-							<Montain />
+						<Route exact path="/mountain">
+							<Mountain />
 						</Route>
 						<Route exact path="/beach">
 							<Beach />

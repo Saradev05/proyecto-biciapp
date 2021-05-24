@@ -96,7 +96,7 @@ export const Home = () => {
 						<div className=" card-body">
 							<h5 className="card-title text-center">En Montaña</h5>
 							<center>
-								<Link to={"/montain"}>
+								<Link to={"/mountain"}>
 									<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-2">
 										ver detalles
 									</button>
