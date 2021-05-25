@@ -32,10 +32,10 @@ def create_checkout_session():
             line_items=[
                 {
                     'price_data': {
-                        'currency': 'usd',
+                        'currency': 'eur',
                         'unit_amount': 2000,
                         'product_data': {
-                            'name': 'Stubborn Attachments',
+                            'name': 'Ruta',
                             'images': ['https://i.imgur.com/EHyR2nP.png'],
                         },
                     },
@@ -193,8 +193,8 @@ def reset_password():
 
 
 
-@api.route('/uploadFoto', methods=['POST'])
-def upload_fotos():
+# @api.route('/uploadFoto', methods=['POST'])
+# def upload_fotos():
 #     files = request.files
 #     current_user_id = get_jwt_identity()
 #     user = User.get(current_user_id)
@@ -208,12 +208,10 @@ def upload_fotos():
 #             raise APIException("ha fallado la subida de la imagen")
 
 #         # now = datetime.datetime.now()
-
-
 #     return jsonify({}), 200
 
-# @api.route("/upload-images", methods=["POST"])
-# def upload_images():
+@api.route('/uploadFoto', methods=["POST"])
+def upload_fotos():
     url_image= ''
     files = request.files
     print(files)

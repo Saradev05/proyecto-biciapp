@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { Component, useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/demo.scss";
 import MasaIMG from "../../img/masacrit.jpg";
+import { func } from "prop-types";
 
 export const Activity = () => {
 	const { actions } = useContext(Context);
@@ -49,10 +50,14 @@ export const Activity = () => {
 		});
 	}
 	return (
-		<div>
-			<img className="img-activity py-4 rounded border border-warning" src={MasaIMG} />
-			<div className="row">
-				<div className="card card-vista">{activity ? activitymap : ""}</div>
+		<div className="container ">
+			<div className="d-flex col-lg-12 ruta-card mb-5">
+				<div className="col-md-8 ">
+					<img className="img-activity py-4 rounded border border-warning" src={MasaIMG} />
+				</div>
+				<div className="col-lg-4">
+					<div className="card card-vista">{activity ? activitymap : ""}</div>
+				</div>
 			</div>
 		</div>
 	);
