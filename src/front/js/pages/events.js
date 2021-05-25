@@ -45,13 +45,14 @@ export const Events = () => {
 
 				<h4 className="route-title">Descripción</h4>
 				<p className="text-black route-descripcion-events">
-					Es un movimiento social que tiene lugar todos los meses en numerosas ciudades del mundo. Es una
-					salida en bici para reclamar los derechos del ciclista y promover un modelo de movilidad sostenible
-					en zonas urbanas. No es una manifestación ni una organización, tampoco es una carrera. Es una manera
-					de establecer un espacio público donde la gente pueda juntarse, reunirse y conocerse. No tiene
-					dirigentes, no hay una organización que autorice los paseos. Un conjunto de ciclistas se reúnen en
-					el mismo lugar, a la misma hora y deciden pedalear juntos por un rato, llevando consigo sus ideales
-					y sus formas de vivir, compartiéndolas con los demás.
+					La massa crítica es un encuentro mensual de ciclistas. Es un movimiento social que tiene lugar todos
+					los meses en numerosas ciudades del mundo. Una salida en bici para reclamar los derechos del
+					ciclista y promover un modelo de movilidad sostenible en zonas urbanas. No es una manifestación ni
+					una organización, tampoco es una carrera. Es una manera de establecer un espacio público donde la
+					gente pueda juntarse, reunirse y conocerse. No tiene dirigentes, no hay una organización que
+					autorice los paseos. Un conjunto de ciclistas se reúnen en el mismo lugar, a la misma hora y deciden
+					pedalear juntos por un rato, llevando consigo sus ideales y sus formas de vivir, compartiéndolas con
+					los demás.
 				</p>
 			</div>
 		</>

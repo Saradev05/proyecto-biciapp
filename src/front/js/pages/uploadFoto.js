@@ -55,12 +55,12 @@ export const UploadFoto = () => {
 	// ));
 
 	return (
-		<div id="backgrd" className=" forgot_body text-center ">
+		<div id="backgrd" className="  text-center  ">
 			<div className=" container-fluid row " width="100%">
-				<div className=" container py-4 ">
+				<div className=" container py-5  ">
 					<div className="row justify-content-center">
 						<div className="col-md-8 pt-2">
-							<div className="card">
+							<div className="card ">
 								<div className="css-header card-header h4">Subir fotos</div>
 								<div className="css-body card-body">
 									{error ? <h5>{error}</h5> : ""}
@@ -104,7 +104,7 @@ export const UploadFoto = () => {
 								</div>
 							</div>
 
-							<div className="container py-5 my-5">
+							<div className="container ">
 								<div className="row text-center ">
 									<div className="col mx-auto mb-3">
 										<h2 className="text-black mb-5">Fotos cargadas</h2>
