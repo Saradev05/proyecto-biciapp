@@ -36,7 +36,7 @@ def create_checkout_session():
                         'unit_amount': 2000,
                         'product_data': {
                             'name': 'Ruta',
-                            'images': ['https://i.imgur.com/EHyR2nP.png'],
+                            'images': ['https://i.imgur.com/w8rVx7V.jpeg'],
                         },
                     },
                     'quantity': 1,
