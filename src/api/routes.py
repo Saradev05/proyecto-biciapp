@@ -32,11 +32,11 @@ def create_checkout_session():
             line_items=[
                 {
                     'price_data': {
-                        'currency': 'usd',
+                        'currency': 'eur',
                         'unit_amount': 2000,
                         'product_data': {
-                            'name': 'Stubborn Attachments',
-                            'images': ['https://i.imgur.com/EHyR2nP.png'],
+                            'name': 'Ruta Senda costera de Llanes a Borizu',
+                            'images': ['https://i.imgur.com/w8rVx7V.jpeg'],
                         },
                     },
                     'quantity': 1,

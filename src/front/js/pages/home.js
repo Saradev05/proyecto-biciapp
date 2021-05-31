@@ -54,7 +54,7 @@ export const Home = () => {
 			</div>
 
 			<p className="bienvenido-home  texto-negro text-justify">
-				<h1 className=" text-center py-5">Bienvenido a BiciApp</h1>
+				<h1 className=" text-center py-5">Bienvenido a Biciapp</h1>
 				<span className="bienvenido-text  ">
 					Estamos encantados de tenerte por aquí y esperamos conocerte en nuestra próxima actividad.
 				</span>
@@ -86,7 +86,7 @@ export const Home = () => {
 								<div>
 									<Link to={"/events"}>
 										<button className=" btn btnb btn-outline-primary font-weight-bold h1 m-2 p-2">
-											ver detalles
+											Ver detalles
 										</button>
 									</Link>
 								</div>
@@ -100,7 +100,7 @@ export const Home = () => {
 							<center>
 								<Link to={"/mountain"}>
 									<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-2">
-										ver detalles
+										Ver detalles
 									</button>
 								</Link>
 								<div className="description">
@@ -124,7 +124,7 @@ export const Home = () => {
 							<center>
 								<Link to={"/beach"}>
 									<button className="btn btnb btn-outline-primary font-weight-bold h1 m-2 p-2">
-										ver detalles
+										Ver detalles
 									</button>
 								</Link>
 								<div className="description">

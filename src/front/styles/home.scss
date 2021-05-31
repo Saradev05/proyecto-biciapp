@@ -188,8 +188,10 @@ display: inline;
 
 //  Activities
 .img-activity{
-     width: 600px;
-     height: 600px;
+    
+    
+    max-width: 100%;
+    height: auto;
      display:block;
   margin-left: auto;
   margin-right: auto;
@@ -305,7 +307,15 @@ margin-top: 3rem;
 }
 
 
+.route-title-actividad{
+     margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size:medium ;
+    font-weight: bolder;
+    color :#004AAD;
+    border-bottom: 4px solid rgb(157, 181, 255) ;
 
+}
 
 
 
