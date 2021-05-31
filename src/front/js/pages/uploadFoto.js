@@ -24,7 +24,9 @@ export const UploadFoto = () => {
 		const formData = new FormData();
 		formData;
 		// loop con nueva foto
-		for (var i = 0; i < files.lenght; i++) {
+		console.log(files);
+		for (var i = 0; i < files.length; i++) {
+			console.log(files);
 			formData.append("document" + i, files[i]);
 		}
 		fetch(process.env.BACKEND_URL + "/api/uploadFoto", {
@@ -36,15 +38,11 @@ export const UploadFoto = () => {
 					return setFiles(response.json());
 				}
 				if (response.ok) {
-					history.push("/home");
+					history.push("/profile");
 					return;
 				}
 			})
-			.then(responseJson => {
-				if (!response.ok) {
-					return console.log("error");
-				}
-			});
+			.then(responseJson => {});
 	}
 	// useEffect(() => {
 	// 	actions.setFormValue("fotos", files);

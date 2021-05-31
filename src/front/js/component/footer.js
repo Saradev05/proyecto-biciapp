@@ -8,14 +8,13 @@ export const Footer = () => {
 			<h5 className="">
 				Made by
 				<a className="p-2" href="mailto:info@aleidagonzalez.com">
-					Aleida
+					Aleida{" "}
 				</a>
 				<i className="mt-3 fa fa-bicycle text-success fa-2x  " />
 				<a className="p-2 " href="mailto:devyanand@gmail.com">
 					Sara{" "}
-				</a>
+				</a>{" "}
 			</h5>
-			<p />
 		</footer>
 	);
 };
