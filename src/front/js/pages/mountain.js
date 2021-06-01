@@ -35,6 +35,8 @@ export const Mountain = () => {
 								<li className="listado-ruta">
 									<div className="detalles-ruta-listado">Ruta</div>
 									<br />
+									Punto de encuentro: Soto de Agües <br />
+									Fecha: 12 de Junio <br />
 									Salida desde Soto de Agües, siguiendo el río Alba. Km 3,4 a nuestra izquierda
 									hallamos una casita, a la que se accede por un puente de madera. 2km más y llegamos
 									a una zona de descanso con una bifurcación. Seguimos por el camino de la izquierda.
@@ -44,7 +46,7 @@ export const Mountain = () => {
 								<li className="listado-ruta">
 									<div className="detalles-ruta-listado">Dificultad</div>
 									<br />
-									Distancia 18km ida y vuelta. Dificultad baja. Apta para niños.
+									Distancia 18km ida y vuelta. <br /> Dificultad baja. <br /> Apta para niños.
 								</li>
 							</ul>
 						</div>

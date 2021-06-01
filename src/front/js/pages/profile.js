@@ -167,7 +167,7 @@ export const Profile = () => {
 																		<img
 																			className="fotoProfile w-100 h-100"
 																			variant="top"
-																			src=""
+																			src="https://images.pexels.com/photos/1619299/pexels-photo-1619299.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
 																		/>
 																	</div>
 																	<div className="perfil1 col-md-6 col-sm-12 p-2">
@@ -414,9 +414,9 @@ export const Profile = () => {
 																			<td>
 																				{" "}
 																				<img
-																					className="fotoProfile w-100 h-100 bg-color-danger"
+																					className="fotoProfile w-100  bg-color-danger"
 																					variant="top"
-																					src=""
+																					src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?cs=srgb&dl=pexels-philipp-m-100582.jpg&fm=jpg"
 																				/>{" "}
 																			</td>
 																			<td>{bike.b_type}</td>
@@ -448,7 +448,7 @@ export const Profile = () => {
 																<img
 																	className="fotoProfile w-100 h-100 bg-color-danger"
 																	variant="top"
-																	src=""
+																	src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?cs=srgb&dl=pexels-philipp-m-100582.jpg&fm=jpg"
 																/>
 															</div>
 															<div className="addBici col-md-6 col-sm-12 p-2">

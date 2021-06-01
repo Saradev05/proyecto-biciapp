@@ -28,14 +28,17 @@ export const Ruta_completa = () => {
 							<li className="listado-ruta">
 								<div className="detalles-ruta-listado">Ruta</div>
 								<br />
-								Punto de encuentro: Fecha: La senda costera recorre la costa oriental de Asturias. Parte
-								de Bustio, pueblo limítrofe con Cantabria, y llega hasta Guadamía. Unos 65km de
-								paisajes, playas y prados, que se pueden ir descubriendo por etapas
+								Punto de encuentro:Puerto maritimo de Llanes Fecha:19 de junio de 2021.
+								<br /> La senda costera recorre la costa oriental de Asturias. Parte de Bustio, pueblo
+								limítrofe con Cantabria, y llega hasta Guadamía. Unos 65km de paisajes, playas y prados,
+								que se pueden ir descubriendo por etapas
 							</li>
 							<li className="listado-ruta">
 								<div className="detalles-ruta-listado">Dificultad</div>
 								<br />
-								Distancia 12km ida y vuelta. Dificultad baja. Apta para niños.
+								Distancia 12km ida y vuelta.
+								<br /> Dificultad baja.
+								<br /> Apta para niños.
 							</li>
 						</ul>
 					</div>
