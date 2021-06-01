@@ -31,21 +31,14 @@ export const Events = () => {
 								<li className="listado-ruta">
 									<div className="detalles-ruta-listado">Ruta</div>
 									<br />
-<<<<<<< HEAD
 									Fecha: Primer viernes de cada mes <br />
-=======
->>>>>>> 3caeb091b21f72e4d53e781a538004bfb038ad63
 									Salida desde La Losa y recorrido por las calles de Oviedo
 								</li>
 								<li className="listado-ruta">
 									<div className="detalles-ruta-listado">Dificultad</div>
 									<br />
-<<<<<<< HEAD
 									Dificultad baja.
 									<br /> Apta para niños.
-=======
-									Dificultad baja. Apta para niños.
->>>>>>> 3caeb091b21f72e4d53e781a538004bfb038ad63
 								</li>
 							</ul>
 						</div>
