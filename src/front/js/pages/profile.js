@@ -469,7 +469,7 @@ export const Profile = () => {
 																		</option>
 																		<option value="MTB">MTB</option>
 																		<option value="Carretera">Carretera</option>
-																		<option value="paseo">paseo</option>
+																		<option value="paseo">Paseo</option>
 																	</select>
 																</div>
 																<div className="col-md-12 col-sm-12 p-2">
@@ -491,7 +491,7 @@ export const Profile = () => {
 																	<label
 																		htmlFor="wheel_inches"
 																		className="form-label">
-																		diametro de rueda
+																		Diámetro de rueda
 																	</label>
 																	<select
 																		type="text"
@@ -507,13 +507,13 @@ export const Profile = () => {
 																		<option value="28+">28 pulgadas o más</option>
 																		<option value="20-27">20 a 27 pulgadas</option>
 																		<option value="19-">
-																			menos de 20 pulgadas
+																			Menos de 20 pulgadas
 																		</option>
 																	</select>
 																</div>
 																<div className="col-md-12 col-sm-12 p-2">
 																	<label htmlFor="gears" className="form-label">
-																		marchas
+																		Marchas
 																	</label>
 																	<select
 																		type="text"
@@ -528,7 +528,7 @@ export const Profile = () => {
 																		</option>
 																		<option value="30+">30 marchas o mas</option>
 																		<option value="15+">15 a 29 marchas</option>
-																		<option value="-15">menos de 15 marchas</option>
+																		<option value="-15">Menos de 15 marchas</option>
 																	</select>
 																</div>
 																<div className="col-md-12 col-sm-12 p-2">

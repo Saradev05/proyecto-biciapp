@@ -45,7 +45,15 @@ const getState = ({ getStore, getAction, setStore }) => {
 			isAdmin: () => {
 				let store = getStore();
 				if (store.isAdmin === null) {
-					return localStorage.getItem("isAdmin");
+					// if("true"=== localStorage.getItem("isAdmin")){
+					//     return true
+					// }else{
+					//     return false
+					// }
+					var isTrueSet = "true" === localStorage.getItem("isAdmin");
+					return isTrueSet;
+
+					// localStorage.getItem("isAdmin");
 				}
 				return store.isAdmin;
 			},

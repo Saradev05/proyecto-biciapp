@@ -6,9 +6,7 @@ import stripe
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Bike,  Activity, ForgotPasswordEmail
 from api.utils import generate_sitemap, APIException
-from flask_jwt_extended import create_access_token
-from flask_jwt_extended import jwt_required
-from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import create_access_token,jwt_required,get_jwt_identity
 import random
 from api.aws import upload_file_to_s3
 
@@ -32,11 +30,11 @@ def create_checkout_session():
             line_items=[
                 {
                     'price_data': {
-                        'currency': 'usd',
+                        'currency': 'eur',
                         'unit_amount': 2000,
                         'product_data': {
-                            'name': 'Stubborn Attachments',
-                            'images': ['https://i.imgur.com/EHyR2nP.png'],
+                            'name': 'Ruta Senda costera de Llanes a Borizu',
+                            'images': ['https://i.imgur.com/w8rVx7V.jpeg'],
                         },
                     },
                     'quantity': 1,
@@ -193,8 +191,8 @@ def reset_password():
 
 
 
-@api.route('/uploadFoto', methods=['POST'])
-def upload_fotos():
+# @api.route('/uploadFoto', methods=['POST'])
+# def upload_fotos():
 #     files = request.files
 #     current_user_id = get_jwt_identity()
 #     user = User.get(current_user_id)
@@ -208,12 +206,10 @@ def upload_fotos():
 #             raise APIException("ha fallado la subida de la imagen")
 
 #         # now = datetime.datetime.now()
-
-
 #     return jsonify({}), 200
 
-# @api.route("/upload-images", methods=["POST"])
-# def upload_images():
+@api.route('/uploadFoto', methods=["POST"])
+def upload_fotos():
     url_image= ''
     files = request.files
     print(files)
