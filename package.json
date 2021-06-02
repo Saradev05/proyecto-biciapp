@@ -79,7 +79,7 @@
 		"@stripe/stripe-js": "^1.14.0",
 		"bootstrap": "^4.6.0",
 		"flask": "^0.2.10",
-		"heroku": "^7.53.1",
+		"heroku": "^7.54.0",
 		"prop-types": "^15.7.2",
 		"react": "^16.14.0",
 		"react-bootstrap": "^1.6.0",

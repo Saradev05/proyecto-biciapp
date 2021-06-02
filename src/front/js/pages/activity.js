@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/demo.scss";
-import MasaIMG from "../../img/masacrit.jpg";
+import Montana01IMG from "../../img/montana01.jpg";
 import { func } from "prop-types";
 
 export const Activity = () => {
@@ -70,9 +70,11 @@ export const Activity = () => {
 	return (
 		<div className="container ">
 			<div className="d-flex col-lg-12 ruta-card mb-5">
-				<div className="col-md-6 ">
-					<img className="img-activity py-4 rounded border border-warning" src={MasaIMG} />
+				<div className="card col-md-6 p-2">
+					<div className="css-header card-header h4">VISTAS RUTA</div>
+					<img className="imagen" src={Montana01IMG}></img>
 				</div>
+
 				<div className="col-md-6">{activity ? activitymap : ""}</div>
 			</div>
 		</div>
